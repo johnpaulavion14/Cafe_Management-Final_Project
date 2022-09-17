@@ -11,3 +11,5 @@ Final Project Features:
 8. User receipt will print Name of shop, location, business type, and calculate the total price minus the tax
 9. User can see the graph report per month (how much the profit and expenses)
 10. User can see the rankings of top sold products 
+11. User existing account can create another different business 
+12. User can use the app offline and can save the database when online
