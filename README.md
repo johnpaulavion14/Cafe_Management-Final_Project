@@ -12,4 +12,4 @@ Final Project Features:
 9. User can see the graph report per month (how much the profit and expenses)
 10. User can see the rankings of top sold products 
 11. User existing account can create another different business 
-12. User can use the app offline and can save the database when online
+<!-- 12. User can use the app offline and can save the database when online -->
