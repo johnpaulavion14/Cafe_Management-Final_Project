@@ -1,3 +1,11 @@
 <h1>Welcome to Cafe Management App</h1>
 
+<%= form_with url: "/dashboard/create_details" do |f| %>
+<%= f.hidden_field :detail, value:"shop_location" %>
 <b>Your Shop Location:</b>
+</br>
+<%= f.text_field :shop_location , size: "10x1", placeholder: "location of your shop"%>
+</br></br>
+<%= f.submit%>
+
+<%end%>
