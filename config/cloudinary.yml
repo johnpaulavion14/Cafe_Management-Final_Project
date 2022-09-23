@@ -1,0 +1,9 @@
+development:
+  cloud_name: "dazff5yba"
+  api_key: "934328263595753"
+  api_secret: "Fd5qM_1N9AJXeDY1bmjvpbliqD4"
+
+production:
+  cloud_name: "dazff5yba"
+  api_key: "934328263595753"
+  api_secret: "Fd5qM_1N9AJXeDY1bmjvpbliqD4"

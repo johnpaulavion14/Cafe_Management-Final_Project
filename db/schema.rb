@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_21_054129) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_23_002338) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "product_details", force: :cascade do |t|
+    t.string "product_name"
+    t.float "price"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+  end
 
   create_table "shop_details", force: :cascade do |t|
     t.string "shop_name"
@@ -20,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_054129) do
     t.string "business_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -28,6 +38,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_054129) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

@@ -72,3 +72,7 @@ group :test do
 end
 gem "devise"
 gem "pg"
+
+gem 'carrierwave', '1.3.1'
+gem 'cloudinary', '~>1.13.2'
+gem 'rmagick'
