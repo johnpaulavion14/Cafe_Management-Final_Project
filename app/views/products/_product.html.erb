@@ -1,7 +1,7 @@
 <div id="<%= dom_id product %>">
   <p>
     <strong>Product name:</strong>
-    <%= link_to product.product_name, order_path %>
+    <%= link_to product.product_name, order_path({name:product.product_name, price:product.price}) %>
   </p>
 
   <p>

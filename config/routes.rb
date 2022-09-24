@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'dashboard/index'
   get 'dashboard/order' , as:'order'
+  post 'dashboard/create_order' 
 
   get 'shop_details/shop_name' , as:'shop_name'
   get 'shop_details/shop_location' , as:'shop_location'
