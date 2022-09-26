@@ -14232,3 +14232,430 @@ LINE 1: SELECT "products".* FROM "products" WHERE "products"."user_i...
     9:       <%= link_to "Show this product", product %>
   
 app/views/products/index.html.erb:6
+Started GET "/products" for 127.0.0.1 at 2022-09-26 11:33:15 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1691)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1779)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 9.5ms | Allocations: 14045)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column products.user_id does not exist
+LINE 1: SELECT "products".* FROM "products" WHERE "products"."user_i...
+                                                  ^
+):
+    3: <h1>Products</h1>
+    4: 
+    5: <div id="products">
+    6:   <%= @products.each do |product| %>
+    7:     <%= render product %>
+    8:     <p>
+    9:       <%= link_to "Show this product", product %>
+  
+app/views/products/index.html.erb:6
+Started GET "/products" for 127.0.0.1 at 2022-09-26 11:33:16 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1641)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1720)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms | Allocations: 3605)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column products.user_id does not exist
+LINE 1: SELECT "products".* FROM "products" WHERE "products"."user_i...
+                                                  ^
+):
+    3: <h1>Products</h1>
+    4: 
+    5: <div id="products">
+    6:   <%= @products.each do |product| %>
+    7:     <%= render product %>
+    8:     <p>
+    9:       <%= link_to "Show this product", product %>
+  
+app/views/products/index.html.erb:6
+Started GET "/" for 127.0.0.1 at 2022-09-26 11:33:31 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 678)
+  Rendered layout layouts/application.html.erb (Duration: 112.6ms | Allocations: 38921)
+Completed 200 OK in 132ms (Views: 119.8ms | ActiveRecord: 0.0ms | Allocations: 42402)
+
+
+Started GET "/rails/info/routes?path=showprodu" for 127.0.0.1 at 2022-09-26 11:33:39 +0800
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"showprodu"}
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2754)
+
+
+Started GET "/dashboard/index" for 127.0.0.1 at 2022-09-26 11:34:16 +0800
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 580)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 3307)
+Completed 200 OK in 49ms (Views: 12.0ms | ActiveRecord: 7.3ms | Allocations: 15977)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-09-26 11:34:18 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2324)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 2422)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.9ms | Allocations: 10772)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column products.user_id does not exist
+LINE 1: SELECT "products".* FROM "products" WHERE "products"."user_i...
+                                                  ^
+):
+    3: <h1>Products</h1>
+    4: 
+    5: <div id="products">
+    6:   <%= @products.each do |product| %>
+    7:     <%= render product %>
+    8:     <p>
+    9:       <%= link_to "Show this product", product %>
+  
+app/views/products/index.html.erb:6
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  [1m[36mOrderTransaction Load (1.6ms)[0m  [1m[34mSELECT "order_transactions".* FROM "order_transactions"[0m
+  [1m[36mOrderTransaction Load (0.6ms)[0m  [1m[34mSELECT "order_transactions".* FROM "order_transactions"[0m
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+Started GET "/dashboard/index" for 127.0.0.1 at 2022-09-26 11:36:08 +0800
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 549)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 3290)
+Completed 200 OK in 19ms (Views: 13.1ms | ActiveRecord: 0.5ms | Allocations: 5652)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-09-26 11:36:10 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1985)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 2074)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.4ms | Allocations: 4411)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column products.user_id does not exist
+LINE 1: SELECT "products".* FROM "products" WHERE "products"."user_i...
+                                                  ^
+):
+    3: <h1>Products</h1>
+    4: 
+    5: <div id="products">
+    6:   <%= @products.each do |product| %>
+    7:     <%= render product %>
+    8:     <p>
+    9:       <%= link_to "Show this product", product %>
+  
+app/views/products/index.html.erb:6
+Started GET "/" for 127.0.0.1 at 2022-09-26 11:36:17 +0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 375)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3170)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 3837)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-26 11:36:17 +0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2671)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 2949)
+
+
+Started GET "/dashboard/index" for 127.0.0.1 at 2022-09-26 11:43:18 +0800
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 2657)
+Completed 200 OK in 38ms (Views: 6.7ms | ActiveRecord: 6.8ms | Allocations: 7449)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2022-09-26 11:43:19 +0800
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms | Allocations: 3303)
+
+
+Started GET "/" for 127.0.0.1 at 2022-09-26 11:43:19 +0800
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 184)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2836)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 3187)
+
+
+Started GET "/dashboard/index" for 127.0.0.1 at 2022-09-26 11:43:19 +0800
+Processing by DashboardController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 353)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2022-09-26 11:43:19 +0800
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/jp14/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/jp14/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 731)
+  Rendered /home/jp14/.asdf/installs/ruby/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3651)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 6179)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 7748)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2022-09-26 11:43:24 +0800
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/shop_details/shop_name
+Completed 302 Found in 254ms (ActiveRecord: 0.5ms | Allocations: 3701)
+
+
+Started GET "/shop_details/shop_name" for 127.0.0.1 at 2022-09-26 11:43:24 +0800
+Processing by ShopDetailsController#shop_name as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mShopDetail Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "shop_details" WHERE "shop_details"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/controllers/shop_details_controller.rb:5:in `shop_name'
+Redirected to http://127.0.0.1:3000/dashboard/index
+Completed 302 Found in 15ms (ActiveRecord: 4.4ms | Allocations: 4759)
+
+
+Started GET "/dashboard/index" for 127.0.0.1 at 2022-09-26 11:43:24 +0800
+Processing by DashboardController#index as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 342)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2790)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 4526)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-09-26 11:43:26 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1672)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1751)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms | Allocations: 3469)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column products.user_id does not exist
+LINE 1: SELECT "products".* FROM "products" WHERE "products"."user_i...
+                                                  ^
+):
+    3: <h1>Products</h1>
+    4: 
+    5: <div id="products">
+    6:   <%= @products.each do |product| %>
+    7:     <%= render product %>
+    8:     <p>
+    9:       <%= link_to "Show this product", product %>
+  
+app/views/products/index.html.erb:6
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8061910144390322640)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFieldsToProduct (20220926034731)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "products" ADD "user_id" integer[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" ADD "index" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220926034731"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(8061910144390322640)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8061910144390322640)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFieldsToProduct (20220926034731)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "products" DROP COLUMN "index"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" DROP COLUMN "user_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20220926034731"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8061910144390322640)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8061910144390322640)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFieldsToProduct (20220926034731)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "products" ADD "user_id" integer[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220926034731"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8061910144390322640)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/dashboard/index" for 127.0.0.1 at 2022-09-26 11:52:01 +0800
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 411)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 15831)
+Completed 200 OK in 37ms (Views: 23.7ms | ActiveRecord: 0.8ms | Allocations: 21920)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-09-26 11:52:03 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1003)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3562)
+Completed 200 OK in 20ms (Views: 8.4ms | ActiveRecord: 0.9ms | Allocations: 8999)
+
+
+Started GET "/dashboard/index" for 127.0.0.1 at 2022-09-26 11:52:06 +0800
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2657)
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 0.5ms | Allocations: 4344)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-09-26 11:52:07 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 709)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 3069)
+Completed 200 OK in 22ms (Views: 16.0ms | ActiveRecord: 0.8ms | Allocations: 4804)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2022-09-26 11:52:11 +0800
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 4.0ms | Allocations: 5282)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Product.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/products_controller.rb:16:in `new'
+Started GET "/products/new" for 127.0.0.1 at 2022-09-26 11:52:27 +0800
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms | Allocations: 2413)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Product.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/products_controller.rb:16:in `new'
+Started GET "/products" for 127.0.0.1 at 2022-09-26 11:53:12 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 946)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 16388)
+Completed 200 OK in 63ms (Views: 26.1ms | ActiveRecord: 7.7ms | Allocations: 26431)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2022-09-26 11:53:14 +0800
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.8ms | Allocations: 1646)
+  Rendered products/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1977)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4436)
+Completed 200 OK in 27ms (Views: 11.3ms | ActiveRecord: 2.7ms | Allocations: 9712)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2022-09-26 11:53:17 +0800
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.8ms | Allocations: 833)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 920)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3266)
+Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 5244)
+
+
+Started POST "/products" for 127.0.0.1 at 2022-09-26 11:53:28 +0800
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"product_name"=>"qwe", "price"=>"234"}, "commit"=>"Create Product"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:28:in `block in create'
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("product_name", "price", "image", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["product_name", "qwe"], ["price", 234.0], ["image", nil], ["created_at", "2022-09-26 03:53:28.667055"], ["updated_at", "2022-09-26 03:53:28.667055"], ["user_id", 3]]
+  ↳ app/controllers/products_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:28:in `block in create'
+Redirected to http://127.0.0.1:3000/products/1
+Completed 302 Found in 15ms (ActiveRecord: 2.5ms | Allocations: 5555)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2022-09-26 11:53:28 +0800
+Processing by ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:64:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 2.2ms | Allocations: 393)
+  Rendered products/show.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1347)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 3791)
+Completed 200 OK in 17ms (Views: 9.7ms | ActiveRecord: 0.8ms | Allocations: 6368)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8061910144390322640)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFieldsToOrderTransactions (20220926035444)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "order_transactions" ADD "user_id" integer[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE INDEX "index_order_transactions_on_user_id" ON "order_transactions" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220926035444"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8061910144390322640)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
