@@ -15,13 +15,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_124256) do
   enable_extension "plpgsql"
 
   create_table "order_transactions", force: :cascade do |t|
-    t.string "product_name"
-    t.float "price"
-    t.integer "quantity"
+    t.text "orders"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "product_id"
-    t.index ["product_id"], name: "index_order_transactions_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -30,8 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_124256) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "shop_details", force: :cascade do |t|
