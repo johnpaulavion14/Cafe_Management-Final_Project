@@ -1,15 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Products</h1>
+<%= form_tag(checkout_path ,method: :get) do |f| %>
 
-<div id="products">
-  <%= @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
-  <% end %>
-</div>
+  <h1>Products</h1>
+
+  <div id="products">
+    <%= @products.each do |product| %>
+    <%= link_to "Show this product", product %>
+      <%= render product %>
+      <p>
+        <%= number_field_tag product.product_name , min: 1, placeholder: "quantity"%>
+      </p>
+    <% end %>
+  </div>
+  </br></br>
+  <%= submit_tag 'Checkout'%>
+<% end %>
+
+ </br></br>
 
 <%= link_to "New product", new_product_path %>
 

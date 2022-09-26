@@ -25,7 +25,7 @@ class DashboardController < ApplicationController
   end
 
   def checkout
-    
+    @product = params
   end
 
 
@@ -38,6 +38,8 @@ class DashboardController < ApplicationController
   def order_params
     params.permit(:product_name,:price,:quantity)
   end
+
+  
 
 end
 
