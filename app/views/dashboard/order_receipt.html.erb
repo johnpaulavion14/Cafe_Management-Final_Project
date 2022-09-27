@@ -9,19 +9,18 @@
 
 <% @Orders.each do |order|%>
   <p>Product: <%= order[:product_name] %></p>
-  <p>Price: <%= order[:price] %></p>
+  <p>Current Price: <%= sprintf('%.2f',order[:price]) %></p>
   <p>Quantity: <%= order[:quantity] %></p>
-  <p>Price: <%= order[:quantity] * order[:price] %></p>
+  <p>Price: <%= sprintf('%.2f',order[:quantity] * order[:price]) %></p>
   </br>
 <% end %>
 
-<p>Total Price: <%= @Order.orders[0][:total_price]%></p>
+<p>Total Price: <%= sprintf('%.2f',@Order.orders[0][:total_price])%></p>
   </br>
 <%= button_to 'Print Receipt' %>
   </br>
 
 <%= button_to 'go back to products' , products_path, method: :get%>
-
 
 
 
