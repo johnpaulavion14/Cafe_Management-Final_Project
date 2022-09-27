@@ -10,6 +10,7 @@ class DashboardController < ApplicationController
 
   def create_order
     products = current_user.products.all
+    product_sales = current_user.product_sales
     order = current_user.order_transactions
 
     order_arrays = []
@@ -32,6 +33,8 @@ class DashboardController < ApplicationController
         product_price.push(quantity * price)
   
         order_arrays.push(order_details)
+
+        product_sales.create(product_name:product_name,quantity:quantity,price:price)
      
     end
     @Tax = product_price.reduce(:+) * 0.12
@@ -81,7 +84,7 @@ class DashboardController < ApplicationController
   end
 
   def sales_report
-    
+    @Product_Sales = current_user.product_sales.all
   end
 
 
