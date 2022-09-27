@@ -1,3 +1,18 @@
-checkout
+<h2>Checkout</h2>
 
-<%= @product%>
+<%= form_with url: "/dashboard/create_order" do |f| %>
+  <% @Checkout.each_with_index do |product,idx|%>
+    <b><%= product.keys[0]%></b>
+    <%= f.number_field product.keys[0], value: product.values[0].to_i%>
+    <b><%= sprintf('%.2f',@Price_array[idx]).to_s + ' x ' + sprintf('%.2f',@Price_product[idx]).to_s %></b>
+    </br>
+  <% end %>
+
+</br></br></br>
+<b><%= "Total Price: " + sprintf('%.2f',@Total_price).to_s %></b>
+</br></br>
+<%= f.submit "Place Order"%>
+
+<% end %>
+</br></br>
+<%= button_to 'go back',products_path, method: :get%>

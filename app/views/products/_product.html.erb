@@ -1,12 +1,12 @@
 <div id="<%= dom_id product %>">
   <p>
     <strong>Product name:</strong>
-    <%= link_to product.product_name, order_path({name:product.product_name, price:product.price}) %>
+    <%= product.product_name %>
   </p>
 
   <p>
     <strong>Price:</strong>
-    <%= product.price %>
+    <%= sprintf('%.2f',product.price) %>
   </p>
 
   <p>

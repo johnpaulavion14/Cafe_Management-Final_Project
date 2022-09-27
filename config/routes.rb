@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :products
   devise_for :users
   get 'dashboard/index'
-  get 'dashboard/order' , as:'order'
   get 'dashboard/order_receipt' , as:'order_receipt'
   get 'dashboard/checkout' , as:'checkout'
   post 'dashboard/create_order' 

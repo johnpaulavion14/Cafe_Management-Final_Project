@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<%= form_tag(checkout_path ,method: :get) do |f| %>
+<%= form_with url: "/dashboard/checkout" ,method: :get do |f| %>
 
   <h1>Products</h1>
 
@@ -9,12 +9,12 @@
     <%= link_to "Show this product", product %>
       <%= render product %>
       <p>
-        <%= number_field_tag product.product_name , min: 1, placeholder: "quantity"%>
+        <%= f.number_field product.product_name , min: 1, placeholder: "quantity"%>
       </p>
     <% end %>
   </div>
   </br></br>
-  <%= submit_tag 'Checkout'%>
+  <%= f.submit 'Checkout'%>
 <% end %>
 
  </br></br>
