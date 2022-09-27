@@ -15,7 +15,8 @@
   </br>
 <% end %>
 
-<p>Total Price: <%= sprintf('%.2f',@Order.orders[0][:total_price])%></p>
+<p>Tax(12%) - <%= sprintf('%.2f',@Order.orders[-1][:tax])%></p>
+<p>Total Price: <%= sprintf('%.2f',@Order.orders[-1][:total_price])%></p>
   </br>
 <%= button_to 'Print Receipt' %>
   </br>

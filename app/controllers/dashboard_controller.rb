@@ -13,25 +13,31 @@ class DashboardController < ApplicationController
     order = current_user.order_transactions
 
     order_arrays = []
+    product_price = []
     
     product_names = params.keys
     product_names.slice!(product_names.length-3,3)
     product_names.slice!(0,1)
 
     product_names.each do |x|
+        product_name = x
+        quantity = params[x].to_i
+        price = products.find_by(product_name:x).price
 
-      if x == 'total_price'
-        order_arrays.push({:total_price => sprintf('%.2f',params[x])})
-      else
         order_details = {}
-        order_details[:product_name] = x
-        order_details[:quantity] = params[x].to_i
-        order_details[:price] = products.find_by(product_name:x).price
+        order_details[:product_name] = product_name
+        order_details[:quantity] = quantity
+        order_details[:price] = price
+
+        product_price.push(quantity * price)
   
         order_arrays.push(order_details)
-      end
      
     end
+    @Tax = product_price.reduce(:+) * 0.12
+    @Total_price = product_price.reduce(:+) + @Tax
+    order_arrays.push({total_price: @Total_price, tax: @Tax})
+
     
     if order.create(orders: order_arrays)
       redirect_to order_receipt_path
@@ -46,8 +52,7 @@ class DashboardController < ApplicationController
     # product = current_user.products.find_by(product_name:params[:name])
     @Order = current_user.order_transactions.last
     @Orders = current_user.order_transactions.last.orders
-    @Orders.shift
-
+    @Orders.pop
   end
 
   def checkout
@@ -66,12 +71,13 @@ class DashboardController < ApplicationController
         @Price_product.push(product)
       end
     end
-    @Total_price = @Price_product.reduce(:+)
 
-    if @Total_price == nil
+    if @Checkout.length == 0
       redirect_to products_path
+    else
+      @Tax = @Price_product.reduce(:+) * 0.12
+      @Total_price = @Price_product.reduce(:+) + @Tax
     end
-
   end
 
   def sales_report

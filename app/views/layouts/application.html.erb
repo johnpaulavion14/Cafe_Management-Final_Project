@@ -11,7 +11,9 @@
   </head>
 
   <body>
-  <span>welcome! <%= current_user.email%></span>
+  <%if user_signed_in?%>
+    <span>welcome! <%= current_user.email%></span>
+  <%end%>
     <%= yield %>
   </body>
 </html>
