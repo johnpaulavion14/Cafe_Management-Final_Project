@@ -4,7 +4,7 @@
 
   <% @Checkout.each_with_index do |product,idx|%>
     <b><%= product.keys[0]%></b>
-    <%= f.number_field product.keys[0], value: product.values[0].to_i%>
+    <%= f.number_field product.keys[0], value: product.values[0].to_i, min: 1%>
     <b><%= sprintf('%.2f',@Price_array[idx]).to_s + ' - ' + sprintf('%.2f',@Price_product[idx]).to_s %></b>
     </br>
   <% end %>
