@@ -20,13 +20,17 @@ class DashboardController < ApplicationController
 
     product_names.each do |x|
 
-      order_details = {}
-      order_details[:product_name] = x
-      order_details[:quantity] = params[x]
-      order_details[:price] = products.find_by(product_name:x).price
-
-      order_arrays.push(order_details)
-
+      if x == 'total_price'
+        order_arrays.push({:total_price => sprintf('%.2f',params[x])})
+      else
+        order_details = {}
+        order_details[:product_name] = x
+        order_details[:quantity] = params[x].to_i
+        order_details[:price] = products.find_by(product_name:x).price
+  
+        order_arrays.push(order_details)
+      end
+     
     end
     
     if order.create(orders: order_arrays)
@@ -38,9 +42,11 @@ class DashboardController < ApplicationController
   end
 
   def order_receipt
-    # @shop = current_user.shop_details.first
+    @Shop = current_user.shop_details.first
     # product = current_user.products.find_by(product_name:params[:name])
-    # @order = product.order_transactions.last
+    @Order = current_user.order_transactions.last
+    @Orders = current_user.order_transactions.last.orders
+    @Orders.shift
 
   end
 
@@ -61,16 +67,12 @@ class DashboardController < ApplicationController
       end
     end
     @Total_price = @Price_product.reduce(:+)
-    
+
     if @Total_price == nil
       redirect_to products_path
     end
 
   end
-
-
-
-
 
 
   private

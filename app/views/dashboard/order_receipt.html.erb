@@ -1,18 +1,24 @@
 <h1>Order Receipt</h1>
-<%# </br> %>
-<%# <h2><%= @shop.shop_name %></h2> %>
-<%# <h3><%= @shop.shop_location %></h3> %>
-<%# <b>phone#: 12345678910</b> %>
-<%# </br> %>
-<%# </br> %>
-<%# <p>Date: <%= @order.created_at%></p> %>
-<%# <p>Product: <%= @order.product_name %></p> %>
-<%# <p>Price: <%= @order.price %></p> %>
-<%# <p>Quantity: <%= @order.quantity %></p> %>
-<%# <p>Total Price: <%= @order.quantity * @order.price %></p> %>
+<h2><%= @Shop.shop_name %></h2>
+<h3><%= @Shop.shop_location %></h3>
+<b>phone#: 12345678910</b>
+</br>
+</b>
+<p>Date: <%= @Order.created_at%></p>
+</br>
 
+<% @Orders.each do |order|%>
+  <p>Product: <%= order[:product_name] %></p>
+  <p>Price: <%= order[:price] %></p>
+  <p>Quantity: <%= order[:quantity] %></p>
+  <p>Price: <%= order[:quantity] * order[:price] %></p>
+  </br>
+<% end %>
 
-
+<p>Total Price: <%= @Order.orders[0][:total_price]%></p>
+  </br>
+<%= button_to 'Print Receipt' %>
+  </br>
 
 <%= button_to 'go back to products' , products_path, method: :get%>
 
