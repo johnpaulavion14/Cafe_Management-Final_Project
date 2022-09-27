@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   get 'dashboard/order_receipt' , as:'order_receipt'
   get 'dashboard/checkout' , as:'checkout'
+  get 'dashboard/sales_report' , as:'sales_report'
   post 'dashboard/create_order' 
   
   get 'shop_details/shop_name' , as:'shop_name'

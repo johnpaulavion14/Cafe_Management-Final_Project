@@ -74,6 +74,10 @@ class DashboardController < ApplicationController
 
   end
 
+  def sales_report
+    
+  end
+
 
   private
 

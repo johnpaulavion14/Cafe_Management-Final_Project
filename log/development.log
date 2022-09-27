@@ -26787,3 +26787,73 @@ Processing by DashboardController#index as HTML
 Completed 200 OK in 31ms (Views: 18.7ms | ActiveRecord: 1.0ms | Allocations: 4555)
 
 
+Started GET "/dashboard/index" for 127.0.0.1 at 2022-09-27 12:53:07 +0800
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 665)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 16341)
+Completed 200 OK in 83ms (Views: 38.1ms | ActiveRecord: 7.8ms | Allocations: 25766)
+
+
+Started GET "/dashboard/sales_report" for 127.0.0.1 at 2022-09-27 12:53:09 +0800
+Processing by DashboardController#sales_report as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sales_report.html.erb within layouts/application
+  Rendered dashboard/sales_report.html.erb within layouts/application (Duration: 1.5ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 2463)
+Completed 200 OK in 32ms (Views: 16.4ms | ActiveRecord: 1.4ms | Allocations: 4279)
+
+
+Started GET "/dashboard/sales_report" for 127.0.0.1 at 2022-09-27 12:53:29 +0800
+Processing by DashboardController#sales_report as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sales_report.html.erb within layouts/application
+  Rendered dashboard/sales_report.html.erb within layouts/application (Duration: 1.5ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 2918)
+Completed 200 OK in 26ms (Views: 17.8ms | ActiveRecord: 0.6ms | Allocations: 5074)
+
+
+Started GET "/dashboard/sales_report" for 127.0.0.1 at 2022-09-27 12:54:58 +0800
+Processing by DashboardController#sales_report as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sales_report.html.erb within layouts/application
+  Rendered dashboard/sales_report.html.erb within layouts/application (Duration: 1.7ms | Allocations: 288)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 3073)
+Completed 200 OK in 27ms (Views: 17.3ms | ActiveRecord: 1.1ms | Allocations: 5425)
+
+
+Started GET "/dashboard/index" for 127.0.0.1 at 2022-09-27 12:54:59 +0800
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 549)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 2911)
+Completed 200 OK in 33ms (Views: 19.8ms | ActiveRecord: 1.6ms | Allocations: 4735)
+
+
+Started GET "/dashboard/sales_report" for 127.0.0.1 at 2022-09-27 12:55:02 +0800
+Processing by DashboardController#sales_report as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sales_report.html.erb within layouts/application
+  Rendered dashboard/sales_report.html.erb within layouts/application (Duration: 0.2ms | Allocations: 90)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2449)
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.5ms | Allocations: 4018)
+
+
+Started GET "/dashboard/index" for 127.0.0.1 at 2022-09-27 12:55:04 +0800
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 377)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 2736)
+Completed 200 OK in 29ms (Views: 14.7ms | ActiveRecord: 1.0ms | Allocations: 4317)
+
+
