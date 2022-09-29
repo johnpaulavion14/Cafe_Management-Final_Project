@@ -1,27 +1,42 @@
-<h2>Sales Report</h2>
+<h2>All Orders</h2>
 
-<%# <table class="table"> %>
-  <%# <thead> %>
-    <%# <tr> %>
-      <%# <th scope="col">Time</th> %>
-      <%# <th scope="col">Product Name</th> %>
-      <%# <th scope="col">Current Price</th> %>
-      <%# <th scope="col">Quantity</th> %>
-      <%# <th scope="col">Product Price</th> %>
-    <%# </tr> %>
-  <%# </thead> %>
-  <%# <tbody> %>
-  <%# <% @Product_Sales.each do |product|%> %>
-        <%# <tr> %>
-          <%# <td><%= product.created_at%></td> %>
-          <%# <td><%= product.product_name%> </td> %>
-          <%# <td><%= product.price%></td> %>
-          <%# <td><%= product.quantity%></td> %>
-          <%# <td><%= product.price * product.quantity%></td> %>
-        <%# </tr> %>
-    <%# <%end%> %>
-  <%# </tbody> %>
-<%# </table> %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Orders</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Tax</th>
+      <th scope="col">Print Receipt</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @Orders.each_with_index do |order,idx|%>
+        <tr>
+          <td><%= idx + 1%> </td>
+          <td>
+          <% order[0].each_with_index do |x,idx|%>
+            <% if x.keys[0] != :total_price %>
+              <%=x[:product_name] %>
+              (&#8369;<%=x[:price]%> x
+              <%=x[:quantity]%>)
+              <%= order[0].length != idx+2 ? ',' : '' %>    
+            <% end %>
+          <% end %>
+          
+          </td>
+          <td>&#8369;<%= order[0][order[0].length-1][:total_price]%> </td>
+          <td>&#8369;<%= order[0][order[0].length-1][:tax]%> </td>
+          <td> Print </td>
+          <td><%= order[1]%></td>
+        </tr>
+    <%end%>
+  </tbody>
+</table>
+
+
+</br></br>
 
 
 </br></br>

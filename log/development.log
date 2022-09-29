@@ -38778,3 +38778,2151 @@ Processing by DashboardController#sold_products as HTML
 Completed 200 OK in 32ms (Views: 8.7ms | ActiveRecord: 7.4ms | Allocations: 6903)
 
 
+Started GET "/products" for 127.0.0.1 at 2022-09-29 19:24:29 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/products/index.html.erb:8
+  Rendered products/_product.html.erb (Duration: 0.3ms | Allocations: 40)
+  Rendered products/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1658)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 4419)
+Completed 200 OK in 78ms (Views: 28.4ms | ActiveRecord: 12.8ms | Allocations: 9242)
+
+
+Started GET "/products/edit_all_products" for 127.0.0.1 at 2022-09-29 19:24:33 +0800
+Processing by ProductsController#edit_all_products as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit_all_products.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/products/edit_all_products.html.erb:14:in `each_with_index'
+  Rendered products/edit_all_products.html.erb within layouts/application (Duration: 4.7ms | Allocations: 878)
+  Rendered application/_navbar.html.erb (Duration: 1.7ms | Allocations: 342)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 3652)
+Completed 200 OK in 22ms (Views: 14.1ms | ActiveRecord: 1.3ms | Allocations: 5365)
+
+
+Started GET "/products/11/edit" for 127.0.0.1 at 2022-09-29 19:24:35 +0800
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:68:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.4ms | Allocations: 921)
+  Rendered products/edit.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1022)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 3783)
+Completed 200 OK in 27ms (Views: 13.5ms | ActiveRecord: 1.5ms | Allocations: 6158)
+
+
+Started GET "/products/edit_all_products" for 127.0.0.1 at 2022-09-29 19:24:37 +0800
+Processing by ProductsController#edit_all_products as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit_all_products.html.erb within layouts/application
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/products/edit_all_products.html.erb:14:in `each_with_index'
+  Rendered products/edit_all_products.html.erb within layouts/application (Duration: 5.5ms | Allocations: 878)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 342)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 3641)
+Completed 200 OK in 23ms (Views: 14.1ms | ActiveRecord: 2.7ms | Allocations: 5358)
+
+
+Started GET "/products/11/edit" for 127.0.0.1 at 2022-09-29 19:24:38 +0800
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:68:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.7ms | Allocations: 921)
+  Rendered products/edit.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1022)
+  Rendered application/_navbar.html.erb (Duration: 1.9ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 3768)
+Completed 200 OK in 25ms (Views: 14.7ms | ActiveRecord: 1.2ms | Allocations: 6146)
+
+
+Started GET "/products/edit_all_products" for 127.0.0.1 at 2022-09-29 19:24:40 +0800
+Processing by ProductsController#edit_all_products as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit_all_products.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/products/edit_all_products.html.erb:14:in `each_with_index'
+  Rendered products/edit_all_products.html.erb within layouts/application (Duration: 3.7ms | Allocations: 878)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 342)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3633)
+Completed 200 OK in 18ms (Views: 11.1ms | ActiveRecord: 1.4ms | Allocations: 5362)
+
+
+Started GET "/products/11/edit" for 127.0.0.1 at 2022-09-29 19:24:42 +0800
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (4.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:68:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.7ms | Allocations: 921)
+  Rendered products/edit.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1022)
+  Rendered application/_navbar.html.erb (Duration: 4.0ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 3781)
+Completed 200 OK in 32ms (Views: 18.2ms | ActiveRecord: 4.5ms | Allocations: 6162)
+
+
+Started GET "/products/edit_all_products" for 127.0.0.1 at 2022-09-29 19:24:44 +0800
+Processing by ProductsController#edit_all_products as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit_all_products.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/products/edit_all_products.html.erb:14:in `each_with_index'
+  Rendered products/edit_all_products.html.erb within layouts/application (Duration: 4.7ms | Allocations: 878)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 342)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 3633)
+Completed 200 OK in 21ms (Views: 14.4ms | ActiveRecord: 1.4ms | Allocations: 5340)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:25:24 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 2770)
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 0.4ms | Allocations: 4492)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-09-29 19:25:44 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/products/index.html.erb:8
+  Rendered products/_product.html.erb (Duration: 0.6ms | Allocations: 96)
+  Rendered products/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 4045)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 378)
+  Rendered layout layouts/application.html.erb (Duration: 42.6ms | Allocations: 19913)
+Completed 200 OK in 96ms (Views: 41.5ms | ActiveRecord: 20.0ms | Allocations: 29699)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 19:25:45 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.5ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:90:in `sold_products'
+  [1m[36mProductSale Pluck (0.9ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:93:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.4ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:97:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.1ms | Allocations: 26)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 418)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3106)
+Completed 200 OK in 50ms (Views: 12.8ms | ActiveRecord: 5.0ms | Allocations: 10055)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-09-29 19:25:46 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/products/index.html.erb:8
+  Rendered products/_product.html.erb (Duration: 0.3ms | Allocations: 44)
+  Rendered products/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1659)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 4413)
+Completed 200 OK in 25ms (Views: 17.2ms | ActiveRecord: 1.1ms | Allocations: 6352)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:25:49 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.1ms | Allocations: 8)
+  Rendered application/_navbar.html.erb (Duration: 1.7ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 2772)
+Completed 200 OK in 19ms (Views: 13.0ms | ActiveRecord: 0.4ms | Allocations: 4567)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 19:25:50 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.5ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:90:in `sold_products'
+  [1m[36mProductSale Pluck (0.6ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:93:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.6ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:97:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.1ms | Allocations: 20)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 2785)
+Completed 200 OK in 30ms (Views: 10.1ms | ActiveRecord: 3.1ms | Allocations: 6902)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 19:26:03 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.5ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:90:in `sold_products'
+  [1m[36mProductSale Pluck (0.8ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:93:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.9ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:97:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.1ms | Allocations: 20)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 2785)
+Completed 200 OK in 33ms (Views: 11.8ms | ActiveRecord: 3.3ms | Allocations: 6897)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-09-29 19:26:04 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/products/index.html.erb:8
+  Rendered products/_product.html.erb (Duration: 0.3ms | Allocations: 40)
+  Rendered products/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1601)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4355)
+Completed 200 OK in 22ms (Views: 15.3ms | ActiveRecord: 0.8ms | Allocations: 6065)
+
+
+  [1m[36mOrderTransaction Load (2.9ms)[0m  [1m[34mSELECT "order_transactions".* FROM "order_transactions"[0m
+  [1m[36mOrderTransaction Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "order_transactions"[0m
+  [1m[36mOrderTransaction Load (1.1ms)[0m  [1m[34mSELECT "order_transactions".* FROM "order_transactions"[0m
+  [1m[36mOrderTransaction Load (0.5ms)[0m  [1m[34mSELECT "order_transactions".* FROM "order_transactions" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mOrderTransaction Load (0.6ms)[0m  [1m[34mSELECT "order_transactions".* FROM "order_transactions" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mOrderTransaction Pluck (0.9ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions"[0m
+  [1m[36mOrderTransaction Pluck (1.3ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions"[0m
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions"[0m
+  [1m[36mOrderTransaction Pluck (1.9ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions"[0m
+  [1m[36mOrderTransaction Pluck (1.1ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions"[0m
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:52:16 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2915)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3003)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 12.8ms | Allocations: 16703)
+
+
+  
+ActionView::Template::Error (undefined method `orders' for [{:product_name=>"coffee ", :quantity=>6, :price=>100.0}]:Array
+
+@output_buffer.safe_append='          '.freeze;@output_buffer.append=( order.orders);@output_buffer.safe_append=' 
+                                                                            ^^^^^^^):
+    20:           <%= x[:product_name] %>%
+    21: 
+    22:           <% end %>
+    23:           <%= order.orders%> 
+    24:           
+    25:           
+    26:           </td>
+  
+app/views/dashboard/all_orders.html.erb:23
+app/views/dashboard/all_orders.html.erb:14:in `each'
+app/views/dashboard/all_orders.html.erb:14:in `each_with_index'
+app/views/dashboard/all_orders.html.erb:14
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:52:53 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.6ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.1ms | Allocations: 466)
+  Rendered application/_navbar.html.erb (Duration: 2.5ms | Allocations: 763)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 17135)
+Completed 200 OK in 45ms (Views: 32.0ms | ActiveRecord: 1.6ms | Allocations: 21611)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:53:48 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.6ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.2ms | Allocations: 408)
+  Rendered application/_navbar.html.erb (Duration: 2.5ms | Allocations: 764)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 16958)
+Completed 200 OK in 73ms (Views: 34.2ms | ActiveRecord: 9.9ms | Allocations: 27817)
+
+
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions"[0m
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:56:09 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.6ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.2ms | Allocations: 468)
+  Rendered application/_navbar.html.erb (Duration: 2.4ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4244)
+Completed 200 OK in 26ms (Views: 11.8ms | ActiveRecord: 1.2ms | Allocations: 8714)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:56:47 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.7ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 11.0ms | Allocations: 5137)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 5225)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.5ms | Allocations: 9657)
+
+
+  
+ActionView::Template::Error (undefined method `order!' for #<ActionView::Base:0x00000000089670>
+
+          '.freeze;@output_buffer.append=( order!.pop );@output_buffer.safe_append='
+                                           ^^^^^^):
+    15:         <tr>
+    16:           <td><%= idx + 1%> </td>
+    17:           <td>
+    18:           <%= order!.pop %>
+    19:           <% order.each do |x|%>
+    20:           <%= x[:product_name] %>%
+    21: 
+  
+app/views/dashboard/all_orders.html.erb:18
+app/views/dashboard/all_orders.html.erb:14:in `each'
+app/views/dashboard/all_orders.html.erb:14:in `each_with_index'
+app/views/dashboard/all_orders.html.erb:14
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:56:55 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.6ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2860)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2948)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.2ms | Allocations: 7378)
+
+
+  
+ActionView::Template::Error (undefined method `pop!' for [{:product_name=>"coffee ", :quantity=>6, :price=>100.0}, {:total_price=>672.0, :tax=>72.0}]:Array
+
+          '.freeze;@output_buffer.append=( order.pop! );@output_buffer.safe_append='
+                                                ^^^^^
+Did you mean?  pop):
+    15:         <tr>
+    16:           <td><%= idx + 1%> </td>
+    17:           <td>
+    18:           <%= order.pop! %>
+    19:           <% order.each do |x|%>
+    20:           <%= x[:product_name] %>%
+    21: 
+  
+app/views/dashboard/all_orders.html.erb:18
+app/views/dashboard/all_orders.html.erb:14:in `each'
+app/views/dashboard/all_orders.html.erb:14:in `each_with_index'
+app/views/dashboard/all_orders.html.erb:14
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:57:11 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 7.3ms | Allocations: 476)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 4255)
+Completed 200 OK in 28ms (Views: 17.3ms | ActiveRecord: 0.9ms | Allocations: 8715)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:57:41 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.8ms | Allocations: 660)
+  Rendered application/_navbar.html.erb (Duration: 2.2ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4417)
+Completed 200 OK in 24ms (Views: 12.1ms | ActiveRecord: 0.7ms | Allocations: 8855)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:57:54 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.9ms | Allocations: 407)
+  Rendered application/_navbar.html.erb (Duration: 2.1ms | Allocations: 750)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4165)
+Completed 200 OK in 23ms (Views: 12.1ms | ActiveRecord: 0.9ms | Allocations: 8604)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:58:56 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1330)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1419)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.6ms | Allocations: 5836)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2>All Orders</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Orders</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Print Receipt</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @Orders.each_with_index do |order,idx|%>
+        <tr>
+          <td><%= idx + 1%> </td>
+          <td>
+          <%# <%= order. %> %>
+          <% order.each do |x|%>
+          <%= x[:product_name](x[:quantity]) %>%
+
+          <% end %>
+          
+          </td>
+          <%# <td><%= product[:price]%> </td> %>
+          <%# <td><%= product[:quantity] == nil ? 0 : product[:quantity]%></td> %>
+          <%# <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td> %>
+        </tr>
+    <%end%>
+  </tbody>
+</table>
+
+
+</br></br>
+
+
+</br></br>
+
+
+):
+1:    <h2>All Orders</h2>
+2:    
+3:    <table class="table">
+4:      <thead>
+5:        <tr>
+6:          <th scope="col">#</th>
+7:          <th scope="col">Orders</th>
+8:          <th scope="col">Total Price</th>
+9:          <th scope="col">Print Receipt</th>
+10:          <th scope="col">Time</th>
+11:        </tr>
+12:      </thead>
+13:      <tbody>
+14:      <% @Orders.each_with_index do |order,idx|%>
+15:            <tr>
+16:              <td><%= idx + 1%> </td>
+17:              <td>
+18:              <%# <%= order. %> %>
+19:              <% order.each do |x|%>
+20:              <%= x[:product_name](x[:quantity]) %>%
+21:    
+22:              <% end %>
+23:              
+24:              </td>
+25:              <%# <td><%= product[:price]%> </td> %>
+26:              <%# <td><%= product[:quantity] == nil ? 0 : product[:quantity]%></td> %>
+27:              <%# <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td> %>
+28:            </tr>
+29:        <%end%>
+30:      </tbody>
+31:    </table>
+32:    
+33:    
+34:    </br></br>
+35:    
+36:    
+37:    </br></br>
+  
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected '(', expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected ')', expecting `end'
+app/views/dashboard/all_orders.html.erb:41: syntax error, unexpected `end', expecting end-of-input
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected '(', expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected ')', expecting `end'
+app/views/dashboard/all_orders.html.erb:41: syntax error, unexpected `end', expecting end-of-input
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected '(', expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected ')', expecting `end'
+app/views/dashboard/all_orders.html.erb:41: syntax error, unexpected `end', expecting end-of-input
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected '(', expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected ')', expecting `end'
+app/views/dashboard/all_orders.html.erb:41: syntax error, unexpected `end', expecting end-of-input
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected '(', expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected ')', expecting `end'
+app/views/dashboard/all_orders.html.erb:41: syntax error, unexpected `end', expecting end-of-input
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected '(', expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected ')', expecting `end'
+app/views/dashboard/all_orders.html.erb:41: syntax error, unexpected `end', expecting end-of-input
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 19:59:45 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1329)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1418)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.0ms | Allocations: 5840)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2>All Orders</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Orders</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Print Receipt</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @Orders.each_with_index do |order,idx|%>
+        <tr>
+          <td><%= idx + 1%> </td>
+          <td>
+          <%# <%= order. %> %>
+          <% order.each do |x|%>
+          <%= x[:product_name], x[:quantity] %>%
+
+          <% end %>
+          
+          </td>
+          <%# <td><%= product[:price]%> </td> %>
+          <%# <td><%= product[:quantity] == nil ? 0 : product[:quantity]%></td> %>
+          <%# <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td> %>
+        </tr>
+    <%end%>
+  </tbody>
+</table>
+
+
+</br></br>
+
+
+</br></br>
+
+
+):
+1:    <h2>All Orders</h2>
+2:    
+3:    <table class="table">
+4:      <thead>
+5:        <tr>
+6:          <th scope="col">#</th>
+7:          <th scope="col">Orders</th>
+8:          <th scope="col">Total Price</th>
+9:          <th scope="col">Print Receipt</th>
+10:          <th scope="col">Time</th>
+11:        </tr>
+12:      </thead>
+13:      <tbody>
+14:      <% @Orders.each_with_index do |order,idx|%>
+15:            <tr>
+16:              <td><%= idx + 1%> </td>
+17:              <td>
+18:              <%# <%= order. %> %>
+19:              <% order.each do |x|%>
+20:              <%= x[:product_name], x[:quantity] %>%
+21:    
+22:              <% end %>
+23:              
+24:              </td>
+25:              <%# <td><%= product[:price]%> </td> %>
+26:              <%# <td><%= product[:quantity] == nil ? 0 : product[:quantity]%></td> %>
+27:              <%# <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td> %>
+28:            </tr>
+29:        <%end%>
+30:      </tbody>
+31:    </table>
+32:    
+33:    
+34:    </br></br>
+35:    
+36:    
+37:    </br></br>
+  
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected ')', expecting '='
+app/views/dashboard/all_orders.html.erb:22: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:41: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected ')', expecting '='
+app/views/dashboard/all_orders.html.erb:22: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:41: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected ')', expecting '='
+app/views/dashboard/all_orders.html.erb:22: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:41: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected ')', expecting '='
+app/views/dashboard/all_orders.html.erb:22: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:41: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected ')', expecting '='
+app/views/dashboard/all_orders.html.erb:22: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:41: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected ')', expecting '='
+app/views/dashboard/all_orders.html.erb:22: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/dashboard/all_orders.html.erb:41: syntax error, unexpected `end', expecting ')'
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:00:02 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1330)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1419)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms | Allocations: 5841)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2>All Orders</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Orders</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Print Receipt</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @Orders.each_with_index do |order,idx|%>
+        <tr>
+          <td><%= idx + 1%> </td>
+          <td>
+          <%# <%= order. %> %>
+          <% order.each do |x|%>
+          <%= x[:product_name] x[:quantity] %>
+
+          <% end %>
+          
+          </td>
+          <%# <td><%= product[:price]%> </td> %>
+          <%# <td><%= product[:quantity] == nil ? 0 : product[:quantity]%></td> %>
+          <%# <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td> %>
+        </tr>
+    <%end%>
+  </tbody>
+</table>
+
+
+</br></br>
+
+
+</br></br>
+
+
+):
+1:    <h2>All Orders</h2>
+2:    
+3:    <table class="table">
+4:      <thead>
+5:        <tr>
+6:          <th scope="col">#</th>
+7:          <th scope="col">Orders</th>
+8:          <th scope="col">Total Price</th>
+9:          <th scope="col">Print Receipt</th>
+10:          <th scope="col">Time</th>
+11:        </tr>
+12:      </thead>
+13:      <tbody>
+14:      <% @Orders.each_with_index do |order,idx|%>
+15:            <tr>
+16:              <td><%= idx + 1%> </td>
+17:              <td>
+18:              <%# <%= order. %> %>
+19:              <% order.each do |x|%>
+20:              <%= x[:product_name] x[:quantity] %>
+21:    
+22:              <% end %>
+23:              
+24:              </td>
+25:              <%# <td><%= product[:price]%> </td> %>
+26:              <%# <td><%= product[:quantity] == nil ? 0 : product[:quantity]%></td> %>
+27:              <%# <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td> %>
+28:            </tr>
+29:        <%end%>
+30:      </tbody>
+31:    </table>
+32:    
+33:    
+34:    </br></br>
+35:    
+36:    
+37:    </br></br>
+  
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected local variable or method, expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected local variable or method, expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected local variable or method, expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected local variable or method, expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected local variable or method, expecting ')'
+app/views/dashboard/all_orders.html.erb:20: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:00:25 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 2.7ms | Allocations: 473)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 750)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 4250)
+Completed 200 OK in 24ms (Views: 13.6ms | ActiveRecord: 0.9ms | Allocations: 8700)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:00:53 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.7ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.1ms | Allocations: 474)
+  Rendered application/_navbar.html.erb (Duration: 2.1ms | Allocations: 750)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 4232)
+Completed 200 OK in 23ms (Views: 12.2ms | ActiveRecord: 1.1ms | Allocations: 8671)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:05:34 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.2ms | Allocations: 112)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 424)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 16083)
+Completed 200 OK in 64ms (Views: 31.3ms | ActiveRecord: 7.6ms | Allocations: 26586)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:11:09 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.7ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 14.6ms | Allocations: 5454)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 5542)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 8.5ms | Allocations: 13086)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `total_price' for #<ActionView::Base:0x00000000090420>
+
+           if x.keys[0] != total_price 
+                           ^^^^^^^^^^^):
+    16:           <td><%= idx + 1%> </td>
+    17:           <td>
+    18:           <% order.each do |x|%>
+    19:           <% if x.keys[0] != total_price %>
+    20:             <%= x[:product_name]  %>
+    21:             (<%=x[:quantity]%>x)
+    22:           <% end %>
+  
+app/views/dashboard/all_orders.html.erb:19
+app/views/dashboard/all_orders.html.erb:18:in `each'
+app/views/dashboard/all_orders.html.erb:18
+app/views/dashboard/all_orders.html.erb:14:in `each'
+app/views/dashboard/all_orders.html.erb:14:in `each_with_index'
+app/views/dashboard/all_orders.html.erb:14
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:11:26 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.7ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.8ms | Allocations: 554)
+  Rendered application/_navbar.html.erb (Duration: 2.0ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4333)
+Completed 200 OK in 29ms (Views: 14.3ms | ActiveRecord: 1.3ms | Allocations: 8792)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:12:28 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.6ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.1ms | Allocations: 554)
+  Rendered application/_navbar.html.erb (Duration: 2.2ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4311)
+Completed 200 OK in 27ms (Views: 13.7ms | ActiveRecord: 1.2ms | Allocations: 8768)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:12:30 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.3ms | Allocations: 178)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2943)
+Completed 200 OK in 21ms (Views: 8.5ms | ActiveRecord: 1.1ms | Allocations: 6836)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:12:46 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.8ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.8ms | Allocations: 554)
+  Rendered application/_navbar.html.erb (Duration: 1.9ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4311)
+Completed 200 OK in 35ms (Views: 13.3ms | ActiveRecord: 1.5ms | Allocations: 8505)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:12:47 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.9ms | Allocations: 178)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 2962)
+Completed 200 OK in 21ms (Views: 10.4ms | ActiveRecord: 0.8ms | Allocations: 6843)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:13:33 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.1ms | Allocations: 557)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4314)
+Completed 200 OK in 22ms (Views: 12.1ms | ActiveRecord: 0.7ms | Allocations: 8502)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:13:45 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.9ms | Allocations: 516)
+  Rendered application/_navbar.html.erb (Duration: 1.7ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4273)
+Completed 200 OK in 23ms (Views: 13.0ms | ActiveRecord: 0.8ms | Allocations: 8718)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:14:23 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.8ms | Allocations: 515)
+  Rendered application/_navbar.html.erb (Duration: 1.7ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 4272)
+Completed 200 OK in 27ms (Views: 13.9ms | ActiveRecord: 0.9ms | Allocations: 8708)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:14:34 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.2ms | Allocations: 517)
+  Rendered application/_navbar.html.erb (Duration: 1.9ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4274)
+Completed 200 OK in 24ms (Views: 12.6ms | ActiveRecord: 0.9ms | Allocations: 8710)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:21:41 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.8ms | Allocations: 546)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4303)
+Completed 200 OK in 57ms (Views: 12.3ms | ActiveRecord: 7.8ms | Allocations: 11822)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:22:34 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1367)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1456)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.9ms | Allocations: 5885)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2>All Orders</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Orders</th>
+      <th scope="col">Total Price</th>
+      <th scope="col">Print Receipt</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @Orders.each_with_index do |order,idx|%>
+        <tr>
+          <td><%= idx + 1%> </td>
+          <td>
+          <% order.each_with_index do |x,idx|%>
+          <% if x.keys[0] != :total_price %>
+            <%=x[:product_name] %>
+            (<%=x[:quantity]%>x)
+            <%= order.length != idx ? , : '' %>    
+          <% end %>
+          
+          
+
+          <% end %>
+          
+          </td>
+          <%# <td><%= product[:price]%> </td> %>
+          <%# <td><%= product[:quantity] == nil ? 0 : product[:quantity]%></td> %>
+          <%# <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td> %>
+        </tr>
+    <%end%>
+  </tbody>
+</table>
+
+
+</br></br>
+
+
+</br></br>
+
+
+):
+1:    <h2>All Orders</h2>
+2:    
+3:    <table class="table">
+4:      <thead>
+5:        <tr>
+6:          <th scope="col">#</th>
+7:          <th scope="col">Orders</th>
+8:          <th scope="col">Total Price</th>
+9:          <th scope="col">Print Receipt</th>
+10:          <th scope="col">Time</th>
+11:        </tr>
+12:      </thead>
+13:      <tbody>
+14:      <% @Orders.each_with_index do |order,idx|%>
+15:            <tr>
+16:              <td><%= idx + 1%> </td>
+17:              <td>
+18:              <% order.each_with_index do |x,idx|%>
+19:              <% if x.keys[0] != :total_price %>
+20:                <%=x[:product_name] %>
+21:                (<%=x[:quantity]%>x)
+22:                <%= order.length != idx ? , : '' %>    
+23:              <% end %>
+24:              
+25:              
+26:    
+27:              <% end %>
+28:              
+29:              </td>
+30:              <%# <td><%= product[:price]%> </td> %>
+31:              <%# <td><%= product[:quantity] == nil ? 0 : product[:quantity]%></td> %>
+32:              <%# <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td> %>
+33:            </tr>
+34:        <%end%>
+35:      </tbody>
+36:    </table>
+37:    
+38:    
+39:    </br></br>
+40:    
+41:    
+42:    </br></br>
+  
+app/views/dashboard/all_orders.html.erb:22: syntax error, unexpected ','
+app/views/dashboard/all_orders.html.erb:22: syntax error, unexpected ','
+app/views/dashboard/all_orders.html.erb:22: syntax error, unexpected ','
+app/views/dashboard/all_orders.html.erb:22: syntax error, unexpected ','
+app/views/dashboard/all_orders.html.erb:22: syntax error, unexpected ','
+app/views/dashboard/all_orders.html.erb:22: syntax error, unexpected ','
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:22:54 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.1ms | Allocations: 606)
+  Rendered application/_navbar.html.erb (Duration: 2.3ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4382)
+Completed 200 OK in 23ms (Views: 11.7ms | ActiveRecord: 1.0ms | Allocations: 8844)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:23:44 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.7ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 2.6ms | Allocations: 604)
+  Rendered application/_navbar.html.erb (Duration: 1.9ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4361)
+Completed 200 OK in 29ms (Views: 15.0ms | ActiveRecord: 1.3ms | Allocations: 8809)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:23:45 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.9ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.6ms | Allocations: 214)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2979)
+Completed 200 OK in 18ms (Views: 7.4ms | ActiveRecord: 1.3ms | Allocations: 6854)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:23:46 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.3ms | Allocations: 214)
+  Rendered application/_navbar.html.erb (Duration: 0.8ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2979)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 0.9ms | Allocations: 6585)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:24:11 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.1ms | Allocations: 604)
+  Rendered application/_navbar.html.erb (Duration: 2.1ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4361)
+Completed 200 OK in 23ms (Views: 12.0ms | ActiveRecord: 0.7ms | Allocations: 8567)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:24:12 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.4ms | Allocations: 214)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2979)
+Completed 200 OK in 20ms (Views: 6.6ms | ActiveRecord: 1.1ms | Allocations: 6833)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:24:50 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.3ms | Allocations: 604)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4361)
+Completed 200 OK in 23ms (Views: 11.9ms | ActiveRecord: 0.8ms | Allocations: 8564)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:26:28 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.3ms | Allocations: 604)
+  Rendered application/_navbar.html.erb (Duration: 2.2ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 4361)
+Completed 200 OK in 24ms (Views: 12.3ms | ActiveRecord: 1.1ms | Allocations: 8791)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:26:29 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.4ms | Allocations: 214)
+  Rendered application/_navbar.html.erb (Duration: 0.8ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2979)
+Completed 200 OK in 20ms (Views: 7.2ms | ActiveRecord: 2.4ms | Allocations: 6848)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:26:29 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.6ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.3ms | Allocations: 214)
+  Rendered application/_navbar.html.erb (Duration: 0.8ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2979)
+Completed 200 OK in 18ms (Views: 7.1ms | ActiveRecord: 0.9ms | Allocations: 6591)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:26:49 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.6ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.5ms | Allocations: 604)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4361)
+Completed 200 OK in 31ms (Views: 12.7ms | ActiveRecord: 1.1ms | Allocations: 8555)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:27:23 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.1ms | Allocations: 604)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 4366)
+Completed 200 OK in 25ms (Views: 13.2ms | ActiveRecord: 0.7ms | Allocations: 8823)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:28:03 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.6ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.3ms | Allocations: 605)
+  Rendered application/_navbar.html.erb (Duration: 1.9ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 4362)
+Completed 200 OK in 25ms (Views: 12.4ms | ActiveRecord: 1.2ms | Allocations: 8816)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:29:13 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.3ms | Allocations: 604)
+  Rendered application/_navbar.html.erb (Duration: 1.9ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4361)
+Completed 200 OK in 27ms (Views: 14.0ms | ActiveRecord: 0.9ms | Allocations: 8803)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:29:52 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1200)
+  Rendered application/_navbar.html.erb (Duration: 1.8ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4957)
+Completed 200 OK in 24ms (Views: 12.0ms | ActiveRecord: 0.8ms | Allocations: 9399)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:30:19 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.2ms | Allocations: 600)
+  Rendered application/_navbar.html.erb (Duration: 2.5ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4357)
+Completed 200 OK in 24ms (Views: 11.6ms | ActiveRecord: 0.8ms | Allocations: 8811)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:31:12 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.4ms | Allocations: 680)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 4437)
+Completed 200 OK in 25ms (Views: 14.1ms | ActiveRecord: 0.9ms | Allocations: 8894)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:32:16 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.6ms | Allocations: 604)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4361)
+Completed 200 OK in 29ms (Views: 12.9ms | ActiveRecord: 1.0ms | Allocations: 8818)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:34:20 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 10.5ms | Allocations: 619)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 4400)
+Completed 200 OK in 32ms (Views: 20.5ms | ActiveRecord: 0.9ms | Allocations: 8834)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:35:48 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.6ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.4ms | Allocations: 619)
+  Rendered application/_navbar.html.erb (Duration: 2.0ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 4393)
+Completed 200 OK in 23ms (Views: 13.5ms | ActiveRecord: 0.9ms | Allocations: 8840)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:35:55 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.3ms | Allocations: 619)
+  Rendered application/_navbar.html.erb (Duration: 1.7ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4378)
+Completed 200 OK in 22ms (Views: 12.3ms | ActiveRecord: 0.6ms | Allocations: 8814)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:37:52 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.5ms | Allocations: 684)
+  Rendered application/_navbar.html.erb (Duration: 2.2ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 4441)
+Completed 200 OK in 26ms (Views: 13.4ms | ActiveRecord: 0.7ms | Allocations: 8889)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:38:27 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 2.6ms | Allocations: 682)
+  Rendered application/_navbar.html.erb (Duration: 2.0ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 4439)
+Completed 200 OK in 26ms (Views: 14.6ms | ActiveRecord: 0.8ms | Allocations: 8896)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:39:51 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.7ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.8ms | Allocations: 286)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3051)
+Completed 200 OK in 25ms (Views: 10.7ms | ActiveRecord: 1.1ms | Allocations: 6928)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 20:39:51 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.6ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:91:in `sold_products'
+  [1m[36mProductSale Pluck (0.6ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.3ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:95:in `block in sold_products'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:98:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 1.2ms | Allocations: 270)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 376)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3201)
+Completed 200 OK in 72ms (Views: 7.7ms | ActiveRecord: 11.7ms | Allocations: 21532)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:39:53 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.5ms | Allocations: 286)
+  Rendered application/_navbar.html.erb (Duration: 2.0ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 3051)
+Completed 200 OK in 24ms (Views: 12.3ms | ActiveRecord: 0.9ms | Allocations: 6787)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:41:06 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.5ms | Allocations: 699)
+  Rendered application/_navbar.html.erb (Duration: 2.4ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 4456)
+Completed 200 OK in 25ms (Views: 14.3ms | ActiveRecord: 0.8ms | Allocations: 8659)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:43:02 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2442)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2530)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 7.6ms | Allocations: 13060)
+
+
+  
+ActionView::Template::Error (undefined method `keys' for [{:product_name=>"coffee ", :quantity=>6, :price=>100.0}, {:total_price=>672.0, :tax=>72.0}]:Array
+
+           if x.keys[0] != :total_price 
+               ^^^^^):
+    17:           <td><%= idx + 1%> </td>
+    18:           <td>
+    19:           <% order.each_with_index do |x,idx|%>
+    20:           <% if x.keys[0] != :total_price %>
+    21:             <%=x[:product_name] %>
+    22:             (&#8369;<%=x[:price]%> x
+    23:             <%=x[:quantity]%>)
+  
+app/views/dashboard/all_orders.html.erb:20
+app/views/dashboard/all_orders.html.erb:19:in `each'
+app/views/dashboard/all_orders.html.erb:19:in `each_with_index'
+app/views/dashboard/all_orders.html.erb:19
+app/views/dashboard/all_orders.html.erb:15:in `each'
+app/views/dashboard/all_orders.html.erb:15:in `each_with_index'
+app/views/dashboard/all_orders.html.erb:15
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:44:20 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 8.2ms | Allocations: 5738)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 5826)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.3ms | Allocations: 10342)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `orde' for #<ActionView::Base:0x00000000097ec8>
+
+          <td>&#8369;'.freeze;@output_buffer.append=( orde[0][order.length-1][:total_price]);@output_buffer.safe_append=' </td>
+                                                      ^^^^
+Did you mean?  order):
+    29:           <% end %>
+    30:           
+    31:           </td>
+    32:           <td>&#8369;<%= orde[0][order.length-1][:total_price]%> </td>
+    33:           <td>&#8369;<%= order[0][order.length-1][:tax]%> </td>
+    34:           <%# <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td> %>
+    35:         </tr>
+  
+app/views/dashboard/all_orders.html.erb:32
+app/views/dashboard/all_orders.html.erb:15:in `each'
+app/views/dashboard/all_orders.html.erb:15:in `each_with_index'
+app/views/dashboard/all_orders.html.erb:15
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:45:09 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 9.1ms | Allocations: 5736)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 5824)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.0ms | Allocations: 10339)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `orde' for #<ActionView::Base:0x000000000981e8>
+
+          <td>&#8369;'.freeze;@output_buffer.append=( orde[0][order.length-1][:total_price]);@output_buffer.safe_append=' </td>
+                                                      ^^^^
+Did you mean?  order):
+    29:           <% end %>
+    30:           
+    31:           </td>
+    32:           <td>&#8369;<%= orde[0][order.length-1][:total_price]%> </td>
+    33:           <td>&#8369;<%= order[0][order.length-1][:tax]%> </td>
+    34:           <%# <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td> %>
+    35:         </tr>
+  
+app/views/dashboard/all_orders.html.erb:32
+app/views/dashboard/all_orders.html.erb:15:in `each'
+app/views/dashboard/all_orders.html.erb:15:in `each_with_index'
+app/views/dashboard/all_orders.html.erb:15
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:45:19 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.6ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 8.8ms | Allocations: 5742)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5830)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.0ms | Allocations: 10345)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `orde' for #<ActionView::Base:0x000000000984e0>
+
+          <td>&#8369;'.freeze;@output_buffer.append=( orde[0][order.length-1][:total_price]);@output_buffer.safe_append=' </td>
+                                                      ^^^^
+Did you mean?  order):
+    29:           <% end %>
+    30:           
+    31:           </td>
+    32:           <td>&#8369;<%= orde[0][order.length-1][:total_price]%> </td>
+    33:           <td>&#8369;<%= order[0][order.length-1][:tax]%> </td>
+    34:           <%# <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td> %>
+    35:         </tr>
+  
+app/views/dashboard/all_orders.html.erb:32
+app/views/dashboard/all_orders.html.erb:15:in `each'
+app/views/dashboard/all_orders.html.erb:15:in `each_with_index'
+app/views/dashboard/all_orders.html.erb:15
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:45:37 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.3ms | Allocations: 665)
+  Rendered application/_navbar.html.erb (Duration: 2.7ms | Allocations: 763)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 17334)
+Completed 200 OK in 40ms (Views: 28.8ms | ActiveRecord: 0.8ms | Allocations: 21888)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:46:57 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.8ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.4ms | Allocations: 276)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 3041)
+Completed 200 OK in 26ms (Views: 11.6ms | ActiveRecord: 1.6ms | Allocations: 6983)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:47:19 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.5ms | Allocations: 665)
+  Rendered application/_navbar.html.erb (Duration: 1.7ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4422)
+Completed 200 OK in 26ms (Views: 13.1ms | ActiveRecord: 0.9ms | Allocations: 8701)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:47:21 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.3ms | Allocations: 276)
+  Rendered application/_navbar.html.erb (Duration: 0.8ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3041)
+Completed 200 OK in 18ms (Views: 7.1ms | ActiveRecord: 0.6ms | Allocations: 6995)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:47:22 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.3ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.4ms | Allocations: 276)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3041)
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 0.6ms | Allocations: 6735)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:47:22 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.4ms | Allocations: 276)
+  Rendered application/_navbar.html.erb (Duration: 0.8ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3041)
+Completed 200 OK in 16ms (Views: 6.9ms | ActiveRecord: 0.7ms | Allocations: 6729)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:49:41 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.4ms | Allocations: 665)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4422)
+Completed 200 OK in 22ms (Views: 11.1ms | ActiveRecord: 1.1ms | Allocations: 8674)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-09-29 20:49:49 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/products/index.html.erb:8
+  Rendered products/_product.html.erb (Duration: 0.8ms | Allocations: 268)
+  Rendered products/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 4677)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 373)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 7740)
+Completed 200 OK in 39ms (Views: 22.0ms | ActiveRecord: 5.0ms | Allocations: 13211)
+
+
+Started GET "/dashboard/checkout?coffeeee=5&commit=Checkout" for 127.0.0.1 at 2022-09-29 20:49:52 +0800
+Processing by DashboardController#checkout as HTML
+  Parameters: {"coffeeee"=>"5", "commit"=>"Checkout"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:69:in `block in checkout'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:70:in `block in checkout'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/checkout.html.erb within layouts/application
+  Rendered dashboard/checkout.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2188)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 348)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 5073)
+Completed 200 OK in 22ms (Views: 10.6ms | ActiveRecord: 0.9ms | Allocations: 8271)
+
+
+Started POST "/dashboard/create_order" for 127.0.0.1 at 2022-09-29 20:49:54 +0800
+Processing by DashboardController#create_order as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "coffeeee"=>"5", "commit"=>"Submit"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:23:in `block in create_order'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dashboard_controller.rb:34:in `block in create_order'
+  [1m[36mProductSale Create (1.1ms)[0m  [1m[32mINSERT INTO "product_sales" ("product_name", "price", "quantity", "user_id", "created_at", "updated_at", "total_price") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_name", "coffeeee"], ["price", 110.0], ["quantity", 5], ["user_id", 7], ["created_at", "2022-09-29 12:49:54.995775"], ["updated_at", "2022-09-29 12:49:54.995775"], ["total_price", 550.0]]
+  ↳ app/controllers/dashboard_controller.rb:34:in `block in create_order'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/dashboard_controller.rb:34:in `block in create_order'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/dashboard_controller.rb:42:in `create_order'
+  [1m[36mOrderTransaction Create (0.9ms)[0m  [1m[32mINSERT INTO "order_transactions" ("orders", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["orders", "---\n- :product_name: coffeeee\n  :quantity: 5\n  :price: 110.0\n- :total_price: 616.0\n  :tax: 66.0\n"], ["created_at", "2022-09-29 12:49:55.010949"], ["updated_at", "2022-09-29 12:49:55.010949"], ["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:42:in `create_order'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/dashboard_controller.rb:42:in `create_order'
+Redirected to http://127.0.0.1:3000/dashboard/order_receipt
+Completed 302 Found in 57ms (ActiveRecord: 10.4ms | Allocations: 15644)
+
+
+Started GET "/dashboard/order_receipt" for 127.0.0.1 at 2022-09-29 20:49:55 +0800
+Processing by DashboardController#order_receipt as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mShopDetail Load (0.5ms)[0m  [1m[34mSELECT "shop_details".* FROM "shop_details" WHERE "shop_details"."user_id" = $1 ORDER BY "shop_details"."id" ASC LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:51:in `order_receipt'
+  [1m[36mOrderTransaction Load (0.4ms)[0m  [1m[34mSELECT "order_transactions".* FROM "order_transactions" WHERE "order_transactions"."user_id" = $1 ORDER BY "order_transactions"."id" DESC LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:53:in `order_receipt'
+  [1m[36mCACHE OrderTransaction Load (0.0ms)[0m  [1m[34mSELECT "order_transactions".* FROM "order_transactions" WHERE "order_transactions"."user_id" = $1 ORDER BY "order_transactions"."id" DESC LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:54:in `order_receipt'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/order_receipt.html.erb within layouts/application
+  Rendered dashboard/order_receipt.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1602)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 343)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4536)
+Completed 200 OK in 36ms (Views: 9.4ms | ActiveRecord: 5.2ms | Allocations: 14397)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:49:59 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 2.0ms | Allocations: 293)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3058)
+Completed 200 OK in 20ms (Views: 10.0ms | ActiveRecord: 0.8ms | Allocations: 6917)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:50:58 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.4ms | Allocations: 293)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3059)
+Completed 200 OK in 19ms (Views: 8.8ms | ActiveRecord: 0.7ms | Allocations: 6848)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 20:51:00 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.5ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:91:in `sold_products'
+  [1m[36mProductSale Pluck (0.8ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.5ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:95:in `block in sold_products'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:98:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 1.2ms | Allocations: 241)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3013)
+Completed 200 OK in 25ms (Views: 8.3ms | ActiveRecord: 2.7ms | Allocations: 7260)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:51:00 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (1.3ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.4ms | Allocations: 293)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3062)
+Completed 200 OK in 24ms (Views: 10.3ms | ActiveRecord: 2.0ms | Allocations: 6860)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 20:51:03 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (1.1ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:91:in `sold_products'
+  [1m[36mProductSale Pluck (0.6ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.6ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:95:in `block in sold_products'
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:98:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 2791)
+Completed 200 OK in 28ms (Views: 9.5ms | ActiveRecord: 3.3ms | Allocations: 6890)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 20:51:55 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.4ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:91:in `sold_products'
+  [1m[36mProductSale Pluck (0.4ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.5ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:95:in `block in sold_products'
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:98:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.8ms | Allocations: 272)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 750)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4030)
+Completed 200 OK in 25ms (Views: 10.8ms | ActiveRecord: 2.1ms | Allocations: 8738)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 20:51:57 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (1.1ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:91:in `sold_products'
+  [1m[36mProductSale Pluck (1.2ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.5ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:95:in `block in sold_products'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:98:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2783)
+Completed 200 OK in 21ms (Views: 5.4ms | ActiveRecord: 3.3ms | Allocations: 7111)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:51:58 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.4ms | Allocations: 750)
+  Rendered application/_navbar.html.erb (Duration: 0.8ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3515)
+Completed 200 OK in 20ms (Views: 9.3ms | ActiveRecord: 0.8ms | Allocations: 7400)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:53:30 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.9ms | Allocations: 788)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4545)
+Completed 200 OK in 22ms (Views: 12.5ms | ActiveRecord: 0.6ms | Allocations: 8924)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:54:16 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.7ms | Allocations: 778)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4535)
+Completed 200 OK in 25ms (Views: 11.7ms | ActiveRecord: 0.9ms | Allocations: 9165)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:54:22 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.5ms | Allocations: 389)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3154)
+Completed 200 OK in 17ms (Views: 6.9ms | ActiveRecord: 0.7ms | Allocations: 7225)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-09-29 20:54:23 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/products/index.html.erb:8
+  Rendered products/_product.html.erb (Duration: 1.1ms | Allocations: 229)
+  Rendered products/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2458)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 5504)
+Completed 200 OK in 22ms (Views: 15.1ms | ActiveRecord: 1.0ms | Allocations: 7624)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 20:54:25 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.5ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:91:in `sold_products'
+  [1m[36mProductSale Pluck (0.5ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.3ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:95:in `block in sold_products'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:98:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.9ms | Allocations: 239)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3004)
+Completed 200 OK in 25ms (Views: 8.2ms | ActiveRecord: 2.2ms | Allocations: 7328)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:54:27 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.3ms | Allocations: 394)
+  Rendered application/_navbar.html.erb (Duration: 0.8ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 3178)
+Completed 200 OK in 37ms (Views: 11.0ms | ActiveRecord: 0.9ms | Allocations: 7014)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-09-29 20:54:27 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/products/index.html.erb:8
+  Rendered products/_product.html.erb (Duration: 0.3ms | Allocations: 40)
+  Rendered products/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1602)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 4356)
+Completed 200 OK in 22ms (Views: 14.4ms | ActiveRecord: 1.0ms | Allocations: 6107)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:54:28 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 2.3ms | Allocations: 389)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 3154)
+Completed 200 OK in 23ms (Views: 12.0ms | ActiveRecord: 1.2ms | Allocations: 6949)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 20:54:28 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.5ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:91:in `sold_products'
+  [1m[36mProductSale Pluck (0.5ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.5ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:95:in `block in sold_products'
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:98:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered application/_navbar.html.erb (Duration: 0.8ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 2802)
+Completed 200 OK in 30ms (Views: 8.7ms | ActiveRecord: 2.4ms | Allocations: 6917)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:54:29 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.7ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.9ms | Allocations: 389)
+  Rendered application/_navbar.html.erb (Duration: 0.8ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 3154)
+Completed 200 OK in 24ms (Views: 12.6ms | ActiveRecord: 1.1ms | Allocations: 6973)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 20:54:30 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.4ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:91:in `sold_products'
+  [1m[36mProductSale Pluck (0.4ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.6ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:95:in `block in sold_products'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:98:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 2783)
+Completed 200 OK in 28ms (Views: 9.0ms | ActiveRecord: 5.2ms | Allocations: 6910)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 20:54:55 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.7ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:91:in `sold_products'
+  [1m[36mProductSale Pluck (0.5ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.5ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:95:in `block in sold_products'
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:98:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2790)
+Completed 200 OK in 31ms (Views: 9.6ms | ActiveRecord: 2.9ms | Allocations: 6919)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:54:56 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.6ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.9ms | Allocations: 389)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 3158)
+Completed 200 OK in 27ms (Views: 15.1ms | ActiveRecord: 0.8ms | Allocations: 6953)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:58:30 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.9ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 2.7ms | Allocations: 813)
+  Rendered application/_navbar.html.erb (Duration: 1.9ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4578)
+Completed 200 OK in 28ms (Views: 13.2ms | ActiveRecord: 1.5ms | Allocations: 8972)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:58:45 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (1.0ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.9ms | Allocations: 421)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3186)
+Completed 200 OK in 31ms (Views: 9.7ms | ActiveRecord: 1.7ms | Allocations: 7251)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 20:58:46 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.7ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:91:in `sold_products'
+  [1m[36mProductSale Pluck (0.4ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.5ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:95:in `block in sold_products'
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:98:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.7ms | Allocations: 239)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3004)
+Completed 200 OK in 25ms (Views: 7.0ms | ActiveRecord: 2.6ms | Allocations: 7175)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:58:47 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (1.2ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 1.0ms | Allocations: 421)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3186)
+Completed 200 OK in 24ms (Views: 9.7ms | ActiveRecord: 1.7ms | Allocations: 6970)
+
+
+Started GET "/products" for 127.0.0.1 at 2022-09-29 20:58:48 +0800
+Processing by ProductsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/views/products/index.html.erb:8
+  Rendered products/_product.html.erb (Duration: 0.9ms | Allocations: 229)
+  Rendered products/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2457)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 5503)
+Completed 200 OK in 22ms (Views: 15.1ms | ActiveRecord: 0.9ms | Allocations: 7620)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:58:48 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.9ms | Allocations: 427)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3192)
+Completed 200 OK in 23ms (Views: 9.4ms | ActiveRecord: 2.0ms | Allocations: 7142)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 20:58:49 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.4ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:91:in `sold_products'
+  [1m[36mProductSale Pluck (0.8ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.5ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:95:in `block in sold_products'
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:98:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.2ms | Allocations: 18)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2783)
+Completed 200 OK in 24ms (Views: 7.6ms | ActiveRecord: 2.9ms | Allocations: 6903)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:58:49 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.5ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.8ms | Allocations: 421)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3186)
+Completed 200 OK in 21ms (Views: 8.7ms | ActiveRecord: 1.0ms | Allocations: 6991)
+
+
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-09-29 20:58:50 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Pluck (0.5ms)[0m  [1m[34mSELECT "products"."product_name" FROM "products" WHERE "products"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:91:in `sold_products'
+  [1m[36mProductSale Pluck (0.5ms)[0m  [1m[34mSELECT "product_sales"."quantity" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:94:in `block in sold_products'
+  [1m[36mProductSale Pluck (0.7ms)[0m  [1m[34mSELECT "product_sales"."total_price" FROM "product_sales" WHERE "product_sales"."user_id" = $1 AND "product_sales"."product_name" = $2[0m  [["user_id", 7], ["product_name", "coffeeee"]]
+  ↳ app/controllers/dashboard_controller.rb:95:in `block in sold_products'
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = $1 AND "products"."product_name" = $2 LIMIT $3[0m  [["user_id", 7], ["product_name", "coffeeee"], ["LIMIT", 1]]
+  ↳ app/controllers/dashboard_controller.rb:98:in `block in sold_products'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 0.1ms | Allocations: 18)
+  Rendered application/_navbar.html.erb (Duration: 0.8ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2783)
+Completed 200 OK in 25ms (Views: 7.3ms | ActiveRecord: 3.3ms | Allocations: 6882)
+
+
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-09-29 20:58:51 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mOrderTransaction Pluck (0.8ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1[0m  [["user_id", 7]]
+  ↳ app/controllers/dashboard_controller.rb:85:in `all_orders'
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 0.8ms | Allocations: 421)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 351)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 3205)
+Completed 200 OK in 31ms (Views: 9.8ms | ActiveRecord: 1.3ms | Allocations: 7018)
+
+

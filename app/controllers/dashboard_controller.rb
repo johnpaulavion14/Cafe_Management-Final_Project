@@ -81,7 +81,8 @@ class DashboardController < ApplicationController
   end
 
   def all_orders
-    @Product_Sales = current_user.product_sales.all
+    # @Orders = current_user.order_transactions.all
+    @Orders = current_user.order_transactions.pluck(:orders, :created_at)
   end
 
   def sold_products
