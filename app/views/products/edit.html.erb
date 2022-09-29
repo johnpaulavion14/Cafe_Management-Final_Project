@@ -1,3 +1,4 @@
+<p style="color: green"><%= notice %></p>
 <h1>Editing product</h1>
 
 <%= render "form", product: @product %>
@@ -5,6 +6,5 @@
 <br>
 
 <div>
-  <%= link_to "Show this product", @product %> |
-  <%= link_to "Back to products", products_path %>
+  <%= link_to "Back to products", edit_all_products_path %>
 </div>

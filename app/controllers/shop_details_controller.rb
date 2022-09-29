@@ -3,7 +3,7 @@ class ShopDetailsController < ApplicationController
 
     def shop_name
         if current_user.shop_details.count != 0 
-            redirect_to dashboard_index_path    
+            redirect_to products_path    
         end
         
     end

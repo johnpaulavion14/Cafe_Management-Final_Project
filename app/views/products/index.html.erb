@@ -1,12 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
+  <h1>Products </h1>
+  <span><%= link_to "Edit Products", edit_all_products_path %> - <%= link_to "New Product", new_product_path %></span>
+
 <%= form_with url: "/dashboard/checkout" ,method: :get do |f| %>
-
-  <h1>Products</h1>
-
   <div id="products">
     <%= @products.each do |product| %>
-    <%= link_to "Show this product", product %>
+    
       <%= render product %>
       <p>
         <%= f.number_field product.product_name , min: 1, placeholder: "quantity"%>
@@ -19,8 +19,6 @@
 
  </br></br>
 
-<%= link_to "New product", new_product_path %>
 
-</br></br>
-<%= button_to "go back", dashboard_index_path, method: :get %>
+
 

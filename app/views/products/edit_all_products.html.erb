@@ -1,0 +1,27 @@
+<h2>Edit Products</h2>
+<p style="color: green"><%= notice %></p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @products.each_with_index do |product,idx|%>
+        <tr>
+          <td><%= idx + 1%> </td>
+          <td><%= product.product_name%> </td>
+          <td><%= product.price%> </td>
+          <td><%= link_to "Edit", edit_product_path(product.id) %></td>
+          <td><%= button_to "Delete", product_path(product.id), method: :delete %></td>
+        </tr>
+    <%end%>
+  </tbody>
+</table>
+
+
+</br></br>
