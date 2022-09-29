@@ -1,0 +1,28 @@
+<h2>Top Product Sold</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @Product_Report.each_with_index do |product,idx|%>
+        <tr>
+          <td><%= idx + 1%> </td>
+          <td><%= product[:product_name]%> </td>
+          <td><%= product[:price]%> </td>
+          <td><%= product[:quantity] == nil ? 0 : product[:quantity]%></td>
+          <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td>
+        </tr>
+    <%end%>
+  </tbody>
+</table>
+
+
+</br></br>
+<%= button_to "go back", dashboard_index_path, method: :get %>

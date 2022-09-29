@@ -1,27 +1,27 @@
 <h2>Sales Report</h2>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Time</th>
-      <th scope="col">Product Name</th>
-      <th scope="col">Current Price</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Product Price</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @Product_Sales.each do |product|%>
-        <tr>
-          <td><%= product.created_at%></td>
-          <td><%= product.product_name%> </td>
-          <td><%= product.price%></td>
-          <td><%= product.quantity%></td>
-          <td><%= product.price * product.quantity%></td>
-        </tr>
-    <%end%>
-  </tbody>
-</table>
+<%# <table class="table"> %>
+  <%# <thead> %>
+    <%# <tr> %>
+      <%# <th scope="col">Time</th> %>
+      <%# <th scope="col">Product Name</th> %>
+      <%# <th scope="col">Current Price</th> %>
+      <%# <th scope="col">Quantity</th> %>
+      <%# <th scope="col">Product Price</th> %>
+    <%# </tr> %>
+  <%# </thead> %>
+  <%# <tbody> %>
+  <%# <% @Product_Sales.each do |product|%> %>
+        <%# <tr> %>
+          <%# <td><%= product.created_at%></td> %>
+          <%# <td><%= product.product_name%> </td> %>
+          <%# <td><%= product.price%></td> %>
+          <%# <td><%= product.quantity%></td> %>
+          <%# <td><%= product.price * product.quantity%></td> %>
+        <%# </tr> %>
+    <%# <%end%> %>
+  <%# </tbody> %>
+<%# </table> %>
 
 
 </br></br>

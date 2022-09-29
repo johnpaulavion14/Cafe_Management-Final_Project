@@ -34,7 +34,7 @@ class DashboardController < ApplicationController
   
         order_arrays.push(order_details)
 
-        product_sales.create(product_name:product_name,quantity:quantity,price:price)
+        product_sales.create(product_name:product_name,quantity:quantity,price:price,total_price: price*quantity)
      
     end
     @Tax = product_price.reduce(:+) * 0.12
@@ -85,6 +85,32 @@ class DashboardController < ApplicationController
 
   def sales_report
     @Product_Sales = current_user.product_sales.all
+  end
+
+  def sold_products
+    @Product_Report = []
+
+    all_products = current_user.products.all.pluck(:product_name)
+
+    all_products.each do |name|
+      product_quantity = current_user.product_sales.where(product_name: name).pluck(:quantity)
+      total_price = current_user.product_sales.where(product_name: name).pluck(:total_price)
+
+      product_name = name
+      price = current_user.products.find_by(product_name:name).price
+      quantity = product_quantity.reduce(:+)
+      sold_price = total_price.reduce(:+)
+
+      product_details = {}
+      product_details[:product_name] = product_name
+      product_details[:quantity] = quantity
+      product_details[:price] = price
+      product_details[:sold_price] = sold_price
+
+      @Product_Report.push(product_details)
+
+    end
+
   end
 
 
