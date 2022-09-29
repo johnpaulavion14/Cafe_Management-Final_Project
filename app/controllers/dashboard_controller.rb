@@ -83,7 +83,7 @@ class DashboardController < ApplicationController
     end
   end
 
-  def sales_report
+  def all_orders
     @Product_Sales = current_user.product_sales.all
   end
 

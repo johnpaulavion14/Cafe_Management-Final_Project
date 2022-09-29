@@ -13,7 +13,8 @@
 
   <body>
     <%if user_signed_in?%>
-      <span>welcome! <%= current_user.email%></span>
+      <%= render 'navbar' %>
+      </br>
     <%end%>
     
     <%= yield %>
