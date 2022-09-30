@@ -7,7 +7,6 @@ class DashboardController < ApplicationController
 
   def create_order
     products = current_user.products.all
-    product_sales = current_user.product_sales
     order = current_user.order_transactions
 
     order_arrays = []
@@ -31,25 +30,33 @@ class DashboardController < ApplicationController
   
         order_arrays.push(order_details)
 
-        product_sales.create(product_name:product_name,quantity:quantity,price:price,total_price: price*quantity)
-     
     end
+
     @Tax = product_price.reduce(:+) * 0.12
     @Total_price = product_price.reduce(:+) + @Tax
     order_arrays.push({total_price: @Total_price, tax: @Tax})
 
-    
+    #Creating Order Transaction
     if order.create(orders: order_arrays)
       redirect_to order_receipt_path
     else
       render :checkout
     end
 
+    #Creating Product Sales
+    product_names.each do |x|
+      product_name = x
+      quantity = params[x].to_i
+      price = products.find_by(product_name:x).price
+
+      product_sales = current_user.order_transactions.last.product_sales
+      product_sales.create(product_name:product_name,quantity:quantity,price:price,total_price: price*quantity)
+    end
+
   end
 
   def order_receipt
     @Shop = current_user.shop_details.first
-    # product = current_user.products.find_by(product_name:params[:name])
     @Order = current_user.order_transactions.last
     @Orders = current_user.order_transactions.last.orders
     @Orders.pop
@@ -81,7 +88,6 @@ class DashboardController < ApplicationController
   end
 
   def all_orders
-    # @Orders = current_user.order_transactions.all
     @Orders = current_user.order_transactions.pluck(:orders, :created_at, :id)
   end
 
@@ -117,6 +123,9 @@ class DashboardController < ApplicationController
       format.html { redirect_to all_orders_path, notice: "Order was successfully destroyed." }
       format.json { head :no_content }
     end
+
+    current_user.product_sales.where(order_transaction_id: params[:id]).destroy_all
+
   end
 
 

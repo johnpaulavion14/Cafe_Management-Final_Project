@@ -1,6 +1,8 @@
 <h2>All Orders</h2>
 <p style="color: green"><%= notice %></p>
 
+<%= @order_id%>
+
 <table class="table">
   <thead>
     <tr>
@@ -32,7 +34,7 @@
           <td>&#8369;<%= order[0][order[0].length-1][:tax]%> </td>
           <td> Print </td>
           <td><%= order[1]%></td>
-          <td><%= button_to 'delete',delete_order_path({id:order[2]}),method: :delete %></td>
+          <td><%= button_to 'delete',delete_order_path({id:order[2]}),method: :delete %></td> 
         </tr>
     <%end%>
   </tbody>

@@ -1,4 +1,4 @@
 class ProductSale < ApplicationRecord
 
-    belongs_to :user
+    belongs_to :order_transaction
 end
