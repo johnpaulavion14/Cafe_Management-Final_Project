@@ -38,7 +38,8 @@ class DashboardController < ApplicationController
 
     #Creating Order Transaction
     if order.create(orders: order_arrays)
-      redirect_to order_receipt_path
+      last_id = order.last.id
+      redirect_to order_receipt_path({id:last_id})
     else
       render :checkout
     end
@@ -57,8 +58,8 @@ class DashboardController < ApplicationController
 
   def order_receipt
     @Shop = current_user.shop_details.first
-    @Order = current_user.order_transactions.last
-    @Orders = current_user.order_transactions.last.orders
+    @Order = current_user.order_transactions.find(params[:id])
+    @Orders = current_user.order_transactions.find(params[:id]).orders
     @Orders.pop
   end
 

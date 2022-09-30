@@ -32,7 +32,7 @@
           </td>
           <td>&#8369;<%= order[0][order[0].length-1][:total_price]%> </td>
           <td>&#8369;<%= order[0][order[0].length-1][:tax]%> </td>
-          <td> Print </td>
+          <td><%= link_to 'print_receipt', order_receipt_path({id:order[2]})%> </td>
           <td><%= order[1]%></td>
           <td><%= button_to 'delete',delete_order_path({id:order[2]}),method: :delete %></td> 
         </tr>
