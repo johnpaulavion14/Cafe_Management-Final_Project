@@ -82,7 +82,7 @@ class DashboardController < ApplicationController
 
   def all_orders
     # @Orders = current_user.order_transactions.all
-    @Orders = current_user.order_transactions.pluck(:orders, :created_at)
+    @Orders = current_user.order_transactions.pluck(:orders, :created_at, :id)
   end
 
   def sold_products
@@ -109,6 +109,14 @@ class DashboardController < ApplicationController
 
     end
 
+  end
+  def delete_order
+    current_user.order_transactions.find(params[:id]).destroy
+
+    respond_to do |format|
+      format.html { redirect_to all_orders_path, notice: "Order was successfully destroyed." }
+      format.json { head :no_content }
+    end
   end
 
 

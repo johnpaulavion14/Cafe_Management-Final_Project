@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'dashboard/checkout' , as:'checkout'
   get 'dashboard/sold_products' , as:'sold_products'
   post 'dashboard/create_order' 
+  delete 'dashboard/delete_order' , as: 'delete_order'
   
   get 'shop_details/shop_name' , as:'shop_name'
   get 'shop_details/shop_location' , as:'shop_location'
