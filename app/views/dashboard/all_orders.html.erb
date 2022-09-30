@@ -1,6 +1,8 @@
 <h2>All Orders</h2>
 <p style="color: green"><%= notice %></p>
 
+<%= button_to 'Today',all_orders_path({start:Date.today, end:Date.today+1}), method: :get%>
+
 <%= form_with url: "/dashboard/all_orders",method: :get do |f| %>
   <%= f.label "start" %>
   <%= f.date_field :start, value: @start_date%>
@@ -44,6 +46,15 @@
           <td><%= button_to 'delete',delete_order_path({id:order[2]}),method: :delete %></td> 
         </tr>
     <%end%>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><b>Total Income: <p>&#8369;<%= sprintf('%.2f',@Total_income)%></p></b></td>
+          <td><b>Total Tax: <p>&#8369;<%= sprintf('%.2f',@Total_tax)%></p></b></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
   </tbody>
 </table>
 

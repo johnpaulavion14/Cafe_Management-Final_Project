@@ -89,17 +89,31 @@ class DashboardController < ApplicationController
   end
 
   def all_orders
+    @start_date = Date.today
+    @end_date = Date.today + 1
     params_keys = params.keys
     params_values = params.values
+
     if params_keys.include?("start" && "end") && !params_values.include?("")
       @start_date = Date.parse params[:start] 
       @end_date = Date.parse params[:end] 
       day = current_user.order_transactions.where(created_at: @start_date..@end_date)
       @Orders = day.pluck(:orders, :created_at, :id)
+      income = day.pluck(:orders).map {|x| x.last[:total_price]}.reduce(:+)
+      # tax = (income==nil?0:income/1.12)*0.12
+      @Total_income = income == nil ? 0 : income
+      @Total_tax = ((income == nil ? 0 : income)/1.12)*0.12
     else
-      @Orders = []
+      day = current_user.order_transactions.where(created_at: @start_date..@end_date)
+      @Orders = day.pluck(:orders, :created_at, :id)
+      income = day.pluck(:orders).map {|x| x.last[:total_price]}.reduce(:+)
+      # tax = (income/1.12)*0.12
+      @Total_income = income == nil ? 0 : income
+      # @Total_tax = tax == nil ? 0 : tax
+      @Total_tax = ((income == nil ? 0 : income)/1.12)*0.12
+
     end
-    
+
 
   end
 
