@@ -89,7 +89,18 @@ class DashboardController < ApplicationController
   end
 
   def all_orders
-    @Orders = current_user.order_transactions.pluck(:orders, :created_at, :id)
+    params_keys = params.keys
+    params_values = params.values
+    if params_keys.include?("start" && "end") && !params_values.include?("")
+      @start_date = Date.parse params[:start] 
+      @end_date = Date.parse params[:end] 
+      day = current_user.order_transactions.where(created_at: @start_date..@end_date)
+      @Orders = day.pluck(:orders, :created_at, :id)
+    else
+      @Orders = []
+    end
+    
+
   end
 
   def sold_products
