@@ -100,16 +100,14 @@ class DashboardController < ApplicationController
       day = current_user.order_transactions.where(created_at: @start_date..@end_date)
       @Orders = day.pluck(:orders, :created_at, :id)
       income = day.pluck(:orders).map {|x| x.last[:total_price]}.reduce(:+)
-      # tax = (income==nil?0:income/1.12)*0.12
       @Total_income = income == nil ? 0 : income
       @Total_tax = ((income == nil ? 0 : income)/1.12)*0.12
+
     else
       day = current_user.order_transactions.where(created_at: @start_date..@end_date)
       @Orders = day.pluck(:orders, :created_at, :id)
       income = day.pluck(:orders).map {|x| x.last[:total_price]}.reduce(:+)
-      # tax = (income/1.12)*0.12
       @Total_income = income == nil ? 0 : income
-      # @Total_tax = tax == nil ? 0 : tax
       @Total_tax = ((income == nil ? 0 : income)/1.12)*0.12
 
     end
@@ -118,30 +116,61 @@ class DashboardController < ApplicationController
   end
 
   def sold_products
+    @start_date = Date.today
+    @end_date = Date.today + 1
+    params_keys = params.keys
+    params_values = params.values
     @Product_Report = []
 
-    all_products = current_user.products.all.pluck(:product_name)
+    if params_keys.include?("start" && "end") && !params_values.include?("")
+      @start_date = Date.parse params[:start] 
+      @end_date = Date.parse params[:end] 
+      day = current_user.product_sales.where(created_at: @start_date..@end_date)
+      all_products = day.pluck(:product_name).uniq
 
-    all_products.each do |name|
-      product_quantity = current_user.product_sales.where(product_name: name).pluck(:quantity)
-      total_price = current_user.product_sales.where(product_name: name).pluck(:total_price)
+      all_products.each do |name|
+        product_quantity = day.where(product_name: name).pluck(:quantity)
+        total_price = day.where(product_name: name).pluck(:total_price)
+  
+        product_name = name
+        price = day.find_by(product_name:name).price
+        quantity = product_quantity.reduce(:+)
+        sold_price = total_price.reduce(:+)
+  
+        product_details = {}
+        product_details[:product_name] = product_name
+        product_details[:quantity] = quantity
+        product_details[:price] = price
+        product_details[:sold_price] = sold_price
+  
+        @Product_Report.push(product_details)
+      end
 
-      product_name = name
-      price = current_user.products.find_by(product_name:name).price
-      quantity = product_quantity.reduce(:+)
-      sold_price = total_price.reduce(:+)
+    else
+      day = current_user.product_sales.where(created_at: @start_date..@end_date)
+      all_products = day.pluck(:product_name).uniq
 
-      product_details = {}
-      product_details[:product_name] = product_name
-      product_details[:quantity] = quantity
-      product_details[:price] = price
-      product_details[:sold_price] = sold_price
-
-      @Product_Report.push(product_details)
+      all_products.each do |name|
+        product_quantity = day.where(product_name: name).pluck(:quantity)
+        total_price = day.where(product_name: name).pluck(:total_price)
+  
+        product_name = name
+        price = day.find_by(product_name:name).price
+        quantity = product_quantity.reduce(:+)
+        sold_price = total_price.reduce(:+)
+  
+        product_details = {}
+        product_details[:product_name] = product_name
+        product_details[:quantity] = quantity
+        product_details[:price] = price
+        product_details[:sold_price] = sold_price
+  
+        @Product_Report.push(product_details)
+      end
 
     end
-
   end
+
   def delete_order
     current_user.order_transactions.find(params[:id]).destroy
 
