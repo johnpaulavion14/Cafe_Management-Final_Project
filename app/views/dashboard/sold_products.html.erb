@@ -77,8 +77,14 @@
           <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td>
         </tr>
     <%end%>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><b>Total Quantity: <p><%= @Total_Quantity%></p></b></td>
+          <td><b>Total Price: <p>&#8369;<%= sprintf('%.2f',@Total_Price)%></p></b></td>
+        </tr>    
   </tbody>
 </table>
-
 
 </br></br>

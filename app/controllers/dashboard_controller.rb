@@ -49,9 +49,10 @@ class DashboardController < ApplicationController
       product_name = x
       quantity = params[x].to_i
       price = products.find_by(product_name:x).price
+      total_price = (price * quantity) + (price * quantity * 0.12)  
 
       product_sales = current_user.order_transactions.last.product_sales
-      product_sales.create(product_name:product_name,quantity:quantity,price:price,total_price: price*quantity)
+      product_sales.create(product_name:product_name,quantity:quantity,price:price,total_price: total_price)
     end
 
   end
@@ -208,7 +209,8 @@ class DashboardController < ApplicationController
       else
         all_products = day.pluck(:product_name).uniq
     end
-
+    @Total_Quantity = total_quantity.reduce(:+) == nil ? 0 : total_quantity.reduce(:+) 
+    @Total_Price = total_sold_price.reduce(:+) == nil ? 0 : total_sold_price.reduce(:+) 
   end
 
   def delete_order
