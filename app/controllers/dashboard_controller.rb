@@ -121,12 +121,22 @@ class DashboardController < ApplicationController
     params_keys = params.keys
     params_values = params.values
     @Product_Report = []
+    total_quantity = []
+    price_list = []
+    total_sold_price = []
 
     if params_keys.include?("start" && "end") && !params_values.include?("")
       @start_date = Date.parse params[:start] 
       @end_date = Date.parse params[:end] 
       day = current_user.product_sales.where(created_at: @start_date..@end_date)
-      all_products = day.pluck(:product_name).uniq
+    case params["sort"] 
+      when 'product_asc'
+        all_products = day.pluck(:product_name).uniq.sort{ |a, b| a <=> b }
+      when 'product_desc'
+        all_products = day.pluck(:product_name).uniq.sort{ |a, b| b <=> a }
+      else
+        all_products = day.pluck(:product_name).uniq
+    end
 
       all_products.each do |name|
         product_quantity = day.where(product_name: name).pluck(:quantity)
@@ -144,6 +154,9 @@ class DashboardController < ApplicationController
         product_details[:sold_price] = sold_price
   
         @Product_Report.push(product_details)
+        total_quantity.push(quantity)
+        price_list.push(price)
+        total_sold_price.push(sold_price)        
       end
 
     else
@@ -166,9 +179,36 @@ class DashboardController < ApplicationController
         product_details[:sold_price] = sold_price
   
         @Product_Report.push(product_details)
+        total_quantity.push(quantity)
+        price_list.push(price)
+        total_sold_price.push(sold_price)
       end
 
     end
+
+    case params["sort"] 
+      when 'quantity_asc'
+        sorted = total_quantity.sort{ |a, b| a <=> b }
+        @Product_Report = sorted.map {|x| @Product_Report.find {|y| y[:quantity] == x}}
+      when 'quantity_desc'
+        sorted = total_quantity.sort{ |a, b| b <=> a }
+        @Product_Report = sorted.map {|x| @Product_Report.find {|y| y[:quantity] == x}}
+      when 'price_asc'
+        sorted = price_list.sort{ |a, b| a <=> b }
+        @Product_Report = sorted.map {|x| @Product_Report.find {|y| y[:price] == x}}
+      when 'price_desc'
+        sorted = price_list.sort{ |a, b| b <=> a }
+        @Product_Report = sorted.map {|x| @Product_Report.find {|y| y[:price] == x}}
+      when 'total_price_asc'
+        sorted = total_sold_price.sort{ |a, b| a <=> b }
+        @Product_Report = sorted.map {|x| @Product_Report.find {|y| y[:sold_price] == x}}
+      when 'total_price_desc'
+        sorted = total_sold_price.sort{ |a, b| b <=> a }
+        @Product_Report = sorted.map {|x| @Product_Report.find {|y| y[:sold_price] == x}}
+      else
+        all_products = day.pluck(:product_name).uniq
+    end
+
   end
 
   def delete_order

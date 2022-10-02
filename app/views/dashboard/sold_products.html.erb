@@ -11,14 +11,60 @@
   <%= f.submit 'Sort' %>
 <% end %>
 
+<%= @array_total_quantity%>
+
 <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Product Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Total Price</th>
+      <th scope="col">Product Name
+        <%= form_with url: "/dashboard/sold_products",method: :get do |f| %>
+          <%= f.hidden_field :start, value:@start_date %>
+          <%= f.hidden_field :end, value:@end_date %>
+          <select name="sort" id="sort">
+            <option value= "">select</option>
+            <option value= "product_asc">ascending</option>
+            <option value="product_desc">descending</option>
+          </select>
+          <%= f.submit "sort" %>
+        <% end %>
+      </th>
+      <th scope="col">Price
+        <%= form_with url: "/dashboard/sold_products",method: :get do |f| %>
+          <%= f.hidden_field :start, value:@start_date %>
+          <%= f.hidden_field :end, value:@end_date %>
+          <select name="sort" id="sort">
+            <option value= "">select</option>
+            <option value= "price_asc">ascending</option>
+            <option value="price_desc">descending</option>
+          </select>
+          <%= f.submit "sort" %>
+        <% end %>
+      </th>
+      <th scope="col">Quantity
+        <%= form_with url: "/dashboard/sold_products",method: :get do |f| %>
+          <%= f.hidden_field :start, value:@start_date %>
+          <%= f.hidden_field :end, value:@end_date %>
+          <select name="sort" id="sort">
+            <option value= "">select</option>
+            <option value= "quantity_asc">ascending</option>
+            <option value="quantity_desc">descending</option>
+          </select>
+          <%= f.submit "sort" %>
+        <% end %>
+      </th>
+      <th scope="col">Total Price
+        <%= form_with url: "/dashboard/sold_products",method: :get do |f| %>
+          <%= f.hidden_field :start, value:@start_date %>
+          <%= f.hidden_field :end, value:@end_date %>
+          <select name="sort" id="sort">
+            <option value= "">select</option>
+            <option value= "total_price_asc">ascending</option>
+            <option value="total_price_desc">descending</option>
+          </select>
+          <%= f.submit "sort" %>
+        <% end %>      
+      </th>
     </tr>
   </thead>
   <tbody>
