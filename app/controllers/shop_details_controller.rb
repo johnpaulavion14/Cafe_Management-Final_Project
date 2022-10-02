@@ -11,7 +11,7 @@ class ShopDetailsController < ApplicationController
     def shop_location
     end
   
-    def business_type
+    def shop_number
     end
   
     def create_details
@@ -21,20 +21,26 @@ class ShopDetailsController < ApplicationController
           if params[:shop_name].count("a-zA-Z") > 0
             redirect_to shop_location_path({name:params[:shop_name]})
           else
-            render :shop_name
+            respond_to do |format|
+              format.html { redirect_to shop_name_path, notice: "Field is blank!" }
+            end            
           end
         when "shop_location"
           if params[:shop_location].count("a-zA-Z") > 0
-            redirect_to business_type_path({location:params[:shop_location],name:params[:name]})
+            redirect_to shop_number_path({location:params[:shop_location],name:params[:name]})
           else
-            render :shop_location
+            respond_to do |format|
+              format.html { redirect_to shop_location_path({name:params[:name]}), notice: "Field is blank!" }
+            end
           end
-        when "business_type"
-          if params[:business_type].count("a-zA-Z") > 0
-            current_user.shop_details.create(shop_name:params[:name],shop_location:params[:location],business_type: params[:business_type])
-            redirect_to dashboard_index_path
+        when "shop_number"
+          if params[:shop_number] !~ /\D/ 
+            current_user.shop_details.create(shop_name:params[:name],shop_location:params[:location],shop_number: params[:shop_number].to_s)
+            redirect_to products_path 
           else
-            render :business_type
+            respond_to do |format|
+              format.html { redirect_to shop_number_path({location:params[:location],name:params[:name]}), notice: "Enter a valid number" }
+            end
           end
       end
     end

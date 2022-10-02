@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   
   get 'shop_details/shop_name' , as:'shop_name'
   get 'shop_details/shop_location' , as:'shop_location'
-  get 'shop_details/business_type' , as:'business_type'
+  get 'shop_details/shop_number' , as:'shop_number'
   post 'shop_details/create_details' , as:'create_details'
 
   

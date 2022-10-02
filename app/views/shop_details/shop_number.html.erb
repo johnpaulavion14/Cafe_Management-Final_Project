@@ -1,0 +1,14 @@
+<h1>Welcome to Cafe Management App</h1>
+<p style="color: red"><%= notice %></p>
+
+<%= form_with url: "/shop_details/create_details" do |f| %>
+<%= f.hidden_field :detail, value:"shop_number" %>
+<%= f.hidden_field :name, value:params[:name] %>
+<%= f.hidden_field :location, value:params[:location] %>
+<b>Shop Phone Number:</b>
+</br>
+<%= f.text_field :shop_number , size: "10x1", placeholder: "shop phone number", required: true %>
+</br></br>
+<%= f.submit%>
+
+<%end%>
