@@ -18,7 +18,7 @@
       <th scope="col">#</th>
       <th scope="col">Orders</th>
       <th scope="col">Total Price</th>
-      <th scope="col">Tax</th>
+      <th scope="col">Tax(12%)</th>
       <th scope="col">Print Receipt</th>
       <th scope="col">Time</th>
       <th scope="col">Delete</th>
@@ -32,17 +32,17 @@
           <% order[0].each_with_index do |x,idx|%>
             <% if x.keys[0] != :total_price %>
               <%=x[:product_name] %>
-              (&#8369;<%=x[:price]%> x
+              (&#8369;<%=sprintf('%.2f',x[:price])%> x
               <%=x[:quantity]%>)
               <%= order[0].length != idx+2 ? ',' : '' %>    
             <% end %>
           <% end %>
           
           </td>
-          <td>&#8369;<%= order[0][order[0].length-1][:total_price]%> </td>
-          <td>&#8369;<%= order[0][order[0].length-1][:tax]%> </td>
+          <td>&#8369;<%= sprintf('%.2f',order[0][order[0].length-1][:total_price])%> </td>
+          <td>&#8369;<%= sprintf('%.2f',order[0][order[0].length-1][:tax])%> </td>
           <td><%= link_to 'print_receipt', order_receipt_path({id:order[2]})%> </td>
-          <td><%= order[1]%></td>
+          <td><%= order[1].strftime("%I:%M%p/%b %d")%></td>
           <td><%= button_to 'delete',delete_order_path({id:order[2]}),method: :delete %></td> 
         </tr>
     <%end%>

@@ -53,6 +53,7 @@
           <%= f.submit "sort" %>
         <% end %>
       </th>
+      <th scope="col">Tax(12%)</th>      
       <th scope="col">Total Price
         <%= form_with url: "/dashboard/sold_products",method: :get do |f| %>
           <%= f.hidden_field :start, value:@start_date %>
@@ -72,9 +73,10 @@
         <tr>
           <td><%= idx + 1%> </td>
           <td><%= product[:product_name]%> </td>
-          <td><%= product[:price]%> </td>
+          <td>&#8369;<%= sprintf('%.2f',product[:price])%> </td>
           <td><%= product[:quantity] == nil ? 0 : product[:quantity]%></td>
-          <td><%= product[:sold_price] == nil ? 0 : product[:sold_price]%></td>
+          <td>&#8369;<%= sprintf('%.2f',product[:quantity] == nil ? 0 : product[:quantity] * product[:price] * 0.12)%></td>
+          <td>&#8369;<%= sprintf('%.2f',product[:sold_price] == nil ? 0 : product[:sold_price])%></td>
         </tr>
     <%end%>
         <tr>
@@ -82,6 +84,7 @@
           <td></td>
           <td></td>
           <td><b>Total Quantity: <p><%= @Total_Quantity%></p></b></td>
+          <td><b>Total Tax: <p>&#8369;<%= sprintf('%.2f',(@Total_Price/1.12)*0.12)%></p></b></td>
           <td><b>Total Price: <p>&#8369;<%= sprintf('%.2f',@Total_Price)%></p></b></td>
         </tr>    
   </tbody>
