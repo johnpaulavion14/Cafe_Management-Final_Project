@@ -73,7 +73,22 @@
         <tr>
           <td><%= idx + 1%> </td>
           <td><%= product[:product_name]%> </td>
-          <td>&#8369;<%= sprintf('%.2f',product[:price])%> </td>
+          <td>
+          <% if product[:price_array].count == 1%>
+            &#8369;<%=sprintf('%.2f',product[:price_array][0].keys[0])%>
+          <% else %>
+            <% product[:price_array].each do |price| %>
+                <% if product[:price] == price.keys[0] %>
+                  <b>(&#8369;<%=sprintf('%.2f',price.keys[0])%> x 
+                  <%=price.values[0]%>)</b>  
+                <% else %> 
+                  <i>(&#8369;<%=sprintf('%.2f',price.keys[0])%> x 
+                  <%=price.values[0]%>)</i>                                 
+                <% end %> 
+
+            <% end %>          
+          <% end %>
+          </td>
           <td><%= product[:quantity] == nil ? 0 : product[:quantity]%></td>
           <td>&#8369;<%= sprintf('%.2f',product[:quantity] == nil ? 0 : product[:quantity] * product[:price] * 0.12)%></td>
           <td>&#8369;<%= sprintf('%.2f',product[:sold_price] == nil ? 0 : product[:sold_price])%></td>

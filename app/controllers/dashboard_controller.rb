@@ -144,14 +144,24 @@ class DashboardController < ApplicationController
         total_price = day.where(product_name: name).pluck(:total_price)
   
         product_name = name
-        price = day.find_by(product_name:name).price
+        price = day.where(product_name:name).last.price
         quantity = product_quantity.reduce(:+)
         sold_price = total_price.reduce(:+)
+
+        prices = day.where(product_name:name).pluck(:price).uniq
+        price_array = []
+        prices.each do |x|
+          priceXquantity = {}
+          price_quantity = day.where(product_name:name).where(price:x).pluck(:quantity).reduce(:+)
+          priceXquantity[x] = price_quantity
+          price_array.push(priceXquantity)
+        end
   
         product_details = {}
         product_details[:product_name] = product_name
         product_details[:quantity] = quantity
         product_details[:price] = price
+        product_details[:price_array] = price_array
         product_details[:sold_price] = sold_price
   
         @Product_Report.push(product_details)
@@ -169,14 +179,24 @@ class DashboardController < ApplicationController
         total_price = day.where(product_name: name).pluck(:total_price)
   
         product_name = name
-        price = day.find_by(product_name:name).price
+        price = day.where(product_name:name).last.price
         quantity = product_quantity.reduce(:+)
         sold_price = total_price.reduce(:+)
+
+        prices = day.where(product_name:name).pluck(:price).uniq
+        price_array = []
+        prices.each do |x|
+          priceXquantity = {}
+          price_quantity = day.where(product_name:name).where(price:x).pluck(:quantity).reduce(:+)
+          priceXquantity[x] = price_quantity
+          price_array.push(priceXquantity)
+        end
   
         product_details = {}
         product_details[:product_name] = product_name
         product_details[:quantity] = quantity
         product_details[:price] = price
+        product_details[:price_array] = price_array
         product_details[:sold_price] = sold_price
   
         @Product_Report.push(product_details)
