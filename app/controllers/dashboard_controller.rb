@@ -117,8 +117,6 @@ class DashboardController < ApplicationController
   end
 
   def sold_products
-    @start_date = Date.today
-    @end_date = Date.today + 1
     params_keys = params.keys
     params_values = params.values
     @Product_Report = []
@@ -129,7 +127,12 @@ class DashboardController < ApplicationController
     if params_keys.include?("start" && "end") && !params_values.include?("")
       @start_date = Date.parse params[:start] 
       @end_date = Date.parse params[:end] 
-      day = current_user.product_sales.where(created_at: @start_date..@end_date)
+    else
+      @start_date = Date.today
+      @end_date = Date.today + 1
+    end
+
+    day = current_user.product_sales.where(created_at: @start_date..@end_date)
     case params["sort"] 
       when 'product_asc'
         all_products = day.pluck(:product_name).uniq.sort{ |a, b| a <=> b }
@@ -139,72 +142,35 @@ class DashboardController < ApplicationController
         all_products = day.pluck(:product_name).uniq
     end
 
-      all_products.each do |name|
-        product_quantity = day.where(product_name: name).pluck(:quantity)
-        total_price = day.where(product_name: name).pluck(:total_price)
-  
-        product_name = name
-        price = day.where(product_name:name).last.price
-        quantity = product_quantity.reduce(:+)
-        sold_price = total_price.reduce(:+)
+    all_products.each do |name|
+      product_quantity = day.where(product_name: name).pluck(:quantity)
+      total_price = day.where(product_name: name).pluck(:total_price)
 
-        prices = day.where(product_name:name).pluck(:price).uniq
-        price_array = []
-        prices.each do |x|
-          priceXquantity = {}
-          price_quantity = day.where(product_name:name).where(price:x).pluck(:quantity).reduce(:+)
-          priceXquantity[x] = price_quantity
-          price_array.push(priceXquantity)
-        end
-  
-        product_details = {}
-        product_details[:product_name] = product_name
-        product_details[:quantity] = quantity
-        product_details[:price] = price
-        product_details[:price_array] = price_array
-        product_details[:sold_price] = sold_price
-  
-        @Product_Report.push(product_details)
-        total_quantity.push(quantity)
-        price_list.push(price)
-        total_sold_price.push(sold_price)        
+      product_name = name
+      price = day.where(product_name:name).last.price
+      quantity = product_quantity.reduce(:+)
+      sold_price = total_price.reduce(:+)
+
+      prices = day.where(product_name:name).pluck(:price).uniq
+      price_array = []
+      prices.each do |x|
+        priceXquantity = {}
+        price_quantity = day.where(product_name:name).where(price:x).pluck(:quantity).reduce(:+)
+        priceXquantity[x] = price_quantity
+        price_array.push(priceXquantity)
       end
 
-    else
-      day = current_user.product_sales.where(created_at: @start_date..@end_date)
-      all_products = day.pluck(:product_name).uniq
+      product_details = {}
+      product_details[:product_name] = product_name
+      product_details[:quantity] = quantity
+      product_details[:price] = price
+      product_details[:price_array] = price_array
+      product_details[:sold_price] = sold_price
 
-      all_products.each do |name|
-        product_quantity = day.where(product_name: name).pluck(:quantity)
-        total_price = day.where(product_name: name).pluck(:total_price)
-  
-        product_name = name
-        price = day.where(product_name:name).last.price
-        quantity = product_quantity.reduce(:+)
-        sold_price = total_price.reduce(:+)
-
-        prices = day.where(product_name:name).pluck(:price).uniq
-        price_array = []
-        prices.each do |x|
-          priceXquantity = {}
-          price_quantity = day.where(product_name:name).where(price:x).pluck(:quantity).reduce(:+)
-          priceXquantity[x] = price_quantity
-          price_array.push(priceXquantity)
-        end
-  
-        product_details = {}
-        product_details[:product_name] = product_name
-        product_details[:quantity] = quantity
-        product_details[:price] = price
-        product_details[:price_array] = price_array
-        product_details[:sold_price] = sold_price
-  
-        @Product_Report.push(product_details)
-        total_quantity.push(quantity)
-        price_list.push(price)
-        total_sold_price.push(sold_price)
-      end
-
+      @Product_Report.push(product_details)
+      total_quantity.push(quantity)
+      price_list.push(price)
+      total_sold_price.push(sold_price)        
     end
 
     case params["sort"] 
