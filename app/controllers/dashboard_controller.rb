@@ -152,6 +152,12 @@ class DashboardController < ApplicationController
         all_products = day.pluck(:product_name).uniq.sort{ |a, b| a <=> b }
       when 'product_desc'
         all_products = day.pluck(:product_name).uniq.sort{ |a, b| b <=> a }
+      when 'price_asc'
+        order = day.order(price: :asc)
+        all_products = order.pluck(:product_name).uniq
+      when 'price_desc'
+        order = day.order(price: :desc)
+        all_products = order.pluck(:product_name).uniq
       else
         all_products = day.pluck(:product_name).uniq
     end
@@ -194,12 +200,6 @@ class DashboardController < ApplicationController
       when 'quantity_desc'
         sorted = total_quantity.sort{ |a, b| b <=> a }
         @Product_Report = sorted.map {|x| @Product_Report.find {|y| y[:quantity] == x}}
-      when 'price_asc'
-        sorted = price_list.sort{ |a, b| a <=> b }
-        @Product_Report = sorted.map {|x| @Product_Report.find {|y| y[:price] == x}}
-      when 'price_desc'
-        sorted = price_list.sort{ |a, b| b <=> a }
-        @Product_Report = sorted.map {|x| @Product_Report.find {|y| y[:price] == x}}
       when 'total_price_asc'
         sorted = total_sold_price.sort{ |a, b| a <=> b }
         @Product_Report = sorted.map {|x| @Product_Report.find {|y| y[:sold_price] == x}}
