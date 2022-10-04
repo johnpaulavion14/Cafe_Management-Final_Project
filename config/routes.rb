@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'dashboard/order_receipt' , as:'order_receipt'
   get 'dashboard/checkout' , as:'checkout'
   get 'dashboard/sold_products' , as:'sold_products'
+  get 'dashboard/print_summary' , as:'print_summary'
   post 'dashboard/create_order' 
   delete 'dashboard/delete_order' , as: 'delete_order'
   

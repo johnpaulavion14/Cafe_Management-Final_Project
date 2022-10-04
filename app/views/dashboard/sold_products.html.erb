@@ -97,7 +97,7 @@
         <tr>
           <td></td>
           <td></td>
-          <td></td>
+          <td><%= link_to 'Print Summary', print_summary_path({start:@start_date, end:@end_date})%></td>
           <td><b>Total Quantity: <p><%= @Total_Quantity%></p></b></td>
           <td><b>Total Tax: <p>&#8369;<%= sprintf('%.2f',(@Total_Price/1.12)*0.12)%></p></b></td>
           <td><b>Total Price: <p>&#8369;<%= sprintf('%.2f',@Total_Price)%></p></b></td>

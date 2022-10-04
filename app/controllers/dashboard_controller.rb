@@ -1,5 +1,6 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!
+  before_action :sold_products, only: %i[ print_summary ]
   
   def order
 
@@ -197,6 +198,13 @@ class DashboardController < ApplicationController
     end
     @Total_Quantity = total_quantity.reduce(:+) == nil ? 0 : total_quantity.reduce(:+) 
     @Total_Price = total_sold_price.reduce(:+) == nil ? 0 : total_sold_price.reduce(:+) 
+  end
+
+  def print_summary
+    @Shop = current_user.shop_details.first
+    @Summary = @Product_Report
+    # @Summary = [12312]
+    
   end
 
   def delete_order
