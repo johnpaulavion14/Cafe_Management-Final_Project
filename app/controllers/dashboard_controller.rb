@@ -105,12 +105,25 @@ class DashboardController < ApplicationController
       @Total_income = income == nil ? 0 : income
       @Total_tax = ((income == nil ? 0 : income)/1.12)*0.12
 
+      # date = day.pluck(:created_at)
+      # total_price_array = day.pluck(:orders).map {|x| x.last[:total_price]}
+      # date.each_with_index do |date,idx|
+      #   @Order_chart[Date.parse date.strftime("%a,%d %b %Y")] = total_price_array[idx]
+      # end
+      # # Sat, 24 May 2020
+
     else
       day = current_user.order_transactions.where(created_at: @start_date..@end_date)
       @Orders = day.pluck(:orders, :created_at, :id)
       income = day.pluck(:orders).map {|x| x.last[:total_price]}.reduce(:+)
       @Total_income = income == nil ? 0 : income
       @Total_tax = ((income == nil ? 0 : income)/1.12)*0.12
+
+      # date = day.pluck(:created_at)
+      # total_price_array = day.pluck(:orders).map {|x| x.last[:total_price]}
+      # date.each_with_index do |date,idx|
+        # @Order_chart[Date.parse date.strftime("%a,%d %b %Y")] = total_price_array[idx]
+      # end
 
     end
 
@@ -203,7 +216,6 @@ class DashboardController < ApplicationController
   def print_summary
     @Shop = current_user.shop_details.first
     @Summary = @Product_Report
-    # @Summary = [12312]
     
   end
 

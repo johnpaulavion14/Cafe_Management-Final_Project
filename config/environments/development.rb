@@ -67,4 +67,5 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+  # CLOUDINARY_URL=cloudinary://934328263595753:Fd5qM_1N9AJXeDY1bmjvpbliqD4@dazff5yba
 end

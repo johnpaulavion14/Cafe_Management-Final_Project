@@ -5,7 +5,7 @@
 
 <%= form_with url: "/dashboard/checkout" ,method: :get do |f| %>
   <div id="products">
-    <%= @products.each do |product| %>
+    <% @products.each do |product| %>
     
       <%= render product %>
       <p>
