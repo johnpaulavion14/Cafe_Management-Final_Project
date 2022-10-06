@@ -1,5 +1,4 @@
 <h2>All Orders</h2>
-<%# <%= @Order_chart%> %>
 <p style="color: green"><%= notice %></p>
 
 <%= button_to 'Today',all_orders_path({start:Date.today, end:Date.today+1}), method: :get%>
@@ -58,10 +57,7 @@
         </tr>
   </tbody>
 </table>
-
-
-</br></br>
-
-
+</br>
+<%= line_chart @Order_chart, colors: ["#b00", "#666"],prefix: "₱" ,name:"asdfr"%>
 </br></br>
 

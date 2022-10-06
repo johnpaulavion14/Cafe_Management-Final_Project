@@ -91,52 +91,49 @@ class DashboardController < ApplicationController
   end
 
   def all_orders
-    @start_date = Date.today
-    @end_date = Date.today + 1
+    @Order_chart = []
     params_keys = params.keys
     params_values = params.values
 
     if params_keys.include?("start" && "end") && !params_values.include?("")
       @start_date = Date.parse params[:start] 
       @end_date = Date.parse params[:end] 
-      day = current_user.order_transactions.where(created_at: @start_date..@end_date)
-      @Orders = day.pluck(:orders, :created_at, :id)
-      income = day.pluck(:orders).map {|x| x.last[:total_price]}.reduce(:+)
-      @Total_income = income == nil ? 0 : income
-      @Total_tax = ((income == nil ? 0 : income)/1.12)*0.12
-
-      # date = day.pluck(:created_at)
-      # total_price_array = day.pluck(:orders).map {|x| x.last[:total_price]}
-      # date.each_with_index do |date,idx|
-      #   @Order_chart[Date.parse date.strftime("%a,%d %b %Y")] = total_price_array[idx]
-      # end
-      # # Sat, 24 May 2020
-
     else
-      day = current_user.order_transactions.where(created_at: @start_date..@end_date)
-      @Orders = day.pluck(:orders, :created_at, :id)
-      income = day.pluck(:orders).map {|x| x.last[:total_price]}.reduce(:+)
-      @Total_income = income == nil ? 0 : income
-      @Total_tax = ((income == nil ? 0 : income)/1.12)*0.12
+      @start_date = Date.today
+      @end_date = Date.today + 1
+    end    
 
-      # date = day.pluck(:created_at)
-      # total_price_array = day.pluck(:orders).map {|x| x.last[:total_price]}
-      # date.each_with_index do |date,idx|
-        # @Order_chart[Date.parse date.strftime("%a,%d %b %Y")] = total_price_array[idx]
-      # end
+    day = current_user.order_transactions.where(created_at: @start_date..@end_date)
+    @Orders = day.pluck(:orders, :created_at, :id)
+    income = day.pluck(:orders).map {|x| x.last[:total_price]}.reduce(:+)
+    @Total_income = income == nil ? 0 : income
+    @Total_tax = ((income == nil ? 0 : income)/1.12)*0.12
 
+    date_end = (@end_date - @start_date).to_i
+    (0..date_end).each do |date|
+      day_graph = current_user.order_transactions.where(created_at: @start_date+date..@start_date+date+1)
+      income_graph = day_graph.pluck(:orders).map {|x| x.last[:total_price]}.reduce(:+)
+      total_income_graph = income_graph == nil ? 0 : income_graph
+      order_array = []
+      order_array[0] = (@start_date + date).strftime("%b%d")
+      order_array[1] = total_income_graph
+      @Order_chart.push(order_array)      
     end
-
+    @qwe = @Order_chart
 
   end
 
   def sold_products
+    @Map_products = []
     params_keys = params.keys
     params_values = params.values
     @Product_Report = []
     total_quantity = []
     price_list = []
     total_sold_price = []
+    @begin = current_user.product_sales.first == nil ? Date.today : current_user.product_sales.first.created_at
+    @last = current_user.product_sales.last == nil ? Date.today + 1  : @begin.to_date + 1
+    
 
     if params_keys.include?("start" && "end") && !params_values.include?("")
       @start_date = Date.parse params[:start] 
@@ -187,6 +184,13 @@ class DashboardController < ApplicationController
       product_details[:price_array] = price_array
       product_details[:sold_price] = sold_price
 
+      #Graph Sold Products
+      graph_details = {}
+      date_quantity_array = [[name, sold_price]]
+      graph_details[:product] = name
+      graph_details[:orders] = date_quantity_array
+      @Map_products.push(graph_details)
+
       @Product_Report.push(product_details)
       total_quantity.push(quantity)
       price_list.push(price)
@@ -231,14 +235,11 @@ class DashboardController < ApplicationController
 
   end
 
-
   private
 
   def order_params
     params.permit(:product_name,:price,:quantity)
   end
-
-  
 
 end
 
