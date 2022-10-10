@@ -14,6 +14,12 @@ RSpec.describe ProductSale, type: :model do
 
       expect(product).to_not be_valid
     end
+    it "product_name should only allow letters" do
+      product = create(:product_sale)
+      product.product_name = 123
+
+      expect(product).to_not be_valid
+    end
   end
   describe '#price' do
     it "price should not be nil" do

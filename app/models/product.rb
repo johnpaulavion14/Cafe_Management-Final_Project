@@ -1,4 +1,10 @@
 class Product < ApplicationRecord
     mount_uploader :image, ImgUploader
     belongs_to :user
+
+    validates :product_name,:price, presence: true
+    validates :price, numericality: true
+    validates :product_name, length: { maximum: 20 }, format: { with: /[a-zA-Z]/,
+    message: "only allows letters" }
+
 end
