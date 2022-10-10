@@ -10,12 +10,9 @@ Rails.application.routes.draw do
   post 'dashboard/create_order' 
   delete 'dashboard/delete_order' , as: 'delete_order'
   
-  get 'shop_details/shop_name' , as:'shop_name'
-  get 'shop_details/shop_location' , as:'shop_location'
-  get 'shop_details/shop_number' , as:'shop_number'
+  get 'shop_details/shop' , as:'shop'
   post 'shop_details/create_details' , as:'create_details'
 
-  
   root 'home#index'
 
 end
