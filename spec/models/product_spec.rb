@@ -8,6 +8,15 @@ RSpec.describe Product, type: :model do
 
       expect(product).to_not be_valid
     end
+    it "product_name should be uniq" do
+      product1 = create(:product, product_name:"same product")
+
+      product2 = create(:product)
+      product2.product_name = "same product"  
+      product2.save    
+
+      expect(product2).to_not be_valid
+    end
     it "product_name should not more than 20 char" do
       product = create(:product)
       product.product_name = 'this is more than 20 char'
