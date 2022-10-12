@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
-  describe "#Devise" do
+  describe "#Devise Request" do
     it "sign in page" do
       get user_session_path
       expect(response).to have_http_status(200)
