@@ -6613,3 +6613,115 @@ Processing by ProductsController#edit_all_products as HTML
   Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2428)
 Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 2977)
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Started POST "/shop_details/create_details" for 127.0.0.1 at 2022-10-13 10:53:42 +0800
+Processing by ShopDetailsController#create_details as HTML
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms | Allocations: 2568)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john1@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john1@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-13 02:54:27.014304"], ["updated_at", "2022-10-13 02:54:27.014304"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/shop_details/shop" for 127.0.0.1 at 2022-10-13 10:54:27 +0800
+Processing by ShopDetailsController#shop as HTML
+  [1m[36mShopDetail Count (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shop_details" WHERE "shop_details"."user_id" = $1[0m  [["user_id", 506]]
+  Rendering layout layouts/application.html.erb
+  Rendering shop_details/shop.html.erb within layouts/application
+  Rendered shop_details/shop.html.erb within layouts/application (Duration: 192.5ms | Allocations: 275829)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 707)
+  Rendered layout layouts/application.html.erb (Duration: 248.5ms | Allocations: 317935)
+Completed 200 OK in 277ms (Views: 253.4ms | ActiveRecord: 3.5ms | Allocations: 325972)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john2@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john2@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-13 02:54:27.320763"], ["updated_at", "2022-10-13 02:54:27.320763"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/shop_details/create_details" for 127.0.0.1 at 2022-10-13 10:54:27 +0800
+Processing by ShopDetailsController#create_details as HTML
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShopDetail Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "shop_details" WHERE "shop_details"."shop_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShopDetail Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shop_details" WHERE "shop_details"."shop_number" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/shop_details/shop
+Completed 302 Found in 17ms (ActiveRecord: 3.5ms | Allocations: 5455)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john1@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john1@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-13 02:56:34.020028"], ["updated_at", "2022-10-13 02:56:34.020028"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/shop_details/create_details" for 127.0.0.1 at 2022-10-13 10:56:34 +0800
+Processing by ShopDetailsController#create_details as HTML
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShopDetail Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "shop_details" WHERE "shop_details"."shop_name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShopDetail Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "shop_details" WHERE "shop_details"."shop_number" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/shop_details/shop
+Completed 302 Found in 32ms (ActiveRecord: 4.9ms | Allocations: 10855)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john1@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john1@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-13 02:57:56.757268"], ["updated_at", "2022-10-13 02:57:56.757268"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-10-13 10:57:56 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mProductSale Load (2.4ms)[0m  [1m[34mSELECT "product_sales".* FROM "product_sales" INNER JOIN "order_transactions" ON "product_sales"."order_transaction_id" = "order_transactions"."id" WHERE "order_transactions"."user_id" = $1 ORDER BY "product_sales"."id" ASC LIMIT $2[0m  [["user_id", 509], ["LIMIT", 1]]
+  [1m[36mProductSale Load (0.5ms)[0m  [1m[34mSELECT "product_sales".* FROM "product_sales" INNER JOIN "order_transactions" ON "product_sales"."order_transaction_id" = "order_transactions"."id" WHERE "order_transactions"."user_id" = $1 ORDER BY "product_sales"."id" DESC LIMIT $2[0m  [["user_id", 509], ["LIMIT", 1]]
+  [1m[36mProductSale Pluck (0.5ms)[0m  [1m[34mSELECT "product_sales"."product_name" FROM "product_sales" INNER JOIN "order_transactions" ON "product_sales"."order_transaction_id" = "order_transactions"."id" WHERE "order_transactions"."user_id" = $1 AND "product_sales"."created_at" BETWEEN $2 AND $3[0m  [["user_id", 509], ["created_at", "2022-10-13"], ["created_at", "2022-10-14"]]
+  [1m[36mCACHE ProductSale Pluck (0.0ms)[0m  [1m[34mSELECT "product_sales"."product_name" FROM "product_sales" INNER JOIN "order_transactions" ON "product_sales"."order_transaction_id" = "order_transactions"."id" WHERE "order_transactions"."user_id" = $1 AND "product_sales"."created_at" BETWEEN $2 AND $3[0m  [["user_id", 509], ["created_at", "2022-10-13"], ["created_at", "2022-10-14"]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 227.3ms | Allocations: 279077)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 640)
+  Rendered layout layouts/application.html.erb (Duration: 316.0ms | Allocations: 321527)
+Completed 200 OK in 363ms (Views: 319.1ms | ActiveRecord: 9.9ms | Allocations: 333771)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john1@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john1@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-13 02:58:20.920541"], ["updated_at", "2022-10-13 02:58:20.920541"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/dashboard/all_orders" for 127.0.0.1 at 2022-10-13 10:58:20 +0800
+Processing by DashboardController#all_orders as HTML
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders", "order_transactions"."created_at", "order_transactions"."id" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1 AND "order_transactions"."created_at" BETWEEN $2 AND $3[0m  [["user_id", 510], ["created_at", "2022-10-13"], ["created_at", "2022-10-14"]]
+  [1m[36mOrderTransaction Pluck (0.2ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1 AND "order_transactions"."created_at" BETWEEN $2 AND $3[0m  [["user_id", 510], ["created_at", "2022-10-13"], ["created_at", "2022-10-14"]]
+  [1m[36mCACHE OrderTransaction Pluck (0.0ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1 AND "order_transactions"."created_at" BETWEEN $2 AND $3[0m  [["user_id", 510], ["created_at", "2022-10-13"], ["created_at", "2022-10-14"]]
+  [1m[36mOrderTransaction Pluck (0.4ms)[0m  [1m[34mSELECT "order_transactions"."orders" FROM "order_transactions" WHERE "order_transactions"."user_id" = $1 AND "order_transactions"."created_at" BETWEEN $2 AND $3[0m  [["user_id", 510], ["created_at", "2022-10-14"], ["created_at", "2022-10-15"]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/all_orders.html.erb within layouts/application
+  Rendered dashboard/all_orders.html.erb within layouts/application (Duration: 194.9ms | Allocations: 277042)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 643)
+  Rendered layout layouts/application.html.erb (Duration: 250.4ms | Allocations: 319685)
+Completed 200 OK in 278ms (Views: 253.7ms | ActiveRecord: 2.8ms | Allocations: 328858)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john2@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john2@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-13 02:58:21.230981"], ["updated_at", "2022-10-13 02:58:21.230981"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/dashboard/sold_products" for 127.0.0.1 at 2022-10-13 10:58:21 +0800
+Processing by DashboardController#sold_products as HTML
+  [1m[36mProductSale Load (0.7ms)[0m  [1m[34mSELECT "product_sales".* FROM "product_sales" INNER JOIN "order_transactions" ON "product_sales"."order_transaction_id" = "order_transactions"."id" WHERE "order_transactions"."user_id" = $1 ORDER BY "product_sales"."id" ASC LIMIT $2[0m  [["user_id", 511], ["LIMIT", 1]]
+  [1m[36mProductSale Load (0.4ms)[0m  [1m[34mSELECT "product_sales".* FROM "product_sales" INNER JOIN "order_transactions" ON "product_sales"."order_transaction_id" = "order_transactions"."id" WHERE "order_transactions"."user_id" = $1 ORDER BY "product_sales"."id" DESC LIMIT $2[0m  [["user_id", 511], ["LIMIT", 1]]
+  [1m[36mProductSale Pluck (0.3ms)[0m  [1m[34mSELECT "product_sales"."product_name" FROM "product_sales" INNER JOIN "order_transactions" ON "product_sales"."order_transaction_id" = "order_transactions"."id" WHERE "order_transactions"."user_id" = $1 AND "product_sales"."created_at" BETWEEN $2 AND $3[0m  [["user_id", 511], ["created_at", "2022-10-13"], ["created_at", "2022-10-14"]]
+  [1m[36mCACHE ProductSale Pluck (0.0ms)[0m  [1m[34mSELECT "product_sales"."product_name" FROM "product_sales" INNER JOIN "order_transactions" ON "product_sales"."order_transaction_id" = "order_transactions"."id" WHERE "order_transactions"."user_id" = $1 AND "product_sales"."created_at" BETWEEN $2 AND $3[0m  [["user_id", 511], ["created_at", "2022-10-13"], ["created_at", "2022-10-14"]]
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/sold_products.html.erb within layouts/application
+  Rendered dashboard/sold_products.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3311)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 253)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 5276)
+Completed 200 OK in 31ms (Views: 7.7ms | ActiveRecord: 6.6ms | Allocations: 10289)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
