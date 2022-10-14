@@ -8844,3 +8844,113 @@ Redirected to http://www.example.com/
 Filter chain halted as :verify_signed_out_user rendered or redirected
 Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 439)
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (2.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john1@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john1@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-14 04:33:54.627972"], ["updated_at", "2022-10-14 04:33:54.627972"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderTransaction Create (2.5ms)[0m  [1m[32mINSERT INTO "order_transactions" ("orders", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["orders", "---\n- :product_name: donut\n  :quantity: 2\n  :price: 15.0\n- :total_price: 33.6\n  :tax: 3.59\n"], ["created_at", "2022-10-14 04:33:54.672936"], ["updated_at", "2022-10-14 04:33:54.672936"], ["user_id", 664]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProductSale Create (2.7ms)[0m  [1m[32mINSERT INTO "product_sales" ("product_name", "price", "quantity", "created_at", "updated_at", "total_price", "order_transaction_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_name", "string"], ["price", 100.0], ["quantity", 1], ["created_at", "2022-10-14 04:33:54.679670"], ["updated_at", "2022-10-14 04:33:54.679670"], ["total_price", 100.0], ["order_transaction_id", 179]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john2@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john2@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-14 04:33:54.718131"], ["updated_at", "2022-10-14 04:33:54.718131"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderTransaction Create (0.6ms)[0m  [1m[32mINSERT INTO "order_transactions" ("orders", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["orders", "---\n- :product_name: donut\n  :quantity: 2\n  :price: 15.0\n- :total_price: 33.6\n  :tax: 3.59\n"], ["created_at", "2022-10-14 04:33:54.723561"], ["updated_at", "2022-10-14 04:33:54.723561"], ["user_id", 665]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProductSale Create (0.4ms)[0m  [1m[32mINSERT INTO "product_sales" ("product_name", "price", "quantity", "created_at", "updated_at", "total_price", "order_transaction_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_name", "string"], ["price", 100.0], ["quantity", 1], ["created_at", "2022-10-14 04:33:54.729393"], ["updated_at", "2022-10-14 04:33:54.729393"], ["total_price", 100.0], ["order_transaction_id", 180]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john3@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john3@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-14 04:33:54.738920"], ["updated_at", "2022-10-14 04:33:54.738920"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderTransaction Create (1.2ms)[0m  [1m[32mINSERT INTO "order_transactions" ("orders", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["orders", "---\n- :product_name: donut\n  :quantity: 2\n  :price: 15.0\n- :total_price: 33.6\n  :tax: 3.59\n"], ["created_at", "2022-10-14 04:33:54.743362"], ["updated_at", "2022-10-14 04:33:54.743362"], ["user_id", 666]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProductSale Create (0.6ms)[0m  [1m[32mINSERT INTO "product_sales" ("product_name", "price", "quantity", "created_at", "updated_at", "total_price", "order_transaction_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_name", "string"], ["price", 100.0], ["quantity", 1], ["created_at", "2022-10-14 04:33:54.748184"], ["updated_at", "2022-10-14 04:33:54.748184"], ["total_price", 100.0], ["order_transaction_id", 181]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john4@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john4@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-14 04:33:54.758726"], ["updated_at", "2022-10-14 04:33:54.758726"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderTransaction Create (0.6ms)[0m  [1m[32mINSERT INTO "order_transactions" ("orders", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["orders", "---\n- :product_name: donut\n  :quantity: 2\n  :price: 15.0\n- :total_price: 33.6\n  :tax: 3.59\n"], ["created_at", "2022-10-14 04:33:54.762306"], ["updated_at", "2022-10-14 04:33:54.762306"], ["user_id", 667]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProductSale Create (0.4ms)[0m  [1m[32mINSERT INTO "product_sales" ("product_name", "price", "quantity", "created_at", "updated_at", "total_price", "order_transaction_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_name", "string"], ["price", 100.0], ["quantity", 1], ["created_at", "2022-10-14 04:33:54.770508"], ["updated_at", "2022-10-14 04:33:54.770508"], ["total_price", 100.0], ["order_transaction_id", 182]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john5@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john5@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-14 04:33:54.779379"], ["updated_at", "2022-10-14 04:33:54.779379"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "order_transactions" ("orders", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["orders", "---\n- :product_name: donut\n  :quantity: 2\n  :price: 15.0\n- :total_price: 33.6\n  :tax: 3.59\n"], ["created_at", "2022-10-14 04:33:54.782890"], ["updated_at", "2022-10-14 04:33:54.782890"], ["user_id", 668]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProductSale Create (0.6ms)[0m  [1m[32mINSERT INTO "product_sales" ("product_name", "price", "quantity", "created_at", "updated_at", "total_price", "order_transaction_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_name", "string"], ["price", 100.0], ["quantity", 1], ["created_at", "2022-10-14 04:33:54.786790"], ["updated_at", "2022-10-14 04:33:54.786790"], ["total_price", 100.0], ["order_transaction_id", 183]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john6@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john6@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-14 04:33:54.797693"], ["updated_at", "2022-10-14 04:33:54.797693"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "order_transactions" ("orders", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["orders", "---\n- :product_name: donut\n  :quantity: 2\n  :price: 15.0\n- :total_price: 33.6\n  :tax: 3.59\n"], ["created_at", "2022-10-14 04:33:54.801127"], ["updated_at", "2022-10-14 04:33:54.801127"], ["user_id", 669]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProductSale Create (0.7ms)[0m  [1m[32mINSERT INTO "product_sales" ("product_name", "price", "quantity", "created_at", "updated_at", "total_price", "order_transaction_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_name", "string"], ["price", 100.0], ["quantity", 1], ["created_at", "2022-10-14 04:33:54.804098"], ["updated_at", "2022-10-14 04:33:54.804098"], ["total_price", 100.0], ["order_transaction_id", 184]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john7@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john7@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-14 04:33:54.815119"], ["updated_at", "2022-10-14 04:33:54.815119"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderTransaction Create (0.4ms)[0m  [1m[32mINSERT INTO "order_transactions" ("orders", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["orders", "---\n- :product_name: donut\n  :quantity: 2\n  :price: 15.0\n- :total_price: 33.6\n  :tax: 3.59\n"], ["created_at", "2022-10-14 04:33:54.819172"], ["updated_at", "2022-10-14 04:33:54.819172"], ["user_id", 670]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProductSale Create (0.5ms)[0m  [1m[32mINSERT INTO "product_sales" ("product_name", "price", "quantity", "created_at", "updated_at", "total_price", "order_transaction_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_name", "string"], ["price", 100.0], ["quantity", 1], ["created_at", "2022-10-14 04:33:54.822814"], ["updated_at", "2022-10-14 04:33:54.822814"], ["total_price", 100.0], ["order_transaction_id", 185]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john8@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john8@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-14 04:33:54.835172"], ["updated_at", "2022-10-14 04:33:54.835172"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderTransaction Create (0.6ms)[0m  [1m[32mINSERT INTO "order_transactions" ("orders", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["orders", "---\n- :product_name: donut\n  :quantity: 2\n  :price: 15.0\n- :total_price: 33.6\n  :tax: 3.59\n"], ["created_at", "2022-10-14 04:33:54.838835"], ["updated_at", "2022-10-14 04:33:54.838835"], ["user_id", 671]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProductSale Create (0.4ms)[0m  [1m[32mINSERT INTO "product_sales" ("product_name", "price", "quantity", "created_at", "updated_at", "total_price", "order_transaction_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_name", "string"], ["price", 100.0], ["quantity", 1], ["created_at", "2022-10-14 04:33:54.843132"], ["updated_at", "2022-10-14 04:33:54.843132"], ["total_price", 100.0], ["order_transaction_id", 186]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john9@test.test"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "john9@test.test"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", nil], ["unconfirmed_email", nil], ["created_at", "2022-10-14 04:33:54.852510"], ["updated_at", "2022-10-14 04:33:54.852510"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mOrderTransaction Create (0.5ms)[0m  [1m[32mINSERT INTO "order_transactions" ("orders", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["orders", "---\n- :product_name: donut\n  :quantity: 2\n  :price: 15.0\n- :total_price: 33.6\n  :tax: 3.59\n"], ["created_at", "2022-10-14 04:33:54.856491"], ["updated_at", "2022-10-14 04:33:54.856491"], ["user_id", 672]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProductSale Create (0.5ms)[0m  [1m[32mINSERT INTO "product_sales" ("product_name", "price", "quantity", "created_at", "updated_at", "total_price", "order_transaction_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["product_name", "string"], ["price", 100.0], ["quantity", 1], ["created_at", "2022-10-14 04:33:54.860239"], ["updated_at", "2022-10-14 04:33:54.860239"], ["total_price", 100.0], ["order_transaction_id", 187]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
