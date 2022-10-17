@@ -1,7 +1,8 @@
 <h2>Top Product Sold</h2>
 
 <%= button_to 'Today',sold_products_path({start:Date.today, end:Date.today+1}), method: :get %>
-
+<%= link_to 'All Products Sold',sold_products_path({start:@begin, end:@last}), method: :get%>
+</br></br>
 
 <%= form_with url: "/dashboard/sold_products",method: :get do |f| %>
   <%= f.label "start" %>
@@ -11,8 +12,6 @@
   <%= f.date_field :end, value: @end_date%>
   <%= f.submit 'Sort' %>
 <% end %>
-
-<%= link_to 'All Products',sold_products_path({start:@begin, end:@last}), method: :get%>
 
 <%= @array_total_quantity%>
 

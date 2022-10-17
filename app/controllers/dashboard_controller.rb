@@ -132,7 +132,7 @@ class DashboardController < ApplicationController
     price_list = []
     total_sold_price = []
     @begin = current_user.product_sales.first == nil ? Date.today : current_user.product_sales.first.created_at
-    @last = current_user.product_sales.last == nil ? Date.today + 1  : @begin.to_date + 1
+    @last = current_user.product_sales.last == nil ? Date.today + 1  : current_user.product_sales.last.created_at
     
 
     if params_keys.include?("start" && "end") && !params_values.include?("")

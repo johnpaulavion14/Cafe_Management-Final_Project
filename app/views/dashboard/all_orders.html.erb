@@ -2,6 +2,7 @@
 <p style="color: green"><%= notice %></p>
 
 <%= button_to 'Today',all_orders_path({start:Date.today, end:Date.today+1}), method: :get%>
+</br>
 
 <%= form_with url: "/dashboard/all_orders",method: :get do |f| %>
   <%= f.label "start" %>
