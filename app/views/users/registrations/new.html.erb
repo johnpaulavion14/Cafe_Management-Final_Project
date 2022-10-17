@@ -1,7 +1,8 @@
+<br><br>
 <div class="container text-center">
-  <h1>Stocks-infini-Trade</h1>
-  </br>
-  <h2>Sign up</h2>
+  <h1>Cafe Management App</h1>
+  <br>
+  <h2 style="text-decoration:underline;text-decoration-thickness: 3px;">SIGN UP</h2>
 
   <div class="row">
     <div class="col">
@@ -25,13 +26,13 @@
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
-
+        <br>
         <div class="actions">
           <%= f.submit "Sign up" %>
         </div>
       <% end %>
-
-      <%= render "users/shared/links" %>
+      <br>
+       <%= button_to "go back", root_path, method: :get%>
 
     </div>
   </div>
