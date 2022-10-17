@@ -1,16 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
-  <h1>Products </h1>
-  <span><%= link_to "Edit Products", edit_all_products_path %> - <%= link_to "New Product", new_product_path %></span>
-
+<h2>All Products </h2>
+<span><%= link_to "Edit Products", edit_all_products_path %> - <%= link_to "New Product", new_product_path %></span>
+</br></br></br>
 <%= form_with url: "/dashboard/checkout" ,method: :get do |f| %>
-  <div id="products">
+  <div class ="products d-flex w-100 flex-wrap ">
     <% @products.each do |product| %>
-    
-      <%= render product %>
-      <p>
-        <%= f.number_field product.product_name , min: 1, placeholder: "quantity"%>
-      </p>
+      <div class="w-25" style="height:150px">
+        <h3><%= product.product_name %></h3>
+        price: &#8369;<%= sprintf('%.2f',product.price)%>
+        <div><%= f.number_field product.product_name , min: 1, placeholder: "quantity" ,size: "1x1"%></div>
+      </div>
     <% end %>
   </div>
   </br></br>
@@ -18,6 +16,9 @@
 <% end %>
 
  </br></br>
+
+<%# <div class="container text-center mt-5 text-bg-primary" style="padding: 3rem; border-radius:10px"> %>
+
 
 
 
