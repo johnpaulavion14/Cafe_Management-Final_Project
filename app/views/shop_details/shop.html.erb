@@ -1,21 +1,24 @@
-<h1>Welcome to Cafe Management App</h1>
-</br>
- <b>Enter Your Shop Details:</b>
+</br></br></br>
+<div class="container text-center">
+    <h1>Welcome to Cafe Management App</h1>
+    </br>
+    <h3 style="text-decoration:underline;text-decoration-thickness: 3px;">Enter Your Shop Details</h3>
+    </br>
+    <%= form_with url: "/shop_details/create_details" do |f| %>
 
-<%= form_with url: "/shop_details/create_details" do |f| %>
+        <%= f.text_field :shop_name , size: "10x1", placeholder: "name of your shop", required: true, format: { without: /\s/ }  %>
+        </br>
+        <i style="color: red"><%= notice == nil ? "" : notice.keys.include?("shop_name") ? notice["shop_name"].join(", ") : "" %></i>
+        </br>
+        <%= f.text_field :shop_location , size: "10x1", placeholder: "location of your shop", required: true %>
+        </br>
+        <i style="color: red"><%= notice == nil ? "" : notice.keys.include?("shop_location") ? notice["shop_location"].join(", ") : "" %></i>
+        </br>
+        <%= f.text_field :shop_number , size: "10x1", placeholder: "shop phone number", required: true ,value:'+63' %>
+        </br>
+        <i style="color: red"><%= notice == nil ? "" : notice.keys.include?("shop_number") ? notice["shop_number"].join(", ") : "" %></i>
+        </br>
+        <%= f.submit%>
 
-    <%= f.text_field :shop_name , size: "10x1", placeholder: "name of your shop", required: true, format: { without: /\s/ }  %>
-    </br>
-    <i style="color: red"><%= notice == nil ? "" : notice.keys.include?("shop_name") ? notice["shop_name"].join(", ") : "" %></i>
-    </br>
-    <%= f.text_field :shop_location , size: "10x1", placeholder: "location of your shop", required: true %>
-    </br>
-     <i style="color: red"><%= notice == nil ? "" : notice.keys.include?("shop_location") ? notice["shop_location"].join(", ") : "" %></i>
-    </br>
-    <%= f.text_field :shop_number , size: "10x1", placeholder: "shop phone number", required: true ,value:'+63' %>
-    </br>
-     <i style="color: red"><%= notice == nil ? "" : notice.keys.include?("shop_number") ? notice["shop_number"].join(", ") : "" %></i>
-    </br>
-    <%= f.submit%>
-
-<%end%>
+    <%end%>
+</div>
