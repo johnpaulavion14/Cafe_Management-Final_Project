@@ -9,8 +9,8 @@ gem "rails", "~> 7.0.4"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# Use postgres as the database for Active Record
+gem "pg"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -73,11 +73,9 @@ group :test do
   gem "webdrivers"
   gem 'rspec-rails'
 end
-gem "devise"
-gem "pg"
-
-gem 'carrierwave', '1.3.1'
-gem 'cloudinary', '~>1.13.2'
-gem 'rmagick'
-gem "chartkick"
-gem "groupdate"
+  gem "devise"
+  gem 'carrierwave', '1.3.1'
+  gem 'cloudinary', '~>1.13.2'
+  gem 'rmagick'
+  gem "chartkick"
+  gem "groupdate"

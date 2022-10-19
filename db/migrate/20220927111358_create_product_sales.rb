@@ -4,10 +4,11 @@ class CreateProductSales < ActiveRecord::Migration[7.0]
       t.string :product_name
       t.float :price
       t.integer :quantity
-      t.integer :user_id
+      t.float :total_price
+      t.integer :order_transaction_id
 
       t.timestamps
     end
-    add_index :product_sales, :user_id
+    add_index :product_sales, :order_transaction_id
   end
 end
