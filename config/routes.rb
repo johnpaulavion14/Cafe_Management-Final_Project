@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+
   get 'products/edit_all_products' , as:'edit_all_products'
   resources :products
-  devise_for :users
+  
   get 'dashboard/all_orders' , as:'all_orders'
   get 'dashboard/order_receipt' , as:'order_receipt'
   get 'dashboard/checkout' , as:'checkout'
