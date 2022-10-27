@@ -5,6 +5,7 @@
   <div class ="products d-flex w-100 flex-wrap ">
     <% @products.each do |product| %>
       <div class="w-25" style="height:150px">
+        <img style="width:100px; height:85px;" src="<%= product.image.to_s%>"/>
         <h3><%= product.product_name %></h3>
         price: &#8369;<%= sprintf('%.2f',product.price)%>
         <div><%= f.number_field product.product_name , min: 1, placeholder: "quantity" ,size: "1x1"%></div>

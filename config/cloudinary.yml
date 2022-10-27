@@ -1,9 +1,19 @@
+# development:
+#   cloud_name: ENV["CLOUD_NAME"]
+#   api_key: ENV["CLOUD_API_KEY"]
+#   api_secret: ENV["CLOUD_API_SECRET"]
+
+# production:
+#   cloud_name: ENV["CLOUD_NAME"]
+#   api_key: ENV["CLOUD_API_KEY"]
+#   api_secret: ENV["CLOUD_API_SECRET"]
+
 development:
-  cloud_name: "dazff5yba"
-  api_key: "934328263595753"
-  api_secret: "Fd5qM_1N9AJXeDY1bmjvpbliqD4"
+  cloud_name: 'dazff5yba'
+  api_key: '934328263595753'
+  api_secret: 'Fd5qM_1N9AJXeDY1bmjvpbliqD4'
 
 production:
-  cloud_name: "dazff5yba"
-  api_key: "934328263595753"
-  api_secret: "Fd5qM_1N9AJXeDY1bmjvpbliqD4"
+  cloud_name: 'dazff5yba'
+  api_key: '934328263595753'
+  api_secret: 'Fd5qM_1N9AJXeDY1bmjvpbliqD4'
