@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :products
   has_many :shop_details
-  has_many :order_transactions
-  has_many :product_sales, through: :order_transactions
+  has_many :orders
+  has_many :product_solds, through: :products
 
 end

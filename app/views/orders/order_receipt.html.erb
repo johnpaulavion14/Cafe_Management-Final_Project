@@ -1,0 +1,27 @@
+<h1>Order Receipt</h1>
+<h2><%= @Shop.shop_name %></h2>
+<h3><%= @Shop.shop_location %></h3>
+<b>phone#:<%= @Shop.shop_number %></b>
+</br>
+</b>
+<p>Date: <%= @Order.created_at.strftime("%b %d,%Y %I:%M%P")%></p>
+</br>
+
+<% @Orders.each do |order|%>
+  <p>Product: <%= order[:product_name] %></p>
+  <p>Current Price: &#8369;<%= sprintf('%.2f',order[:price]) %></p>
+  <p>Quantity: <%= order[:quantity] %></p>
+  <p>Price: &#8369;<%= sprintf('%.2f',order[:quantity] * order[:price]) %></p>
+  </br>
+<% end %>
+
+<p>Tax(12%) - <%= sprintf('%.2f',@Order.orders[-1][:tax])%></p>
+<p>Total Price: &#8369;<%= sprintf('%.2f',@Order.orders[-1][:total_price])%></p>
+  </br>
+<%= button_to 'Print Receipt' %>
+  </br>
+
+<%= button_to 'go back to products' , products_path, method: :get%>
+
+
+

@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
     mount_uploader :image, ImgUploader
     belongs_to :user
+    has_many :product_solds
 
     validates :product_name,:price, presence: true
     validates :price, numericality: true

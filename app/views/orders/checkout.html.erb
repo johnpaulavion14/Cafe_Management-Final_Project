@@ -1,0 +1,31 @@
+</br>
+<h2>Checkout</h2>
+</br>
+
+<%= form_with url: "/orders/checkout" ,method: :get do |f| %>
+
+  <% @Checkout.each_with_index do |product,idx|%>
+    <b><%= product.keys[0]%></b>
+    <%= f.number_field product.keys[0], value: product.values[0].to_i, min: 1, size: "1x1"%> x
+    <span>&#8369;<%= sprintf('%.2f',@Price_array[idx]).to_s %></span>  -  
+    <b>&#8369;<%= sprintf('%.2f',@Price_product[idx]).to_s %></b>
+    </br></br>
+  <% end %>
+
+<p>Tax(12%) - &#8369;<%= sprintf('%.2f',@Tax)%></p>
+<b style="text-decoration:underline;text-decoration-thickness: 2px;">Total Price: &#8369;<%= sprintf('%.2f',@Total_price).to_s %></b>
+</br></br>
+
+<%= f.submit "Place Order"%>
+<% end %>
+</br>
+<%= form_with url: "/orders/create_order" do |f| %>
+  <% @Checkout.each_with_index do |product,idx| %>
+    <%= f.hidden_field product.keys[0], value: product.values[0].to_i %>
+  <% end %>
+  <%= f.submit 'Submit' %>
+<% end %>
+
+
+</br></br></br>
+<%= button_to 'go back',products_path, method: :get%>
