@@ -80,3 +80,4 @@ end
   gem 'rmagick'
   gem "chartkick"
   gem "groupdate"
+  gem 'ransack'

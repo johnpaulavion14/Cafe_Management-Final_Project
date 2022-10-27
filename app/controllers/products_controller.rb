@@ -59,7 +59,10 @@ class ProductsController < ApplicationController
   end
 
   def edit_all_products
-    @products = current_user.products.all
+    @q = current_user.products.ransack(params[:q])
+    @products = @q.result(distinct: true)
+
+    # @products = current_user.products.all
   end
 
   private
