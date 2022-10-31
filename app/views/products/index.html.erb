@@ -26,7 +26,7 @@
       <% @products.each do |product| %>
         <div class="w-25" style="height:200px">
           <img style="width:100px; height:85px;" src="<%= product.image.to_s%>"/>
-          <h3><%= product.product_name %></h3>
+          <h3 class="text-capitalize"><%= product.product_name %></h3>
           <i>price: &#8369;<%= sprintf('%.2f',product.price)%></i>
           <div><%= f.number_field product.product_name , min: 1, placeholder: "quantity" ,size: "1x1"%></div>
         </div>

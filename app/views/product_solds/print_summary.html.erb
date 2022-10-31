@@ -1,31 +1,62 @@
 <h1>Summary Receipt</h1>
-<h2><%= @Shop.shop_name %></h2>
-<h3><%= @Shop.shop_location %></h3>
-<b>phone#:<%= @Shop.shop_number %></b>
+<div class="bg-secondary w-50 rounded mx-auto mt-3 p-3" style=" --bs-bg-opacity: .15;">
+  <h2 class="text-capitalize"><%= @Shop.shop_name %></h2>
+  <h3 class="text-capitalize"><%= @Shop.shop_location %></h3>
+  <b>phone#:<%= @Shop.shop_number %></b>
+  </br>
+  </b>
+  <i>Date: <%= @start_date.strftime("%b %d,%Y %I:%M%P") %> -
+              <%= @end_date.strftime("%b %d,%Y %I:%M%P") %>
+  </i> 
+  </br></br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">QTY</th>
+        <th scope="col">PRODUCT</th>
+        <th scope="col">UNIT PRICE</th>
+        <th scope="col">AMOUNT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @Summary.each do |product|%>
+      <tr>
+        <td><%= product.quantity %></td>
+        <td><%= product.product_name %></td>
+        <td>&#8369;<%= sprintf('%.2f',product.price) %></td>
+        <td>&#8369;<%= sprintf('%.2f',product.total_price/1.12) %></td>
+      </tr>
+      <% end %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>      
+      <tr>
+        <td></td>
+        <td></td>
+        <td><i>Subtotal</i></td>
+        <td><i>&#8369;<%= sprintf('%.2f',@Total_income/1.12) %></i></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><i>Sales Tax(12%)</i></td>
+        <td><i>&#8369; <%= sprintf('%.2f',@Total_tax) %></i></td>
+      </tr>     
+      <tr>
+        <td></td>
+        <td></td>
+        <td><b>TOTAL</b></td>
+        <td><b>&#8369;<%= sprintf('%.2f',@Total_income) %></b></td>
+      </tr>         
+    </tbody>
+  </table>
+</div>
 </br>
-</b>
-
-<span>Date: <%= @start_date.strftime("%b %d,%Y %I:%M%P") %> -
-            <%= @end_date.strftime("%b %d,%Y %I:%M%P") %>
-</span> 
+<%= button_to 'Print Receipt',sold_products_path,method: :get, class:"btn btn-warning" %>
 </br>
-
-<% @Summary.each do |product|%>
-  <p>Product: <%= product.product_name %></p>
-  <p> Price: &#8369;<%= sprintf('%.2f',product.price) %></p>
-  <p>Quantity: <%= product.quantity %></p>
-  <p>Tax(12%): &#8369; <%= sprintf('%.2f',product.tax) %></p>
-  <p>Total Price: &#8369;<%= sprintf('%.2f',product.total_price) %></p>
-  </br>
-<% end %>
-
-<p>Total Quantity: <%= @Total_quantity%></p>
-<p>Total Tax(12%): &#8369;<%= sprintf('%.2f',@Total_tax) %></p>
-<p>Total Income: &#8369;<%= sprintf('%.2f',@Total_income) %></p>
-  </br>
-<%= button_to 'Print Receipt' %>
-  </br>
-
-<%= link_to 'go back' , sold_products_path({start:@start_date, end:@end_date})%>
-
+<%= link_to 'go back' , sold_products_path({start:@start_date, end:@end_date}),class:"btn btn-danger"%>
+</br></br>
 
