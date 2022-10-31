@@ -117,8 +117,6 @@ class OrdersController < ApplicationController
       order_array[1] = total_income_graph
       @Order_chart.push(order_array)      
     end
-    @qwe = @Order_chart
-
   end
 
   def delete_order
@@ -128,8 +126,9 @@ class OrdersController < ApplicationController
       format.html { redirect_to all_orders_path, notice: "Order was successfully destroyed." }
       format.json { head :no_content }
     end
-
-    current_user.product_solds.where(product_id: params[:id]).destroy_all
+    date = Time.parse(params[:date])
+    current_user.product_solds.where(created_at: date..date + 2.seconds).destroy_all
+   
   end
 
   private

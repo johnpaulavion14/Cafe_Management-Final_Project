@@ -13,7 +13,6 @@ class ShopDetailsController < ApplicationController
 
       respond_to do |format|
         if @shop.save
-          format.html { redirect_to products_path, notice: "Shop detail was successfully created." }
         else
           format.html { redirect_to shop_path, notice: @shop.errors }
         end
