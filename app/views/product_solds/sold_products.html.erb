@@ -1,17 +1,26 @@
 <h2>Top Product Sold</h2>
+<div class="d-flex align-items-center">
+  <div class="w-25 d-flex">
+    <%= button_to 'Sort Today',sold_products_path({start:Date.today, end:Date.today+1}), method: :get, class:"btn btn-success mx-2" %>
+    <%= link_to 'Sort All Products Sold',sold_products_path({start:@begin, end:@last}), method: :get, class:"btn btn-success mx-2"%>      
+  </div>
+  
+  <div class="w-50">
+    <div class="w-75 bg-secondary mx-auto py-2 rounded" style=" --bs-bg-opacity: .15;">
+      <%= form_with url: "/product_solds/sold_products",method: :get do |f| %>
+        <%= f.label "start" %>
+        <%= f.date_field :start, value: @start_date%>
+        <span> -- </span>
+        <%= f.label "end" %>
+        <%= f.date_field :end, value: @end_date%>
+        <%= f.submit 'Sort', class:"btn btn-success" %>
+      <% end %>    
+    </div>
+  </div>
 
-<%= button_to 'Today',sold_products_path({start:Date.today, end:Date.today+1}), method: :get %>
-<%= link_to 'All Products Sold',sold_products_path({start:@begin, end:@last}), method: :get%>
-</br></br>
-
-<%= form_with url: "/product_solds/sold_products",method: :get do |f| %>
-  <%= f.label "start" %>
-  <%= f.date_field :start, value: @start_date%>
-  <span> -- </span>
-  <%= f.label "end" %>
-  <%= f.date_field :end, value: @end_date%>
-  <%= f.submit 'Sort' %>
-<% end %>
+  <div class="w-25">
+  </div>        
+</div>
 
 <table class="table">
   <thead>
@@ -45,14 +54,13 @@
         <td><b>Total Price: &#8369;<%= sprintf('%.2f',@Total_Price) %></b></td> 
       </tr>    
     </tbody>
-
   <% else %>
     <tbody>
       <tr>
         <td></td>
         <td></td>
         <td></td>
-        <td><h1>No Data</h1></td>
+        <td><h1 class="text-secondary" >No Data</h1></td>
         <td></td>
         <td></td>
       </tr>

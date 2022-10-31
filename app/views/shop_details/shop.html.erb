@@ -1,24 +1,25 @@
 </br></br></br>
-<div class="container text-center">
+<div class="container text-center  bg-secondary w-50 d-flex flex-column justify-content-center mx-auto rounded px-3 py-5" style=" --bs-bg-opacity: .15;">
     <h1>Welcome to Cafe Management App</h1>
     </br>
-    <h3 style="text-decoration:underline;text-decoration-thickness: 3px;">Enter Your Shop Details</h3>
+    <h3 class="my-3" style="text-decoration:underline;text-decoration-thickness: 3px;">Enter Your Shop Details</h3>
     </br>
     <%= form_with url: "/shop_details/create_details" do |f| %>
 
-        <%= f.text_field :shop_name , size: "10x1", placeholder: "name of your shop", required: true, format: { without: /\s/ }  %>
+        <%= f.text_field :shop_name , size: "10x1", placeholder: "Name of your shop", required: true, format: { without: /\s/ }  %>
         </br>
-        <i style="color: red"><%= notice.class == String ? "" : notice.keys.include?("shop_name") ? notice["shop_name"].join(", ") : "" %></i>
+        <i style="color: red"><%= notice.class == String || notice == nil ? "" : notice.keys.include?("shop_name") ? notice["shop_name"].join(", ") : "" %></i>
         </br>
-        <%= f.text_field :shop_location , size: "10x1", placeholder: "location of your shop", required: true %>
+        <%= f.text_field :shop_location , size: "10x1", placeholder: "Location of your shop", required: true %>
         </br>
-        <i style="color: red"><%= notice.class == String ? "" : notice.keys.include?("shop_location") ? notice["shop_location"].join(", ") : "" %></i>
+        <i style="color: red"><%= notice.class == String || notice == nil ? "" : notice.keys.include?("shop_location") ? notice["shop_location"].join(", ") : "" %></i>
         </br>
-        <%= f.text_field :shop_number , size: "10x1", placeholder: "shop phone number", required: true ,value:'+63' %>
+        <%= f.text_field :shop_number , size: "10x1", placeholder: "Shop phone number", required: true ,value:'+63' %>
         </br>
-        <i style="color: red"><%= notice.class == String ? "" : notice.keys.include?("shop_number") ? notice["shop_number"].join(", ") : "" %></i>
+        <i style="color: red"><%= notice.class == String || notice == nil ? "" : notice.keys.include?("shop_number") ? notice["shop_number"].join(", ") : "" %></i>
         </br>
-        <%= f.submit%>
+        
+        <%= f.submit "PROCEED" , class:"btn btn-outline-success"%>
 
     <%end%>
 </div>

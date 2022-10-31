@@ -1,9 +1,19 @@
-<h1>New product</h1>
+<div class="bg-warning w-50 rounded mx-auto mt-3 p-5" style=" --bs-bg-opacity: .75;">
+  <h1 class="mb-3">New product</h1>
 
-<%= render "form", product: @product %>
+  <% if notice  %>
+    <div class="alert alert-success"><%= notice %></div>
+  <% end %>
 
-<br>
+  <% if alert  %>
+    <div class="alert alert-danger"><%= alert %></div>
+  <% end %>
 
-<div>
-  <%= button_to "Back to products", products_path, method: :get %>
+  <%= render "form", product: @product %>
+
+  <br>
+
+  <div>
+    <%= button_to "Back to products", products_path, method: :get, class:"btn btn-danger" %>
+  </div>
 </div>

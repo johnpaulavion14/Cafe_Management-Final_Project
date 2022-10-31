@@ -1,5 +1,9 @@
 <h2>Edit Products</h2>
-<p style="color: green"><%= notice %></p>
+
+<% if notice  %>
+  <div class="alert alert-danger"><%= notice %></div>
+<% end %>
+
 <table class="table">
   <thead>
     <tr>
@@ -16,8 +20,8 @@
           <td><%= idx + 1%> </td>
           <td><%= product.product_name%> </td>
           <td>&#8369;<%= sprintf('%.2f',product.price)%> </td>
-          <td><%= link_to "Edit", edit_product_path(product.id) %></td>
-          <td><%= button_to "Delete", product_path(product.id), method: :delete %></td>
+          <td><%= link_to "Edit", edit_product_path(product.id), class:"btn btn-warning" %></td>
+          <td><%= button_to "Delete", product_path(product.id), method: :delete, class:"btn btn-danger" %></td>
         </tr>
     <%end%>
   </tbody>
@@ -26,5 +30,5 @@
 
 </br></br>
 <div>
-  <%= button_to "Back to products", products_path, method: :get %>
+  <%= button_to "Back to products", products_path, method: :get , class:"btn btn-primary"%>
 </div>

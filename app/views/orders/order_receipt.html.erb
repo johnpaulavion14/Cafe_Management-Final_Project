@@ -1,27 +1,70 @@
 <h1>Order Receipt</h1>
-<h2><%= @Shop.shop_name %></h2>
-<h3><%= @Shop.shop_location %></h3>
-<b>phone#:<%= @Shop.shop_number %></b>
+<div class="bg-secondary w-50 rounded mx-auto mt-3 p-3" style=" --bs-bg-opacity: .15;">
+  <h2 class="text-capitalize"><%= @Shop.shop_name %></h2>
+  <h3 class="text-capitalize"><%= @Shop.shop_location %></h3>
+  <b>phone#:<%= @Shop.shop_number %></b>
+  </br>
+  <i>Date: <%= @Order.created_at.strftime("%b %d,%Y %I:%M%P")%></i>
+  </br></br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">QTY</th>
+        <th scope="col">PRODUCT</th>
+        <th scope="col">UNIT PRICE</th>
+        <th scope="col">AMOUNT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @Orders.each do |order|%>
+      <tr>
+        <td><%= order[:quantity] %></td>
+        <td><%= order[:product_name] %></td>
+        <td>&#8369;<%= sprintf('%.2f',order[:price]) %></td>
+        <td>&#8369;<%= sprintf('%.2f',order[:quantity] * order[:price]) %></td>
+      </tr>
+      <% end %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>      
+      <tr>
+        <td></td>
+        <td></td>
+        <td><i>Subtotal</i></td>
+        <td><i>&#8369;<%= sprintf('%.2f',@Order.orders[-1][:total_price]/1.12)%></i></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td><i>Sales Tax(12%)</i></td>
+        <td><i><%= sprintf('%.2f',@Order.orders[-1][:tax])%></i></td>
+      </tr>     
+      <tr>
+        <td></td>
+        <td></td>
+        <td><b>TOTAL</b></td>
+        <td><b>&#8369;<%= sprintf('%.2f',@Order.orders[-1][:total_price])%></b></td>
+      </tr>         
+    </tbody>
+  </table>
+</div>
 </br>
-</b>
-<p>Date: <%= @Order.created_at.strftime("%b %d,%Y %I:%M%P")%></p>
-</br>
-
-<% @Orders.each do |order|%>
-  <p>Product: <%= order[:product_name] %></p>
-  <p>Current Price: &#8369;<%= sprintf('%.2f',order[:price]) %></p>
-  <p>Quantity: <%= order[:quantity] %></p>
-  <p>Price: &#8369;<%= sprintf('%.2f',order[:quantity] * order[:price]) %></p>
+<% if params[:back_to_allorders]%>
+  <%= button_to 'Print Receipt', all_orders_path,method: :get,class:"btn btn-warning" %>
+  </br>
+  <%= button_to 'go back to products' , all_orders_path, method: :get, class:"btn btn-danger"%>
+  </br>
+<% else %>
+  <%= button_to 'Print Receipt', products_path,method: :get,class:"btn btn-warning" %>
+  </br>
+  <%= button_to 'go back to products' , products_path, method: :get, class:"btn btn-danger"%>
   </br>
 <% end %>
 
-<p>Tax(12%) - <%= sprintf('%.2f',@Order.orders[-1][:tax])%></p>
-<p>Total Price: &#8369;<%= sprintf('%.2f',@Order.orders[-1][:total_price])%></p>
-  </br>
-<%= button_to 'Print Receipt' %>
-  </br>
 
-<%= button_to 'go back to products' , products_path, method: :get%>
 
 
 

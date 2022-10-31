@@ -1,17 +1,30 @@
 <h2>All Orders</h2>
-<p style="color: green"><%= notice %></p>
 
-<%= button_to 'Today',all_orders_path({start:Date.today, end:Date.today+1}), method: :get%>
-</br>
-
-<%= form_with url: "/orders/all_orders",method: :get do |f| %>
-  <%= f.label "start" %>
-  <%= f.date_field :start, value: @start_date%>
-  <span> -- </span>
-  <%= f.label "end" %>
-  <%= f.date_field :end, value: @end_date%>
-  <%= f.submit 'Sort' %>
+<% if notice  %>
+  <div class="alert alert-danger"><%= notice %></div>
 <% end %>
+    
+<div class="d-flex align-items-center">
+    <div class="w-25">
+      <%= button_to 'Sort Today',all_orders_path({start:Date.today, end:Date.today+1}), method: :get, class:"btn btn-success" %>
+    </div>
+
+    <div class="w-50">
+      <div class="w-75 bg-secondary mx-auto py-2 rounded" style=" --bs-bg-opacity: .15;">
+        <%= form_with url: "/orders/all_orders",method: :get do |f| %>
+          <%= f.label "start" %>
+          <%= f.date_field :start, value: @start_date%>
+          <span> -- </span>
+          <%= f.label "end" %>
+          <%= f.date_field :end, value: @end_date%>
+          <%= f.submit 'Sort', class:"btn btn-success" %>
+        <% end %>  
+      </div>  
+    </div>
+
+    <div class="w-25">
+    </div>        
+</div>
 
 <table class="table">
   <thead>
@@ -26,36 +39,54 @@
     </tr>
   </thead>
   <tbody>
-  <% @Orders.each_with_index do |order,idx|%>
+
+    <% if @Orders.length == 0%>
+      <tbody>
         <tr>
-          <td><%= idx + 1%> </td>
-          <td>
-          <% order[0].each_with_index do |x,idx|%>
-            <% if x.keys[0] != :total_price %>
-              <%=x[:product_name] %>
-              (&#8369;<%=sprintf('%.2f',x[:price])%> x
-              <%=x[:quantity]%>)
-              <%= order[0].length != idx+2 ? ',' : '' %>    
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><h1 class="text-secondary" >No Data</h1></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+
+    <% else %>
+
+      <% @Orders.each_with_index do |order,idx|%>   
+          <tr>
+            <td><%= idx + 1%> </td>
+            <td>
+            <% order[0].each_with_index do |x,idx|%>
+              <% if x.keys[0] != :total_price %>
+                <%=x[:product_name] %>
+                (&#8369;<%=sprintf('%.2f',x[:price])%> x
+                <%=x[:quantity]%>)
+                <%= order[0].length != idx+2 ? ',' : '' %>    
+              <% end %>
             <% end %>
-          <% end %>
-          
-          </td>
-          <td>&#8369;<%= sprintf('%.2f',order[0][order[0].length-1][:total_price])%> </td>
-          <td>&#8369;<%= sprintf('%.2f',order[0][order[0].length-1][:tax])%> </td>
-          <td><%= link_to 'print_receipt', order_receipt_path({id:order[2]})%> </td>
-          <td><%= order[1].strftime("%I:%M%p/%b %d")%></td>
-          <td><%= button_to 'delete',delete_order_path({id:order[2]}),method: :delete %></td> 
-        </tr>
-    <%end%>
-        <tr>
-          <td></td>
-          <td></td>
-          <td><b>Total Income: <p>&#8369;<%= sprintf('%.2f',@Total_income)%></p></b></td>
-          <td><b>Total Tax: <p>&#8369;<%= sprintf('%.2f',@Total_tax)%></p></b></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+            </td>
+            <td>&#8369;<%= sprintf('%.2f',order[0][order[0].length-1][:total_price])%> </td>
+            <td>&#8369;<%= sprintf('%.2f',order[0][order[0].length-1][:tax])%> </td>
+            <td><%= link_to 'print_receipt', order_receipt_path({id:order[2], back_to_allorders:"ok"}), class:"btn btn-warning"%> </td>
+            <td><%= order[1].strftime("%I:%M%p/%b %d")%></td>
+            <td><%= button_to 'delete',delete_order_path({id:order[2]}),method: :delete %></td> 
+          </tr>
+      <%end%>
+
+          <tr>
+            <td></td>
+            <td></td>
+            <td><b>Total Income: <p>&#8369;<%= sprintf('%.2f',@Total_income)%></p></b></td>
+            <td><b>Total Tax: <p>&#8369;<%= sprintf('%.2f',@Total_tax)%></p></b></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>  
+
+    <% end %> 
+
   </tbody>
 </table>
 </br>

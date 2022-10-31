@@ -5,7 +5,7 @@ class ProductSoldsController < ApplicationController
     @Map_products = []
     params_keys = params.keys
     @begin = current_user.product_solds.first == nil ? Date.today : current_user.product_solds.first.created_at
-    @last = current_user.product_solds.last == nil ? Date.today + 1  : current_user.product_solds.last.created_at
+    @last = current_user.product_solds.last == nil ? Date.today + 1  : current_user.product_solds.last.created_at.to_date + 1
 
     if params_keys.include?("start") && params_keys.include?("end")
       @start_date = Date.parse params[:start] 

@@ -27,10 +27,10 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to products_path, notice: "Product was successfully created." }
+        format.html { redirect_to new_product_path, notice: "Product was successfully created." }
         format.json { render :show, status: :created, location: @product }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to new_product_path, alert: "Product name has already been taken" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to edit_product_path(@product), notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { redirect_to edit_product_path(@product), alert: "Product name has already been taken" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end

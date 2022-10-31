@@ -129,8 +129,7 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
 
-    current_user.product_solds.where(order_transaction_id: params[:id]).destroy_all
-
+    current_user.product_solds.where(product_id: params[:id]).destroy_all
   end
 
   private

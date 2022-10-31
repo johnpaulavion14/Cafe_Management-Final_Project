@@ -1,5 +1,4 @@
 <div class="container text-center mt-5 text-bg-primary" style="padding: 3rem; border-radius:10px">
-<h1 style="text-decoration:underline;text-decoration-thickness: 5px;">Cafe Management App</h1>
 
 <% if params[:user_notice]  %>
   <div class="alert alert-info">
@@ -7,13 +6,15 @@
   </div>
 <% end %>
 
+<h1 style="text-decoration:underline;text-decoration-thickness: 5px;">Cafe Management App</h1>
 <div class="row">
     <div class="col">
-        <h1>Welcome!</h1>
-        <%= button_to "Log In", shop_path, method: :get%>
-        </br>
-        <%= button_to "Register", new_user_registration_path, method: :get%>
+        <h1 class="my-5">Welcome!</h1>
+        <div class="w-50 mx-auto d-flex justify-content-center">
+          <%= button_to "Log In", shop_path, method: :get, class:"btn btn-success mx-2"%>
+          <%= button_to "Register", new_user_registration_path, method: :get, class:"btn btn-danger mx-2" %>
+        </div>
     </div>
-
   </div>
+  
 </div>
