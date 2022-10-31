@@ -1,0 +1,31 @@
+<h1>Summary Receipt</h1>
+<h2><%= @Shop.shop_name %></h2>
+<h3><%= @Shop.shop_location %></h3>
+<b>phone#:<%= @Shop.shop_number %></b>
+</br>
+</b>
+
+<span>Date: <%= @start_date.strftime("%b %d,%Y %I:%M%P") %> -
+            <%= @end_date.strftime("%b %d,%Y %I:%M%P") %>
+</span> 
+</br>
+
+<% @Summary.each do |product|%>
+  <p>Product: <%= product.product_name %></p>
+  <p> Price: &#8369;<%= sprintf('%.2f',product.price) %></p>
+  <p>Quantity: <%= product.quantity %></p>
+  <p>Tax(12%): &#8369; <%= sprintf('%.2f',product.tax) %></p>
+  <p>Total Price: &#8369;<%= sprintf('%.2f',product.total_price) %></p>
+  </br>
+<% end %>
+
+<p>Total Quantity: <%= @Total_quantity%></p>
+<p>Total Tax(12%): &#8369;<%= sprintf('%.2f',@Total_tax) %></p>
+<p>Total Income: &#8369;<%= sprintf('%.2f',@Total_income) %></p>
+  </br>
+<%= button_to 'Print Receipt' %>
+  </br>
+
+<%= link_to 'go back' , sold_products_path({start:@start_date, end:@end_date})%>
+
+

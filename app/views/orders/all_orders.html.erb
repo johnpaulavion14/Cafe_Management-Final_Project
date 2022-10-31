@@ -4,7 +4,7 @@
 <%= button_to 'Today',all_orders_path({start:Date.today, end:Date.today+1}), method: :get%>
 </br>
 
-<%= form_with url: "/dashboard/all_orders",method: :get do |f| %>
+<%= form_with url: "/orders/all_orders",method: :get do |f| %>
   <%= f.label "start" %>
   <%= f.date_field :start, value: @start_date%>
   <span> -- </span>

@@ -4,6 +4,7 @@ class CreateProductSolds < ActiveRecord::Migration[7.0]
       t.string :product_name
       t.float :price
       t.integer :quantity
+      t.float :tax
       t.float :total_price
       t.integer :product_id
 
