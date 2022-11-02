@@ -1,25 +1,26 @@
 </br></br></br>
-<div class="container text-center  bg-secondary w-50 d-flex flex-column justify-content-center mx-auto rounded px-3 py-5" style=" --bs-bg-opacity: .15;">
-    <h1>Welcome to Cafe Management App</h1>
-    </br>
-    <h3 class="my-3" style="text-decoration:underline;text-decoration-thickness: 3px;">Enter Your Shop Details</h3>
-    </br>
-    <%= form_with url: "/shop_details/create_details" do |f| %>
+<div class="container text-center  bg-primary w-50 d-flex flex-column justify-content-center mx-auto rounded px-3 py-5">
+    <span style="font-family:'Lobster',cursive; font-size: 1.5rem">Welcome! <%=current_user.email%> to</span>
+    <h1 style="font-family:'Lobster',cursive; font-size: 4rem">Cafe Management App</h1>
 
-        <%= f.text_field :shop_name , size: "10x1", placeholder: "Name of your shop", required: true, format: { without: /\s/ }  %>
-        </br>
-        <i style="color: red"><%= notice.class == String || notice == nil ? "" : notice.keys.include?("shop_name") ? notice["shop_name"].join(", ") : "" %></i>
-        </br>
-        <%= f.text_field :shop_location , size: "10x1", placeholder: "Location of your shop", required: true %>
-        </br>
-        <i style="color: red"><%= notice.class == String || notice == nil ? "" : notice.keys.include?("shop_location") ? notice["shop_location"].join(", ") : "" %></i>
-        </br>
-        <%= f.text_field :shop_number , size: "10x1", placeholder: "Shop phone number", required: true ,value:'+63' %>
-        </br>
-        <i style="color: red"><%= notice.class == String || notice == nil ? "" : notice.keys.include?("shop_number") ? notice["shop_number"].join(", ") : "" %></i>
-        </br>
-        
-        <%= f.submit "PROCEED" , class:"btn btn-outline-success"%>
+    <div class="py-4 w-75 mx-auto" style="border: 5px solid black; border-radius: 8px; ">
+        <h3 class="mb-3" style="text-decoration:underline;text-decoration-thickness: 3px;">Enter Your Shop Details</h3>
+        <%= form_with url: "/shop_details/create_details" do |f| %>
 
-    <%end%>
+            <%= f.text_field :shop_name , size: "10x1", placeholder: "Name of your shop", required: true, format: { without: /\s/ }  %>
+            </br>
+            <i style="color: red"><%= notice.class == String || notice == nil ? "" : notice.keys.include?("shop_name") ? notice["shop_name"].join(", ") : "" %></i>
+            </br>
+            <%= f.text_field :shop_location , size: "10x1", placeholder: "Location of your shop", required: true %>
+            </br>
+            <i style="color: red"><%= notice.class == String || notice == nil ? "" : notice.keys.include?("shop_location") ? notice["shop_location"].join(", ") : "" %></i>
+            </br>
+            <%= f.text_field :shop_number , size: "10x1", placeholder: "Shop phone number", required: true ,value:'+63' %>
+            </br>
+            <i style="color: red"><%= notice.class == String || notice == nil ? "" : notice.keys.include?("shop_number") ? notice["shop_number"].join(", ") : "" %></i>
+            </br>
+            
+            <%= f.submit "PROCEED" , class:"btn btn-success"%>
+        <%end%>
+    </div>
 </div>

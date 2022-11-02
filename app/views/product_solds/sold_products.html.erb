@@ -1,4 +1,4 @@
-<h2>Top Product Sold</h2>
+<h2 style="font-family:'Lobster',cursive; font-size: 3rem">Top Product Sold</h2>
 <div class="d-flex align-items-center">
   <div class="w-25 d-flex">
     <%= button_to 'Sort Today',sold_products_path({start:Date.today, end:Date.today+1}), method: :get, class:"btn btn-success mx-2" %>
