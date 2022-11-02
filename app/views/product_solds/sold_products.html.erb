@@ -38,7 +38,7 @@
     <% @Sold_products.each_with_index do |product,idx| %>
       <tr>
         <td><%= idx + 1%> </td>
-        <td><%= product[:product_name]%></td>
+        <td class="text-capitalize"><%= product[:product_name]%></td>
         <td>&#8369;<%= sprintf('%.2f',product[:price]) %></td>
         <td><%= product[:quantity] %></td>
         <td>&#8369;<%= sprintf('%.2f',product[:tax])%></td>

@@ -19,7 +19,7 @@
       <% @Orders.each do |order|%>
       <tr>
         <td><%= order[:quantity] %></td>
-        <td><%= order[:product_name] %></td>
+        <td class="text-capitalize"><%= order[:product_name] %></td>
         <td>&#8369;<%= sprintf('%.2f',order[:price]) %></td>
         <td>&#8369;<%= sprintf('%.2f',order[:quantity] * order[:price]) %></td>
       </tr>

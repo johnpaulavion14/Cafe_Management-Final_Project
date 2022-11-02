@@ -22,7 +22,7 @@
       <% @Summary.each do |product|%>
       <tr>
         <td><%= product.quantity %></td>
-        <td><%= product.product_name %></td>
+        <td class="text-capitalize"><%= product.product_name %></td>
         <td>&#8369;<%= sprintf('%.2f',product.price) %></td>
         <td>&#8369;<%= sprintf('%.2f',product.total_price/1.12) %></td>
       </tr>
