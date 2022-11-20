@@ -22,7 +22,6 @@ class ProductSoldsController < ApplicationController
     current_user.total_sold_products.all.destroy_all
 
     array_product_names.each do |name|
-
       product_name = name
       quantity = day.where(product_name: name).pluck(:quantity).reduce(:+)
       price = day.where(product_name: name).last.price
@@ -31,7 +30,6 @@ class ProductSoldsController < ApplicationController
 
       product_sold = current_user.total_sold_products
       product_sold.create(product_name:product_name,quantity:quantity,price:price,tax: tax, total_price: total_price)
-
 
       #Graph Sold Products
       graph_details = {}

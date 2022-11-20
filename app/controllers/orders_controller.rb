@@ -14,18 +14,18 @@ class OrdersController < ApplicationController
     product_names.slice!(0,1)
 
     product_names.each do |x|
-        product_name = x
-        quantity = params[x].to_i
-        price = products.find_by(product_name:x).price
+      product_name = x
+      quantity = params[x].to_i
+      price = products.find_by(product_name:x).price
 
-        order_details = {}
-        order_details[:product_name] = product_name
-        order_details[:quantity] = quantity
-        order_details[:price] = price
+      order_details = {}
+      order_details[:product_name] = product_name
+      order_details[:quantity] = quantity
+      order_details[:price] = price
 
-        product_price.push(quantity * price)
-  
-        order_arrays.push(order_details)
+      product_price.push(quantity * price)
+
+      order_arrays.push(order_details)
     end
 
     @Tax = product_price.reduce(:+) * 0.12
@@ -51,9 +51,7 @@ class OrdersController < ApplicationController
       product_sold = current_user.products.find_by(product_name: x).product_solds
 
       product_sold.create(product_name:product_name,quantity:quantity,price:price,tax: tax, total_price: total_price)
-
     end
-
   end
 
   def order_receipt
@@ -128,7 +126,6 @@ class OrdersController < ApplicationController
     end
     date = Time.parse(params[:date])
     current_user.product_solds.where(created_at: date..date + 2.seconds).destroy_all
-   
   end
 
   private

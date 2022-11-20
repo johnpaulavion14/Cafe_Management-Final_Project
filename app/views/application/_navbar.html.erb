@@ -3,20 +3,19 @@
 
     <div class="col d-flex flex-column justify-content-center">
       <i id="welcome" class="text-white"><%="Welcome, " + current_user.email+' !'%></i>
-
     </div>
 
     <div class="col-6 d-flex justify-content-center">
       <nav class="navbar text-white">
         <ul class="nav nav-pills d-flex justify-content-around w-100" id="nav_bar">
           <li class="nav-item">
-              <%= link_to "All Products", products_path, class:"nav-link #{'active' if current_page?(products_path)}" %>
+            <%= link_to "All Products", products_path, class:"nav-link #{'active' if current_page?(products_path)}" %>
           </li>
           <li class="nav-item">
-              <%= link_to "All Orders",  all_orders_path, class:"nav-link #{'active' if current_page?(all_orders_path)}"%>
+            <%= link_to "All Orders",  all_orders_path, class:"nav-link #{'active' if current_page?(all_orders_path)}"%>
           </li>
           <li class="nav-item">
-              <%= link_to "Sold Products",sold_products_path, class:"nav-link #{'active' if current_page?(sold_products_path)}" %>
+            <%= link_to "Sold Products",sold_products_path, class:"nav-link #{'active' if current_page?(sold_products_path)}" %>
           </li>
         </ul>
       </nav>
@@ -24,14 +23,7 @@
 
     <div class="col d-flex flex-column justify-content-center">
       <%= button_to "Log Out", destroy_user_session_path, method: :delete, class:"btn btn-outline-danger", id:"logout" %>
-    </div>    
+    </div>
     
   </div>
 </div>
-
-
-
-
-
-
-

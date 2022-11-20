@@ -2,7 +2,6 @@
   <% if product.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
       <ul>
         <% product.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -25,10 +24,8 @@
     <%= form.label :image, style: "display: block; font-weight: bold;" %>
     <%= form.file_field :image , style: "margin-left: 70px" %>
   </div>  
-
   </br>
   </br>
-
   <% if current_page?(new_product_path) %>
     <div >
       <%= form.submit "Create Product", class:"btn btn-success", id:"create_new_product" %>
@@ -38,5 +35,4 @@
       <%= form.submit "Update Product", class:"btn btn-success", id:"create_new_product" %>
     </div>    
   <% end %>
-
 <% end %>

@@ -1,40 +1,40 @@
 <h2 id="edit_products_title">Edit Products</h2>
 <div class ="w-100 border-none rounded bg-secondary" style=" --bs-bg-opacity: .15; min-height: 570px;">
-<% if notice  %>
-  <div class="alert alert-danger"><%= notice %></div>
-<% end %>
+  <% if notice  %>
+    <div class="alert alert-danger"><%= notice %></div>
+  <% end %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col" style="color:black"><%= sort_link(@q, :product_name, 'Product Name', default_order: :asc) %></th>
-      <th scope="col"><%= sort_link(@q, :price, 'Price', default_order: :asc) %></th>
-      <th scope="col"></th>
-      <th scope="col"></th>
-    </tr>
-  </thead>
-  <tbody>
-      <% @products.each_with_index do |product,idx|%>
-        <tr class="align-middle">
-          <td><%= idx + 1%> </td>
-          <td class="text-capitalize"><%= product.product_name%> </td>
-          <td>&#8369;<%= sprintf('%.2f',product.price)%> </td>
-          <td><%= link_to "Edit", edit_product_path(product.id), class:"btn btn-warning py-1" %></td>
-          <td><%= button_to "Delete", product_path(product.id), method: :delete, class:"btn btn-danger py-1" %></td>
-        </tr>
-      <% end %>
-  </tbody>
-</table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" style="color:black"><%= sort_link(@q, :product_name, 'Product Name', default_order: :asc) %></th>
+        <th scope="col"><%= sort_link(@q, :price, 'Price', default_order: :asc) %></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @products.each_with_index do |product,idx|%>
+          <tr class="align-middle">
+            <td><%= idx + 1%> </td>
+            <td class="text-capitalize"><%= product.product_name%> </td>
+            <td>&#8369;<%= sprintf('%.2f',product.price)%> </td>
+            <td><%= link_to "Edit", edit_product_path(product.id), class:"btn btn-warning py-1" %></td>
+            <td><%= button_to "Delete", product_path(product.id), method: :delete, class:"btn btn-danger py-1" %></td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
 
-<% if @products.length == 0 %>
-  <div class="m-auto mt-5">
-    <h1 id="no_product">No Products Created</h1>
+  <% if @products.length == 0 %>
+    <div class="m-auto mt-5">
+      <h1 id="no_product">No Products Created</h1>
+    </div>
+  <% end %>
+  </br>
+  </br>
+  <div>
+    <%= button_to "Back to all products", products_path, method: :get , class:"btn btn-danger" ,id:"back" %>
   </div>
-<% end %>
-
-</br></br>
-<div>
-  <%= button_to "Back to all products", products_path, method: :get , class:"btn btn-danger" ,id:"back" %>
-</div>
 </div>

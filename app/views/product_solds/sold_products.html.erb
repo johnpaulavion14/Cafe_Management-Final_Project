@@ -23,54 +23,54 @@
 </div>
 
 <div class ="w-100 border-none rounded bg-secondary" style=" --bs-bg-opacity: .15; min-height: 400px;">
-<table class="table">
-  <thead>
-    <tr class="align-middle"> 
-      <th scope="col">#</th>
-      <th scope="col"><%= sort_link(@q, :product_name, 'Product Name', default_order: :asc)%></th>
-      <th scope="col"><%= sort_link(@q, :price, 'Price', default_order: :asc) %></th>
-      <th scope="col"><%= sort_link(@q, :quantity, 'Quantity', default_order: :asc) %></th>
-      <th scope="col"><%= sort_link(@q, :tax, 'Tax(12%)', default_order: :asc) %></th>
-      <th scope="col"><%= sort_link(@q, :total_price, 'Total Price', default_order: :asc) %></th>
-    </tr>
-  </thead>
-  <% if @With_data %>
-    <tbody>
-    <% @Sold_products.each_with_index do |product,idx| %>
-      <tr>
-        <td><%= idx + 1%> </td>
-        <td class="text-capitalize"><%= product[:product_name]%></td>
-        <td>&#8369;<%= sprintf('%.2f',product[:price]) %></td>
-        <td><%= product[:quantity] %></td>
-        <td>&#8369;<%= sprintf('%.2f',product[:tax])%></td>
-        <td>&#8369;<%= sprintf('%.2f',product[:total_price])%></td>
+  <table class="table">
+    <thead>
+      <tr class="align-middle"> 
+        <th scope="col">#</th>
+        <th scope="col"><%= sort_link(@q, :product_name, 'Product Name', default_order: :asc)%></th>
+        <th scope="col"><%= sort_link(@q, :price, 'Price', default_order: :asc) %></th>
+        <th scope="col"><%= sort_link(@q, :quantity, 'Quantity', default_order: :asc) %></th>
+        <th scope="col"><%= sort_link(@q, :tax, 'Tax(12%)', default_order: :asc) %></th>
+        <th scope="col"><%= sort_link(@q, :total_price, 'Total Price', default_order: :asc) %></th>
       </tr>
-    <%end%>
-      <tr>
-        <td></td>
-        <td></td>
-        <td><%= link_to 'Print Summary', print_summary_path({start:@start_date, end:@end_date}) ,class:"btn btn-warning py-1"%></td> 
-        <td><b>Total Quantity: <%= @Total_quantity %></b></td> 
-        <td><b>Total Tax: &#8369;<%= sprintf('%.2f',@Tax) %></b></td> 
-        <td><b>Total Price: &#8369;<%= sprintf('%.2f',@Total_Price) %></b></td> 
-      </tr>    
-    </tbody>
-  <% else %>
-    <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td id="no_data"><h1 class="text-secondary" >No Data</h1></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  <% end %>
-</table>
-</br>
+    </thead>
+    <% if @With_data %>
+      <tbody>
+      <% @Sold_products.each_with_index do |product,idx| %>
+        <tr>
+          <td><%= idx + 1%> </td>
+          <td class="text-capitalize"><%= product[:product_name]%></td>
+          <td>&#8369;<%= sprintf('%.2f',product[:price]) %></td>
+          <td><%= product[:quantity] %></td>
+          <td>&#8369;<%= sprintf('%.2f',product[:tax])%></td>
+          <td>&#8369;<%= sprintf('%.2f',product[:total_price])%></td>
+        </tr>
+      <%end%>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><%= link_to 'Print Summary', print_summary_path({start:@start_date, end:@end_date}) ,class:"btn btn-warning py-1"%></td> 
+          <td><b>Total Quantity: <%= @Total_quantity %></b></td> 
+          <td><b>Total Tax: &#8369;<%= sprintf('%.2f',@Tax) %></b></td> 
+          <td><b>Total Price: &#8369;<%= sprintf('%.2f',@Total_Price) %></b></td> 
+        </tr>    
+      </tbody>
+    <% else %>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td id="no_data"><h1 class="text-secondary" >No Data</h1></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+  </br>
 
-<%= column_chart @Map_products.map { |sale|
-   {name: sale[:product], data: sale[:orders], colors: ["#b00", "#666"]}
- }%>
- </div>
+  <%= column_chart @Map_products.map { 
+    |sale|{name: sale[:product], data: sale[:orders], colors: ["#b00", "#666"]}
+  }%>
+</div>

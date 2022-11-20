@@ -1,5 +1,5 @@
-<div class="bg-warning w-50 rounded mx-auto mt-3 p-5" style=" --bs-bg-opacity: .75;">
-  <h1>Editing product</h1>
+<div class="w-50 bg-secondary mx-auto p-5 mt-3 rounded" style=" --bs-bg-opacity: .15;">
+  <h1 class="mb-3" id="new_product_title">Editing product</h1>
 
   <% if notice  %>
     <div class="alert alert-success"><%= notice %></div>
@@ -10,10 +10,8 @@
   <% end %>  
 
   <%= render "form", product: @product %>
-
-  <br>
-
+  </br>
   <div>
-    <%= button_to "Back to products", edit_all_products_path, method: :get, class:"btn btn-danger" %>
+    <%= button_to "Back to products", edit_all_products_path, method: :get, class:"btn btn-danger", id:"back" %>
   </div>
 </div>
