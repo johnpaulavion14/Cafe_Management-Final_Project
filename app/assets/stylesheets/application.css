@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+.home_bg {
+  background-image: url('https://res.cloudinary.com/dazff5yba/image/upload/v1668758099/vecteezy_a-brown-table-top-with-a-blurred-coffee-shop_1782280_nffhex.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100vw;
+}
+#shop_bg{
+  background-image: url('https://res.cloudinary.com/dazff5yba/image/upload/v1668847627/vecteezy_a-brown-table-top-with-a-blurred-coffee-shop_1782281_elqghj.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+
+#title_name, #edit_products_title{
+  font-family: Lobster;
+  font-size: 4rem;
+}
+#edit_products_title,#new_product_title,#checkout_title, #order_receipt_title,#summary_title{
+  font-family: Lobster;
+  font-size: 3rem;
+}
+
+#welcome, #nav_bar, #edit_products, #create_product, #sort_today, #sort_date, #sort_product_solds{
+  font-family: 'Fredoka One';
+}
+
+#login,#register,#shop_details,#proceed,#no_product,#checkout,#no_data,#logout,#searchs,#back,#create_new_product, #submit, #place_order, #print_receipt{
+  font-family: 'Rubik Marker Hatch';
+}
+#order_receipt{
+  font-family: 'VT323'
+}

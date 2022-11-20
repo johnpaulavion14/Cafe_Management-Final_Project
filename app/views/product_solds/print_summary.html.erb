@@ -1,5 +1,5 @@
-<h1>Summary Receipt</h1>
-<div class="bg-secondary w-50 rounded mx-auto mt-3 p-3" style=" --bs-bg-opacity: .15;">
+<h1 id="summary_title">Summary Receipt</h1>
+<div class="bg-light w-50 rounded mx-auto mt-3 p-3 fs-4" id="order_receipt">
   <h2 class="text-capitalize"><%= @Shop.shop_name %></h2>
   <h3 class="text-capitalize"><%= @Shop.shop_location %></h3>
   <b>phone#:<%= @Shop.shop_number %></b>
@@ -55,8 +55,8 @@
   </table>
 </div>
 </br>
-<%= button_to 'Print Receipt',sold_products_path,method: :get, class:"btn btn-warning" %>
+<%= button_to 'Print Receipt',sold_products_path,method: :get, class:"btn btn-warning",id:"print_receipt" %>
 </br>
-<%= link_to 'go back' , sold_products_path({start:@start_date, end:@end_date}),class:"btn btn-danger"%>
+<%= link_to 'go back to sold products' , sold_products_path({start:@start_date, end:@end_date}),class:"btn btn-danger",id:"back" %>
 </br></br>
 

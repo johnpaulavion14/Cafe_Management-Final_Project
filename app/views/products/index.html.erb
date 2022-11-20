@@ -2,14 +2,14 @@
   <div class="w-25 d-flex align-items-center">
     <%= search_form_for @q do |f| %>
       <%= f.search_field :product_name_cont, placeholder:"search product name", size: "10x1" %>
-      <%= f.submit "Search" %>
+      <%= f.submit "Search" , class:"btn btn-warning py-1", id:"searchs" %>
     <% end %>  
   </div>
 
   <div class="w-50">
     <h2 style="font-family:'Lobster',cursive; font-size: 3rem">All Products </h2>
-    <%= link_to "Edit Products", edit_all_products_path, class:"btn btn-success mx-3" %> 
-    <%= link_to "Create Product", new_product_path, class:"btn btn-success mx-3" %>
+    <%= link_to "Edit Products", edit_all_products_path, class:"btn btn-success mx-3", id:"edit_products" %> 
+    <%= link_to "Create Product", new_product_path, class:"btn btn-success mx-3", id:"create_product" %>
   </div>
 
   <div class="w-25">
@@ -17,10 +17,10 @@
 </div>
 
 <%= form_with url: "/orders/checkout" ,method: :get do |f| %>
-  <div class ="products d-flex w-100 flex-wrap mt-3 py-5 border rounded bg-secondary" style=" --bs-bg-opacity: .15; min-height: 500px;">
+  <div class ="products d-flex w-100 flex-wrap mt-3 py-5 border-none rounded bg-secondary" style=" --bs-bg-opacity: .15; min-height: 500px;">
     <% if @products.length == 0 %>
-      <div class="m-auto text-secondary">
-        <h1>No Products Created</h1>
+      <div class="m-auto">
+        <h1 id="no_product">No Products Created</h1>
       </div>
     <% else %>
       <% @products.each do |product| %>
@@ -33,7 +33,7 @@
       <% end %>
     <% end %>
   </div>
-  <%= f.submit 'CHECKOUT', class:"btn btn-warning mt-3"%>
+  <%= f.submit 'CHECKOUT', class:"btn btn-warning mt-3", id:"checkout"%>
 <% end %>  
 </br>
 

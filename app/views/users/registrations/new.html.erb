@@ -1,37 +1,33 @@
-<div class="container text-center mt-5 text-bg-primary" style="padding: 3rem; border-radius:10px">
-  <h1 style="font-family:'Lobster',cursive; font-size: 4rem">Cafe Management App</h1>
-  
-
-  <div class="row py-4 w-50 mx-auto" style="border: 5px solid black; border-radius: 8px; ">
-    <div class="col">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "users/shared/error_messages", resource: resource %>
-
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        </div>
-        </br>
-        <div class="actions">
-          <%= f.submit "Sign up", class:"btn btn-success mx-2"%>
-        </div>
-      <% end %>
-
-      <%= button_to "go back", root_path, method: :get, class:"btn btn-danger mt-3"%>
-
+<div class="home_bg py-5">
+  <div class="w-50 text-center bg-secondary p-5 mx-auto rounded-4" style=" --bs-bg-opacity: .30;">
+    <h1 class="text-dark" id="title_name">Cafe Management App</h1>
+    <div class="row py-4 w-50 mx-auto" style="border: 5px solid black; border-radius: 8px; ">
+      <h2 class="text-dark" id="register" >Register</h2>
+      <div class="col">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "users/shared/error_messages", resource: resource %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", size:"15x1", class:"text-center",required: true %>
+          </div>
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password", size:"15x1", class:"text-center",required: true %>
+          </div>
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", size:"15x1", class:"text-center",required: true %>
+          </div>
+          </br>
+          <div class="actions">
+            <%= f.submit "Sign up", class:"btn btn-success mx-2"%>
+          </div>
+        <% end %>
+        <%= button_to "Back", root_path, method: :get, class:"btn btn-danger mt-3"%>
+      </div>
     </div>
   </div>
 </div>

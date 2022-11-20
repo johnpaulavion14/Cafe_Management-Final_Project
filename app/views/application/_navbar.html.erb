@@ -1,14 +1,14 @@
-<div class="container text-center">
+<div class="text-center py-2 bg-dark" style="background-color:black;">
   <div class="row">
 
     <div class="col d-flex flex-column justify-content-center">
-      <i><%="Welcome, " + current_user.email+' !'%></i>
+      <i id="welcome" class="text-white"><%="Welcome, " + current_user.email+' !'%></i>
 
     </div>
 
-    <div class="col-6 d-flex">
-      <nav class="navbar navbar-expand-lg bg-light w-100">
-        <ul class="nav nav-pills d-flex justify-content-around w-100">
+    <div class="col-6 d-flex justify-content-center">
+      <nav class="navbar text-white">
+        <ul class="nav nav-pills d-flex justify-content-around w-100" id="nav_bar">
           <li class="nav-item">
               <%= link_to "All Products", products_path, class:"nav-link #{'active' if current_page?(products_path)}" %>
           </li>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="col d-flex flex-column justify-content-center">
-      <%= button_to "Log Out", destroy_user_session_path, method: :delete, class:"btn btn-outline-danger" %>
+      <%= button_to "Log Out", destroy_user_session_path, method: :delete, class:"btn btn-outline-danger", id:"logout" %>
     </div>    
     
   </div>

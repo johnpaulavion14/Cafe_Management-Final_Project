@@ -6,18 +6,18 @@
     
 <div class="d-flex align-items-center">
     <div class="w-25">
-      <%= button_to 'Sort Today',all_orders_path({start:Date.today, end:Date.today+1}), method: :get, class:"btn btn-success" %>
+      <%= button_to 'Sort Today',all_orders_path({start:Date.today, end:Date.today+1}), method: :get, class:"btn btn-success py-1", id:"sort_today" %>
     </div>
 
     <div class="w-50">
-      <div class="w-75 bg-secondary mx-auto py-2 rounded" style=" --bs-bg-opacity: .15;">
+      <div class="w-75 mx-auto py-2">
         <%= form_with url: "/orders/all_orders",method: :get do |f| %>
           <%= f.label "start" %>
-          <%= f.date_field :start, value: @start_date%>
+          <%= f.date_field :start, value: @start_date %>
           <span> -- </span>
           <%= f.label "end" %>
-          <%= f.date_field :end, value: @end_date%>
-          <%= f.submit 'Sort', class:"btn btn-success" %>
+          <%= f.date_field :end, value: @end_date %>
+          <%= f.submit 'Sort Date', class:"btn btn-success py-1",id:"sort_date" %>
         <% end %>  
       </div>  
     </div>
@@ -26,6 +26,7 @@
     </div>        
 </div>
 
+<div class ="w-100 border-none rounded bg-secondary" style=" --bs-bg-opacity: .15; min-height: 400px;">
 <table class="table">
   <thead>
     <tr>
@@ -38,43 +39,41 @@
       <th scope="col">Delete</th>
     </tr>
   </thead>
-  <tbody>
-
     <% if @Orders.length == 0%>
       <tbody>
         <tr>
           <td></td>
           <td></td>
           <td></td>
-          <td><h1 class="text-secondary" >No Data</h1></td>
+          <td><h1 class="text-secondary" id="no_data" >No Data</h1></td>
+          <td></td>
           <td></td>
           <td></td>
         </tr>
       </tbody>
 
     <% else %>
-
-      <% @Orders.each_with_index do |order,idx|%>   
-          <tr>
-            <td><%= idx + 1%> </td>
-            <td class="text-capitalize">
-            <% order[0].each_with_index do |x,idx|%>
-              <% if x.keys[0] != :total_price %>
-                <%=x[:product_name] %>
-                (&#8369;<%=sprintf('%.2f',x[:price])%> x
-                <%=x[:quantity]%>)
-                <%= order[0].length != idx+2 ? ',' : '' %>    
+      <tbody>
+        <% @Orders.each_with_index do |order,idx|%>   
+            <tr class="align-middle">
+              <td><%= idx + 1%> </td>
+              <td class="text-capitalize">
+              <% order[0].each_with_index do |x,idx|%>
+                <% if x.keys[0] != :total_price %>
+                  <%=x[:product_name] %>
+                  (&#8369;<%=sprintf('%.2f',x[:price])%> x
+                  <%=x[:quantity]%>)
+                  <%= order[0].length != idx+2 ? ',' : '' %>    
+                <% end %>
               <% end %>
-            <% end %>
-            </td>
-            <td>&#8369;<%= sprintf('%.2f',order[0][order[0].length-1][:total_price])%> </td>
-            <td>&#8369;<%= sprintf('%.2f',order[0][order[0].length-1][:tax])%> </td>
-            <td><%= link_to 'print_receipt', order_receipt_path({id:order[2], back_to_allorders:"ok"}), class:"btn btn-warning"%> </td>
-            <td><%= order[1].strftime("%I:%M%p/%b %d")%></td>
-            <td><%= button_to 'delete',delete_order_path({id:order[2], date:order[1]}),method: :delete, class:"btn btn-danger" %></td> 
-          </tr>
-      <%end%>
-
+              </td>
+              <td>&#8369;<%= sprintf('%.2f',order[0][order[0].length-1][:total_price])%> </td>
+              <td>&#8369;<%= sprintf('%.2f',order[0][order[0].length-1][:tax])%> </td>
+              <td><%= link_to 'print_receipt', order_receipt_path({id:order[2], back_to_allorders:"ok"}), class:"btn btn-warning py-1"%> </td>
+              <td><%= order[1].strftime("%I:%M%p/%b %d")%></td>
+              <td><%= button_to 'delete',delete_order_path({id:order[2], date:order[1]}),method: :delete, class:"btn btn-danger py-1" %></td> 
+            </tr>
+        <%end%>
           <tr>
             <td></td>
             <td></td>
@@ -84,12 +83,12 @@
             <td></td>
             <td></td>
           </tr>  
-
+      </tbody>
     <% end %> 
 
-  </tbody>
 </table>
 </br>
 <%= line_chart @Order_chart, colors: ["#b00", "#666"],prefix: "₱" ,name:"asdfr"%>
 </br></br>
+</div>
 

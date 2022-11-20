@@ -14,7 +14,7 @@ class ShopDetailsController < ApplicationController
       respond_to do |format|
         if @shop.save
         else
-          format.html { redirect_to shop_path, notice: @shop.errors }
+          format.html { redirect_to shop_path(shop_params), notice: @shop.errors }
         end
       end
 

@@ -1,8 +1,7 @@
-<h2 style="font-family:'Lobster',cursive; font-size: 3rem">Top Product Sold</h2>
+<h2 style="font-family:'Lobster',cursive; font-size: 3rem">Sold Products</h2>
 <div class="d-flex align-items-center">
-  <div class="w-25 d-flex">
-    <%= button_to 'Sort Today',sold_products_path({start:Date.today, end:Date.today+1}), method: :get, class:"btn btn-success mx-2" %>
-    <%= link_to 'Sort All Products Sold',sold_products_path({start:@begin, end:@last}), method: :get, class:"btn btn-success mx-2"%>      
+  <div class="w-25">
+    <%= button_to 'Sort Today',sold_products_path({start:Date.today, end:Date.today+1}), method: :get, class:"btn btn-success mx-2 py-1", id:"sort_today" %>
   </div>
   
   <div class="w-50">
@@ -13,20 +12,22 @@
         <span> -- </span>
         <%= f.label "end" %>
         <%= f.date_field :end, value: @end_date%>
-        <%= f.submit 'Sort', class:"btn btn-success" %>
+        <%= f.submit 'Sort', class:"btn btn-success py-1",id:"sort_date" %>
       <% end %>    
     </div>
   </div>
 
   <div class="w-25">
+    <%= link_to 'Sort All Products Sold',sold_products_path({start:@begin, end:@last}), method: :get, class:"btn btn-success mx-2 py-1", id:"sort_product_solds"%>      
   </div>        
 </div>
 
+<div class ="w-100 border-none rounded bg-secondary" style=" --bs-bg-opacity: .15; min-height: 400px;">
 <table class="table">
   <thead>
-    <tr>
+    <tr class="align-middle"> 
       <th scope="col">#</th>
-      <th scope="col"><%= sort_link(@q, :product_name, 'Product Name', default_order: :asc) %></th>
+      <th scope="col"><%= sort_link(@q, :product_name, 'Product Name', default_order: :asc)%></th>
       <th scope="col"><%= sort_link(@q, :price, 'Price', default_order: :asc) %></th>
       <th scope="col"><%= sort_link(@q, :quantity, 'Quantity', default_order: :asc) %></th>
       <th scope="col"><%= sort_link(@q, :tax, 'Tax(12%)', default_order: :asc) %></th>
@@ -48,7 +49,7 @@
       <tr>
         <td></td>
         <td></td>
-        <td><%= link_to 'Print Summary', print_summary_path({start:@start_date, end:@end_date}) %></td> 
+        <td><%= link_to 'Print Summary', print_summary_path({start:@start_date, end:@end_date}) ,class:"btn btn-warning py-1"%></td> 
         <td><b>Total Quantity: <%= @Total_quantity %></b></td> 
         <td><b>Total Tax: &#8369;<%= sprintf('%.2f',@Tax) %></b></td> 
         <td><b>Total Price: &#8369;<%= sprintf('%.2f',@Total_Price) %></b></td> 
@@ -60,7 +61,7 @@
         <td></td>
         <td></td>
         <td></td>
-        <td><h1 class="text-secondary" >No Data</h1></td>
+        <td id="no_data"><h1 class="text-secondary" >No Data</h1></td>
         <td></td>
         <td></td>
       </tr>
@@ -72,3 +73,4 @@
 <%= column_chart @Map_products.map { |sale|
    {name: sale[:product], data: sale[:orders], colors: ["#b00", "#666"]}
  }%>
+ </div>
