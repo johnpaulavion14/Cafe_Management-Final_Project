@@ -5,7 +5,7 @@
   </div>
   
   <div class="w-50">
-    <div class="w-75 bg-secondary mx-auto py-2 rounded" style=" --bs-bg-opacity: .15;">
+    <div class="w-75 mx-auto py-2">
       <%= form_with url: "/product_solds/sold_products",method: :get do |f| %>
         <%= f.label "start" %>
         <%= f.date_field :start, value: @start_date%>

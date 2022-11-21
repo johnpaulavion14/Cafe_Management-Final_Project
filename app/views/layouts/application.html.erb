@@ -19,11 +19,9 @@
 
   <body>
     <%if user_signed_in? && current_user.shop_details.count != 0 %>
-      <div id="shop_bg">
-        <%= render 'navbar' %>
-        <div class="container text-center">  
-          <%= yield %>
-        </div>
+      <%= render 'navbar' %>
+      <div class="container text-center">  
+        <%= yield %>
       </div>
     <% else %>
       <div class="text-center">  
